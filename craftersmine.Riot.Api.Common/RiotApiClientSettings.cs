@@ -10,10 +10,6 @@ namespace craftersmine.Riot.Api.Common
         public bool UseTournamentStub { get; set; }
     }
 
-    public static class RiotApiClientSettingsExtensions
-    {
-    }
-
     public class RiotApiClientSettingsBuilder
     {
         internal RiotApiClientSettings Settings { get; }
