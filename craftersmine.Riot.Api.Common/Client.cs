@@ -14,6 +14,7 @@ namespace craftersmine.Riot.Api.Common
     public sealed class Client
     {
         private readonly HttpClient _httpClient;
+        private TimeSpan? _retryAfterLast;
 
         /// <summary>
         /// Gets current API base address
@@ -48,6 +49,15 @@ namespace craftersmine.Riot.Api.Common
             _httpClient.DefaultRequestHeaders.Add(header, value);
         }
 
+        /// <summary>
+        /// Gets time span from last failed request from <see cref="System.Net.HttpStatusCode.RateLimited"/>
+        /// </summary>
+        /// <returns></returns>
+        public TimeSpan? GetRetryAfterTimeSpan()
+        {
+            return _retryAfterLast;
+        }
+
         public async Task<T> Get<T>(string address, IDictionary<string, object> queryParams)
         {
             string queryParamsString = string.Empty;
@@ -63,6 +73,9 @@ namespace craftersmine.Riot.Api.Common
             }
 
             var response = await _httpClient.GetAsync(address);
+
+            _retryAfterLast = response.Headers.RetryAfter.Delta;
+
             var responseStr = await response.Content.ReadAsStringAsync();
 
             if (!response.IsSuccessStatusCode)
@@ -94,6 +107,9 @@ namespace craftersmine.Riot.Api.Common
             string body = JsonConvert.SerializeObject(bodyContent);
 
             var response = await _httpClient.PostAsync(address, new StringContent(body));
+
+            _retryAfterLast = response.Headers.RetryAfter.Delta;
+
             var responseStr = await response.Content.ReadAsStringAsync();
 
             if (!response.IsSuccessStatusCode)
@@ -125,6 +141,9 @@ namespace craftersmine.Riot.Api.Common
             string body = JsonConvert.SerializeObject(bodyContent);
 
             var response = await _httpClient.PutAsync(address, new StringContent(body));
+
+            _retryAfterLast = response.Headers.RetryAfter.Delta;
+
             var responseStr = await response.Content.ReadAsStringAsync();
 
             if (!response.IsSuccessStatusCode)
