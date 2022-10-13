@@ -19,6 +19,8 @@ namespace craftersmine.Riot.Api.Common
         /// </summary>
         public bool UseTournamentStub { get; internal set; } = false;
 
+        public RiotRegion DefaultDataRegion { get; internal set; } = RiotRegion.Europe;
+
         /// <summary>
         /// Use <see cref="RiotApiClientSettingsBuilder"/> instead
         /// </summary>
@@ -72,6 +74,12 @@ namespace craftersmine.Riot.Api.Common
         public RiotApiClientSettingsBuilder UseTournamentStub()
         {
             Settings.UseTournamentStub = true;
+            return this;
+        }
+
+        public RiotApiClientSettingsBuilder UseDefaultDataRegion(RiotRegion region)
+        {
+            Settings.DefaultDataRegion = region;
             return this;
         }
     }
