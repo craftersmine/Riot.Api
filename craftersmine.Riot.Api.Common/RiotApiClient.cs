@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -12,6 +12,9 @@ namespace craftersmine.Riot.Api.Common
         public RiotApiClient(RiotApiClientSettings settings)
         {
             _client = new Client();
+            _settings = settings;
+
+            _client.SetHeader("X-Riot-Token", _settings.ApiKey);
         }
     }
 }
