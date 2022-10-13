@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -81,7 +81,7 @@ namespace craftersmine.Riot.Api.Common
             if (!response.IsSuccessStatusCode)
             {
                 if (string.IsNullOrWhiteSpace(responseStr))
-                    throw new RiotApiException(response.StatusCode);
+                    throw new RiotApiException((HttpResponseCode)response.StatusCode);
 
                 var errRespObj = JsonConvert.DeserializeObject<ErrorResponse>(responseStr);
                 throw new RiotApiException(errRespObj);
@@ -115,7 +115,7 @@ namespace craftersmine.Riot.Api.Common
             if (!response.IsSuccessStatusCode)
             {
                 if (string.IsNullOrWhiteSpace(responseStr))
-                    throw new RiotApiException(response.StatusCode);
+                    throw new RiotApiException((HttpResponseCode)response.StatusCode);
 
                 var errRespObj = JsonConvert.DeserializeObject<ErrorResponse>(responseStr);
                 throw new RiotApiException(errRespObj);
@@ -149,7 +149,7 @@ namespace craftersmine.Riot.Api.Common
             if (!response.IsSuccessStatusCode)
             {
                 if (string.IsNullOrWhiteSpace(responseStr))
-                    throw new RiotApiException(response.StatusCode);
+                    throw new RiotApiException((HttpResponseCode)response.StatusCode);
 
                 var errRespObj = JsonConvert.DeserializeObject<ErrorResponse>(responseStr);
                 throw new RiotApiException(errRespObj);
