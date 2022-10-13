@@ -4,18 +4,38 @@ using System.Text;
 
 namespace craftersmine.Riot.Api.Common
 {
+    /// <summary>
+    /// Represents Riot API Client settings
+    /// </summary>
     public class RiotApiClientSettings
     {
+        /// <summary>
+        /// Gets or sets Riot API key
+        /// </summary>
         public string ApiKey { get; set; }
+        /// <summary>
+        /// Gets or sets <see langword="true"/> to use Riot Tournament Stub API instead of Riot Tournament API
+        /// </summary>
         public bool UseTournamentStub { get; set; }
     }
 
-    public class RiotApiClientSettingsBuilder
+    /// <summary>
+    /// Allows you to create <see cref="RiotApiClientSettings"/> using fluent API
+    /// </summary>
+    public sealed class RiotApiClientSettingsBuilder
     {
         internal RiotApiClientSettings Settings { get; }
 
+        /// <summary>
+        /// Gets current settings
+        /// </summary>
         public RiotApiClientSettingsBuilder() => Settings = new RiotApiClientSettings();
 
+        /// <summary>
+        /// Returns built settings
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException">If API key is not set (null or empty string)</exception>
         public RiotApiClientSettings Build()
         {
             if (string.IsNullOrWhiteSpace(Settings.ApiKey))
@@ -24,6 +44,12 @@ namespace craftersmine.Riot.Api.Common
             return Settings;
         }
 
+        /// <summary>
+        /// Sets Riot API key
+        /// </summary>
+        /// <param name="apiKey">Riot API key of your application</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException">If API keu is not set (null or empty string)</exception>
         public RiotApiClientSettingsBuilder UseApiKey(string apiKey)
         {
             if (string.IsNullOrWhiteSpace(apiKey))
@@ -33,6 +59,10 @@ namespace craftersmine.Riot.Api.Common
             return this;
         }
 
+        /// <summary>
+        /// Switches Riot API client to use Tournament Stub API instead of Tournament API if used
+        /// </summary>
+        /// <returns></returns>
         public RiotApiClientSettingsBuilder UseTournamentStub()
         {
             Settings.UseTournamentStub = true;
