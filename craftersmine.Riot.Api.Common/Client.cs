@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -20,20 +20,27 @@ namespace craftersmine.Riot.Api.Common
         /// </summary>
         public string BaseAddress
         {
-            get => _httpClient.BaseAddress.ToString();
-            set => _httpClient.BaseAddress = new Uri(value);
+            //get => _httpClient.BaseAddress.ToString();
+            //set => _httpClient.BaseAddress = new Uri(value);
+            get;
+            set;
+        }
+        
+        /// <summary>
+        /// Creates a new instance of <see cref="Client"/> to make HTTP requests
+        /// </summary>
+        public Client()
+        {
+            _httpClient = new HttpClient();
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="Client"/> to make HTTP requests
         /// </summary>
         /// <param name="baseAddress">API request base address</param>
-        public Client(string baseAddress)
+        internal Client(string baseAddress) : base()
         {
-            _httpClient = new HttpClient();
-            _httpClient.BaseAddress = new Uri(baseAddress);
-
-            //RiotApiClientSettings settings = 
+            //_httpClient.BaseAddress = new Uri(baseAddress);
         }
 
         public void SetHeader(string header, string value)
