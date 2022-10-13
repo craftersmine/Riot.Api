@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\craftersmine.Riot.Api.Common\craftersmine.Riot.Api.Common.csproj" />
+    <ProjectReference Include="..\craftersmine.Riot.Api.Account\craftersmine.Riot.Api.Account.csproj" />
   </ItemGroup>
 
 </Project>
