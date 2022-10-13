@@ -10,9 +10,9 @@ namespace craftersmine.Riot.Api.Common.Exceptions
     public class RiotApiException : Exception
     {
         public ErrorResponse RiotApiResponse { get; private set; }
-        public HttpStatusCode ResponseCode { get; private set; }
+        public HttpResponseCode ResponseCode { get; private set; }
 
-        public RiotApiException(HttpStatusCode responseCode)
+        public RiotApiException(HttpResponseCode responseCode)
         {
             ResponseCode = responseCode;
             RiotApiResponse = null;
