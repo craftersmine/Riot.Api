@@ -34,20 +34,27 @@ namespace craftersmine.Riot.Api.Common
 
         #region Valorant Shards
 
-        public const string ValorantEuropeShard = "eu";
-        public const string ValorantNorthAmericaShard = "na";
-        public const string ValorantLatinAmericaShard = "latam";
-        public const string ValorantKoreaShard = "kr";
-        public const string ValorantBrazilShard = "br";
-        public const string ValorantAsiaPacificShard = "ap";
+        public const string ShardValorantEurope = "eu";
+        public const string ShardValorantNorthAmerica = "na";
+        public const string ShardValorantLatinAmerica = "latam";
+        public const string ShardValorantKorea = "kr";
+        public const string ShardValorantBrazil = "br";
+        public const string ShardValorantAsiaPacific = "ap";
 
         #endregion
 
         #region LoR Shards
 
-        public const string LoREuropeShard = "europe";
-        public const string LoRAmericasShard = "americas";
-        public const string LoRAsiaPacificShard = "apac";
+        public const string ShardLoREurope = "europe";
+        public const string ShardLoRAmericas = "americas";
+        public const string ShardLoRAsiaPacific = "apac";
+
+        #endregion
+
+        #region Shards Games
+
+        public const string ShardGameLegendsOfRunterra = "lor";
+        public const string ShardGameValorant = "val";
 
         #endregion
     }
