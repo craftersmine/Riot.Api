@@ -4,23 +4,65 @@ using System.Text;
 
 namespace craftersmine.Riot.Api.Common
 {
+    /// <summary>
+    /// Represents a Riot Data Platform to fetch data from
+    /// </summary>
     public enum RiotPlatform
     {
+        /// <summary>
+        /// Brazil region
+        /// </summary>
         Brazil,
+        /// <summary>
+        /// Europe Nordic and East region
+        /// </summary>
         EuropeNordicEast,
+        /// <summary>
+        /// Europe West region
+        /// </summary>
         EuropeWest,
+        /// <summary>
+        /// Latin America North region
+        /// </summary>
         LatinAmericaNorth,
+        /// <summary>
+        /// Latin America South region
+        /// </summary>
         LatinAmericaSouth,
+        /// <summary>
+        /// North America region
+        /// </summary>
         NorthAmerica,
+        /// <summary>
+        /// Oceania region
+        /// </summary>
         Oceania,
+        /// <summary>
+        /// CIS region
+        /// </summary>
         Russia,
+        /// <summary>
+        /// Turkey region
+        /// </summary>
         Turkey,
+        /// <summary>
+        /// Japan region
+        /// </summary>
         Japan,
+        /// <summary>
+        /// Republic of Korea region
+        /// </summary>
         Korea,
     }
 
     public static class RiotPlatformExtensions
     {
+        /// <summary>
+        /// Gets corresponding base address for platform value
+        /// </summary>
+        /// <param name="platform">Data Platform</param>
+        /// <returns></returns>
+        /// <exception cref="Exception">Should not happen</exception>
         public static string GetAddressFor(this RiotPlatform platform)
         {
             switch (platform)
