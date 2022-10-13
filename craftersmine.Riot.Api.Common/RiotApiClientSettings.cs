@@ -10,13 +10,19 @@ namespace craftersmine.Riot.Api.Common
     public class RiotApiClientSettings
     {
         /// <summary>
-        /// Gets or sets Riot API key
+        /// Gets Riot API key
         /// </summary>
-        public string ApiKey { get; set; }
+        public string ApiKey { get; internal set; }
+
         /// <summary>
-        /// Gets or sets <see langword="true"/> to use Riot Tournament Stub API instead of Riot Tournament API
+        /// Gets <see langword="true"/> to use Riot Tournament Stub API instead of Riot Tournament API
         /// </summary>
-        public bool UseTournamentStub { get; set; }
+        public bool UseTournamentStub { get; internal set; } = false;
+
+        /// <summary>
+        /// Use <see cref="RiotApiClientSettingsBuilder"/> instead
+        /// </summary>
+        internal RiotApiClientSettings() {}
     }
 
     /// <summary>
