@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Common", "craftersmine.Riot.Api.Common\craftersmine.Riot.Api.Common.csproj", "{1116FE35-89F5-4FAE-BE9F-E82147F150D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.Tests", "craftersmine.Riot.Api.Tests\craftersmine.Riot.Api.Tests.csproj", "{5F72BAC1-A2D9-44C4-BA20-226F9ECDE6C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Tests", "craftersmine.Riot.Api.Tests\craftersmine.Riot.Api.Tests.csproj", "{5F72BAC1-A2D9-44C4-BA20-226F9ECDE6C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.Account", "craftersmine.Riot.Api.Account\craftersmine.Riot.Api.Account.csproj", "{B6A56583-AB44-4F85-AB4B-72FB71E93726}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{5F72BAC1-A2D9-44C4-BA20-226F9ECDE6C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F72BAC1-A2D9-44C4-BA20-226F9ECDE6C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F72BAC1-A2D9-44C4-BA20-226F9ECDE6C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6A56583-AB44-4F85-AB4B-72FB71E93726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6A56583-AB44-4F85-AB4B-72FB71E93726}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6A56583-AB44-4F85-AB4B-72FB71E93726}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6A56583-AB44-4F85-AB4B-72FB71E93726}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
