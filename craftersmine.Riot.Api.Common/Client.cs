@@ -74,7 +74,8 @@ namespace craftersmine.Riot.Api.Common
 
             var response = await _httpClient.GetAsync(address);
 
-            _retryAfterLast = response.Headers.RetryAfter.Delta;
+            if (!(response.Headers.RetryAfter is null))
+                _retryAfterLast = response.Headers.RetryAfter.Delta;
 
             var responseStr = await response.Content.ReadAsStringAsync();
 
@@ -107,8 +108,9 @@ namespace craftersmine.Riot.Api.Common
             string body = JsonConvert.SerializeObject(bodyContent);
 
             var response = await _httpClient.PostAsync(address, new StringContent(body));
-
-            _retryAfterLast = response.Headers.RetryAfter.Delta;
+            
+            if (!(response.Headers.RetryAfter is null))
+                _retryAfterLast = response.Headers.RetryAfter.Delta;
 
             var responseStr = await response.Content.ReadAsStringAsync();
 
@@ -141,8 +143,9 @@ namespace craftersmine.Riot.Api.Common
             string body = JsonConvert.SerializeObject(bodyContent);
 
             var response = await _httpClient.PutAsync(address, new StringContent(body));
-
-            _retryAfterLast = response.Headers.RetryAfter.Delta;
+            
+            if (!(response.Headers.RetryAfter is null))
+                _retryAfterLast = response.Headers.RetryAfter.Delta;
 
             var responseStr = await response.Content.ReadAsStringAsync();
 
