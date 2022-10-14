@@ -7,7 +7,5 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
         private const string _apiEndpointRoot = "/lol/league/v4/";
 
         public RiotSummonerLeaguesApiClient(RiotApiClientSettings settings) : base(settings) { }
-
-        public 
     }
 }
