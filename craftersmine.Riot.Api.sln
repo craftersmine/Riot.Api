@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Commo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Tests", "craftersmine.Riot.Api.Tests\craftersmine.Riot.Api.Tests.csproj", "{5F72BAC1-A2D9-44C4-BA20-226F9ECDE6C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.Account", "craftersmine.Riot.Api.Account\craftersmine.Riot.Api.Account.csproj", "{B6A56583-AB44-4F85-AB4B-72FB71E93726}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Account", "craftersmine.Riot.Api.Account\craftersmine.Riot.Api.Account.csproj", "{B6A56583-AB44-4F85-AB4B-72FB71E93726}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

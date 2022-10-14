@@ -1,20 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-	  <Version>0.0.2</Version>
+	  <Version>0.0.8</Version>
 	  <Authors>craftersmine</Authors>
-	  <Description>Riot Account v4 API wrapper for .NET</Description>
+	  <Description>Riot Account v1 API wrapper for .NET</Description>
 	  <PackageOutputPath>$(SolutionDir)_NUGETS\craftersmine.Riot.Api\</PackageOutputPath>
 	  <RepositoryType>git</RepositoryType>
 	  <RepositoryUrl>https://github.com/craftersmine/Riot.Api/</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="craftersmine.Riot.Api.Common" Version="0.0.4" />
+    <PackageReference Include="craftersmine.Riot.Api.Common" Version="0.0.8" />
   </ItemGroup>
 
 </Project>
