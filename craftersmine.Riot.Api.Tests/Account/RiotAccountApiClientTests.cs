@@ -17,15 +17,15 @@ namespace craftersmine.Riot.Api.Tests.Account
         public const RiotShards MyShardLor = RiotShards.LoREurope;
         public const RiotShards MyShardValorant = RiotShards.ValorantEurope;
 
-        public TestContext TestContext { get; set; }
+        public TestContext? TestContext { get; set; }
 
-        public static string ApiKey;
-        public static RiotAccountApiClient Client;
+        public string? ApiKey;
+        public RiotAccountApiClient? Client;
 
         [TestInitialize]
         public void Initialize()
         {
-            ApiKey = TestContext.Properties["ApiKey"].ToString();
+            ApiKey = TestContext?.Properties["ApiKey"]?.ToString();
             if (string.IsNullOrWhiteSpace(ApiKey))
                 Assert.Fail("No Riot API key provided!");
             Client = new RiotAccountApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey)
@@ -35,6 +35,7 @@ namespace craftersmine.Riot.Api.Tests.Account
         [TestMethod]
         public async Task GetAccountByPuuidTest()
         {
+            Assert.IsNotNull(Client, "Client is not initialized!");
             RiotAccount account = await Client.GetAccountByPuuidAsync(MyPuuid);
             Assert.IsNotNull(account);
             Assert.AreEqual(MyPuuid, account.Puuid);
@@ -45,6 +46,7 @@ namespace craftersmine.Riot.Api.Tests.Account
         [TestMethod]
         public async Task GetAccountByRiotIdTest()
         {
+            Assert.IsNotNull(Client, "Client is not initialized!");
             RiotAccount account = await Client.GetAccountByRiotIdAsync(MyGameName, MyTagLine);
             Assert.IsNotNull(account);
             Assert.AreEqual(MyPuuid, account.Puuid);
@@ -55,6 +57,7 @@ namespace craftersmine.Riot.Api.Tests.Account
         [TestMethod]
         public async Task GetActiveShardByPuuidTest()
         {
+            Assert.IsNotNull(Client, "Client is not initialized!");
             RiotActiveShard shard = await Client.GetActiveShardForPlayerByPuuidAsync(RiotShardGame.Valorant, MyPuuid);
             Assert.IsNotNull(shard);
             Assert.AreEqual(shard.ActiveShard, MyShardValorant);
