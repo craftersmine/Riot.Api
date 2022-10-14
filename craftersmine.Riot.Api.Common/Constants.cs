@@ -4,7 +4,7 @@ using System.Text;
 
 namespace craftersmine.Riot.Api.Common
 {
-    public class Constants
+    internal class Constants
     {
         #region Data Regions
 
