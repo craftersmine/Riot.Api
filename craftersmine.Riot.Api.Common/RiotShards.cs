@@ -48,7 +48,7 @@ namespace craftersmine.Riot.Api.Common
             }
         }
 
-        public static RiotShards GetShardFromString(this string str)
+        internal static RiotShards GetShardFromString(this string str)
         {
             switch (str.ToLower())
             {
