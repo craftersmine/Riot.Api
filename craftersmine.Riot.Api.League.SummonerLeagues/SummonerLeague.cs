@@ -22,12 +22,12 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
         /// Gets League of Legends summoner ID
         /// </summary>
         [JsonProperty("summonerId")]
-        public string SummonerId { get; private set; }
+        public string? SummonerId { get; private set; }
         /// <summary>
         /// Gets League of Legends summoner name
         /// </summary>
         [JsonProperty("summonerName")]
-        public string SummonerName { get; private set; }
+        public string? SummonerName { get; private set; }
         /// <summary>
         /// Gets League of Legends Queue type for League
         /// </summary>
