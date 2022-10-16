@@ -106,7 +106,7 @@ namespace craftersmine.Riot.Api.Tests.League
         public async Task GetLeagueEntriesByLeagueIdTests()
         {
             Assert.IsNotNull(Client, "Client is not initialized");
-            LeagueList goldLeagueSolo = await Client.GetLeagueEntriesByLeagueId(RiotPlatform.Russia, GoldSoloRuLeagueId);
+            LeagueList goldLeagueSolo = await Client.GetLeagueEntriesByLeagueIdAsync(RiotPlatform.Russia, GoldSoloRuLeagueId);
             Assert.AreEqual(GoldSoloRuLeagueId, goldLeagueSolo.Id, "League ID is mismatched");
             Assert.AreEqual(LeagueRankedTier.Gold, goldLeagueSolo.Tier, "Tier is mismatched");
             Assert.AreEqual(GoldSoloRuLeagueName, goldLeagueSolo.Name, "Names are mismatched");
