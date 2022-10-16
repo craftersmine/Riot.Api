@@ -56,19 +56,22 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
         /// </summary>
         Unranked
     }
-
+    
+    /// <summary>
+    /// Contains a static methods for <see cref="LeagueRankedTier"/> enum extensions
+    /// </summary>
     public static class LeagueRankedTierExtensions
     {
-        internal const string IronTier = "IRON";
-        internal const string BronzeTier = "BRONZE";
-        internal const string SilverTier = "SILVER";
-        internal const string GoldTier = "GOLD";
-        internal const string PlatinumTier = "PLATINUM";
-        internal const string DiamondTier = "DIAMOND";
-        internal const string MasterTier = "MASTER";
-        internal const string GrandmasterTier = "GRANDMASTER";
-        internal const string ChallengerTier = "CHALLENGER";
-        internal const string UnrankedTier = "UNRANKED";
+        private const string IronTier = "IRON";
+        private const string BronzeTier = "BRONZE";
+        private const string SilverTier = "SILVER";
+        private const string GoldTier = "GOLD";
+        private const string PlatinumTier = "PLATINUM";
+        private const string DiamondTier = "DIAMOND";
+        private const string MasterTier = "MASTER";
+        private const string GrandmasterTier = "GRANDMASTER";
+        private const string ChallengerTier = "CHALLENGER";
+        private const string UnrankedTier = "UNRANKED";
 
         /// <summary>
         /// Returns string for specified rank
