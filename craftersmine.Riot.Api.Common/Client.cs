@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -92,16 +92,13 @@ namespace craftersmine.Riot.Api.Common
 
             var responseStr = await response.Content.ReadAsStringAsync();
 
-            if (!response.IsSuccessStatusCode)
-            {
-                if (string.IsNullOrWhiteSpace(responseStr))
-                    throw new RiotApiException((HttpResponseCode)response.StatusCode);
+            if (response.IsSuccessStatusCode) return JsonConvert.DeserializeObject<T>(responseStr);
+            if (string.IsNullOrWhiteSpace(responseStr))
+                throw new RiotApiException((HttpResponseCode)response.StatusCode);
 
-                var errRespObj = JsonConvert.DeserializeObject<ErrorResponse>(responseStr);
-                throw new RiotApiException(errRespObj);
-            }
+            var errRespObj = JsonConvert.DeserializeObject<ErrorResponse>(responseStr);
+            throw new RiotApiException(errRespObj);
 
-            return JsonConvert.DeserializeObject<T>(responseStr);
         }
         
         /// <summary>
@@ -136,16 +133,13 @@ namespace craftersmine.Riot.Api.Common
 
             var responseStr = await response.Content.ReadAsStringAsync();
 
-            if (!response.IsSuccessStatusCode)
-            {
-                if (string.IsNullOrWhiteSpace(responseStr))
-                    throw new RiotApiException((HttpResponseCode)response.StatusCode);
+            if (response.IsSuccessStatusCode) return JsonConvert.DeserializeObject<T>(responseStr);
+            if (string.IsNullOrWhiteSpace(responseStr))
+                throw new RiotApiException((HttpResponseCode)response.StatusCode);
 
-                var errRespObj = JsonConvert.DeserializeObject<ErrorResponse>(responseStr);
-                throw new RiotApiException(errRespObj);
-            }
+            var errRespObj = JsonConvert.DeserializeObject<ErrorResponse>(responseStr);
+            throw new RiotApiException(errRespObj);
 
-            return JsonConvert.DeserializeObject<T>(responseStr);
         }
         
         /// <summary>
@@ -180,16 +174,13 @@ namespace craftersmine.Riot.Api.Common
 
             var responseStr = await response.Content.ReadAsStringAsync();
 
-            if (!response.IsSuccessStatusCode)
-            {
-                if (string.IsNullOrWhiteSpace(responseStr))
-                    throw new RiotApiException((HttpResponseCode)response.StatusCode);
+            if (response.IsSuccessStatusCode) return JsonConvert.DeserializeObject<T>(responseStr);
+            if (string.IsNullOrWhiteSpace(responseStr))
+                throw new RiotApiException((HttpResponseCode)response.StatusCode);
 
-                var errRespObj = JsonConvert.DeserializeObject<ErrorResponse>(responseStr);
-                throw new RiotApiException(errRespObj);
-            }
+            var errRespObj = JsonConvert.DeserializeObject<ErrorResponse>(responseStr);
+            throw new RiotApiException(errRespObj);
 
-            return JsonConvert.DeserializeObject<T>(responseStr);
         }
     }
 }
