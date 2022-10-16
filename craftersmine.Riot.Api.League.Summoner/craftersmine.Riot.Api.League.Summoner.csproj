@@ -1,20 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-	  <Version>0.0.8</Version>
+	  <Version>0.0.12</Version>
 	  <Authors>craftersmine</Authors>
 	  <Description>Riot League of Legends Summoner v4 API wrapper for .NET</Description>
 	  <PackageOutputPath>$(SolutionDir)_NUGETS\craftersmine.Riot.Api\</PackageOutputPath>
 	  <RepositoryType>git</RepositoryType>
 	  <RepositoryUrl>https://github.com/craftersmine/Riot.Api/</RepositoryUrl>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="craftersmine.Riot.Api.Common" Version="0.0.8" />
+    <ProjectReference Include="..\craftersmine.Riot.Api.Common\craftersmine.Riot.Api.Common.csproj" />
   </ItemGroup>
 
 </Project>

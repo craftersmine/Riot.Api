@@ -4,10 +4,11 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="craftersmine.Riot.Api.League.Summoner" Version="0.0.8" />
+    <ProjectReference Include="..\craftersmine.Riot.Api.League.Summoner\craftersmine.Riot.Api.League.Summoner.csproj" />
   </ItemGroup>
 
 </Project>
