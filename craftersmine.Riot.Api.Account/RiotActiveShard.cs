@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +19,7 @@ namespace craftersmine.Riot.Api.Account
         /// Gets a Riot Account PUUID
         /// </summary>
         [JsonProperty("puuid")]
-        public string Puuid { get; private set; }
+        public string? Puuid { get; private set; }
         /// <summary>
         /// Gets a Riot Shard Game value for active shard
         /// </summary>
