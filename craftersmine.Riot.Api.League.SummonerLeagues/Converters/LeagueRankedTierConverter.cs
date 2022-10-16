@@ -60,7 +60,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues.Converters
 
         public override bool CanConvert(Type objectType)
         {
-            return objectType == typeof(string)
+            return objectType == typeof(string);
         }
     }
 }

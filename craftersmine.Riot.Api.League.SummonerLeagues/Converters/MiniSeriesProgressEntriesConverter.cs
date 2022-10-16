@@ -32,7 +32,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues.Converters
             }
             else
                 throw new ArgumentException(
-                    "Invalid parameter passed in! Expected MiniSeriesProgressEntry[], got " + value.GetType(),
+                    "Invalid parameter passed in! Expected MiniSeriesProgressEntry[], got " + value?.GetType(),
                     nameof(value));
         }
 

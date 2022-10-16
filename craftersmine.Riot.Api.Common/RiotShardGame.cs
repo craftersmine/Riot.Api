@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -13,7 +13,7 @@ namespace craftersmine.Riot.Api.Common
         /// Unknown game data shard
         /// </summary>
         Unknown,
-        LegendsOfRunterra,
+        /// <summary>
         /// Data shard for League of Runeterra (LoR)
         /// </summary>
         LegendsOfRuneterra,
@@ -52,7 +52,7 @@ namespace craftersmine.Riot.Api.Common
             switch (str.ToLower())
             {
                 case Constants.ShardGameLegendsOfRunterra:
-                    return RiotShardGame.LegendsOfRunterra;
+                    return RiotShardGame.LegendsOfRuneterra;
                 case Constants.ShardGameValorant:
                     return RiotShardGame.Valorant;
                 default:

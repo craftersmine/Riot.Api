@@ -13,7 +13,7 @@ namespace craftersmine.Riot.Api.Common.Converters
             {
                 switch ((RiotShardGame) value)
                 {
-                    case RiotShardGame.LegendsOfRunterra:
+                    case RiotShardGame.LegendsOfRuneterra:
                         writer.WriteValue(Constants.ShardGameLegendsOfRunterra);
                         break;
                     case RiotShardGame.Valorant:
@@ -32,7 +32,7 @@ namespace craftersmine.Riot.Api.Common.Converters
                 switch (reader.Value)
                 {
                     case Constants.ShardGameLegendsOfRunterra:
-                        return RiotShardGame.LegendsOfRunterra;
+                        return RiotShardGame.LegendsOfRuneterra;
                     case Constants.ShardGameValorant:
                         return RiotShardGame.Valorant;
                 }
