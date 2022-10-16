@@ -6,18 +6,39 @@ using System.Threading.Tasks;
 
 namespace craftersmine.Riot.Api.League.SummonerLeagues
 {
+    /// <summary>
+    /// Represents a League of Legends ranked queue
+    /// </summary>
     public enum LeagueQueueType
     {
+        /// <summary>
+        /// League of Legends Ranked Solo/Duo queues
+        /// </summary>
         RankedSoloDuo,
+        /// <summary>
+        /// League of Legends Ranked Flex queues
+        /// </summary>
         RankedFlex,
+        /// <summary>
+        /// Unknown queues
+        /// </summary>
         Unknown
     }
-
+    
+    /// <summary>
+    /// Contains a static methods for <see cref="LeagueQueueType"/> enum extensions
+    /// </summary>
     public static class LeagueQueueTypeExtensions
     {
         internal const string RankedSoloDuoQueueId = "RANKED_SOLO_5x5";
         internal const string RankedFlexQueueId = "RANKED_FLEX_SR";
 
+        /// <summary>
+        /// Gets a representing string for <see cref="LeagueQueueType"/>
+        /// </summary>
+        /// <param name="queueType">League of Legends queue type</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         public static string GetLeagueQueueStringFor(this LeagueQueueType queueType)
         {
             switch (queueType)

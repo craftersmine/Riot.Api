@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -19,6 +19,9 @@ namespace craftersmine.Riot.Api.Common
         /// </summary>
         public bool UseTournamentStub { get; internal set; } = false;
 
+        /// <summary>
+        /// Gets default Riot Data Region for Account API requests
+        /// </summary>
         public RiotRegion DefaultDataRegion { get; internal set; } = RiotRegion.Europe;
 
         /// <summary>
@@ -53,9 +56,14 @@ namespace craftersmine.Riot.Api.Common
         }
 
         /// <summary>
-        /// Sets Riot API key
+        /// Sets Riot Games API key
         /// </summary>
         /// <param name="apiKey">Riot API key of your application</param>
+        /// <remarks>
+        ///  You can obtain development key here: https://developer.riotgames.com <br/>
+        ///  If you deploying an application for production you need to register your application to obtain permanent API key <br/>
+        ///  You can register your application here: https://developer.riotgames.com/app-type
+        /// </remarks>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException">If API keu is not set (null or empty string)</exception>
         public RiotApiClientSettingsBuilder UseApiKey(string apiKey)
@@ -77,6 +85,11 @@ namespace craftersmine.Riot.Api.Common
             return this;
         }
 
+        /// <summary>
+        /// Sets default Riot Games Data Region for Account API requests. It is recommended by Riot to use a cluster near you (near application host)
+        /// </summary>
+        /// <param name="region">Riot Region</param>
+        /// <returns></returns>
         public RiotApiClientSettingsBuilder UseDefaultDataRegion(RiotRegion region)
         {
             Settings.DefaultDataRegion = region;

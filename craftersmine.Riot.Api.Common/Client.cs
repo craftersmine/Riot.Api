@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -44,13 +44,18 @@ namespace craftersmine.Riot.Api.Common
             //_httpClient.BaseAddress = new Uri(baseAddress);
         }
 
+        /// <summary>
+        /// Sets a HTTP request header for all requests
+        /// </summary>
+        /// <param name="header">Header key</param>
+        /// <param name="value">Header value</param>
         public void SetHeader(string header, string value)
         {
             _httpClient.DefaultRequestHeaders.Add(header, value);
         }
 
         /// <summary>
-        /// Gets time span from last failed request from <see cref="System.Net.HttpStatusCode.RateLimited"/>
+        /// Gets time span from last failed request from <see cref="HttpResponseCode.RateLimitExceeded"/>
         /// </summary>
         /// <returns></returns>
         public TimeSpan? GetRetryAfterTimeSpan()
@@ -58,6 +63,14 @@ namespace craftersmine.Riot.Api.Common
             return _retryAfterLast;
         }
 
+        /// <summary>
+        /// Makes a GET request to specified address and query parameters and returns object as <see cref="T"/>
+        /// </summary>
+        /// <typeparam name="T">Object type to which convert a response</typeparam>
+        /// <param name="address">Endpoint address for GET API request</param>
+        /// <param name="queryParams">Additional query parameters (<see langword="null"/> for none)</param>
+        /// <returns>Object of type <see cref="T"/> from response</returns>
+        /// <exception cref="RiotApiException"></exception>
         public async Task<T> Get<T>(string address, IDictionary<string, object> queryParams)
         {
             string queryParamsString = string.Empty;
@@ -90,7 +103,16 @@ namespace craftersmine.Riot.Api.Common
 
             return JsonConvert.DeserializeObject<T>(responseStr);
         }
-
+        
+        /// <summary>
+        /// Makes a POST request to specified address, query parameters and body content as JSON and returns object as <see cref="T"/>
+        /// </summary>
+        /// <typeparam name="T">Object type to which convert a response</typeparam>
+        /// <param name="address">Endpoint address for POST API request</param>
+        /// <param name="queryParams">Additional query parameters (<see langword="null"/> for none)</param>
+        /// <param name="bodyContent">POST request body parameters to send, will be converted to JSON</param>
+        /// <returns>Object of type <see cref="T"/> from response</returns>
+        /// <exception cref="RiotApiException"></exception>
         public async Task<T> Post<T>(string address, IDictionary<string, object> queryParams, object bodyContent)
         {
             string queryParamsString = string.Empty;
@@ -125,7 +147,16 @@ namespace craftersmine.Riot.Api.Common
 
             return JsonConvert.DeserializeObject<T>(responseStr);
         }
-
+        
+        /// <summary>
+        /// Makes a PUT request to specified address, query parameters and body content as JSON and returns object as <see cref="T"/>
+        /// </summary>
+        /// <typeparam name="T">Object type to which convert a response</typeparam>
+        /// <param name="address">Endpoint address for PUT API request</param>
+        /// <param name="queryParams">Additional query parameters (<see langword="null"/> for none)</param>
+        /// <param name="bodyContent">POST request body parameters to send, will be converted to JSON</param>
+        /// <returns>Object of type <see cref="T"/> from response</returns>
+        /// <exception cref="RiotApiException"></exception>
         public async Task<T> Put<T>(string address, IDictionary<string, object> queryParams, object bodyContent)
         {
             string queryParamsString = string.Empty;

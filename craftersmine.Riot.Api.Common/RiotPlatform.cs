@@ -55,6 +55,9 @@ namespace craftersmine.Riot.Api.Common
         Korea,
     }
 
+    /// <summary>
+    /// Contains a static methods for <see cref="RiotPlatform"/> enum extensions
+    /// </summary>
     public static class RiotPlatformExtensions
     {
         /// <summary>

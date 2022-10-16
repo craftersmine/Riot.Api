@@ -5,22 +5,64 @@ using craftersmine.Riot.Api.Common.Exceptions;
 
 namespace craftersmine.Riot.Api.Common
 {
+    /// <summary>
+    /// Represents a Riot Active Shard value
+    /// </summary>
     public enum RiotShards
     {
+        /// <summary>
+        /// Unknown data shard
+        /// </summary>
         Unknown,
+        /// <summary>
+        /// Legends of Runeterra Europe shard
+        /// </summary>
         LoREurope,
+        /// <summary>
+        /// Legends of Runeterra Americas shard
+        /// </summary>
         LoRAmericas,
+        /// <summary>
+        /// Legends of Runeterra Asia and Pacific shard
+        /// </summary>
         LoRAsiaPacific,
+        /// <summary>
+        /// Valorant Europe shard
+        /// </summary>
         ValorantEurope,
+        /// <summary>
+        /// Valorant North America shard
+        /// </summary>
         ValorantNorthAmerica,
+        /// <summary>
+        /// Valorant Latin America shard
+        /// </summary>
         ValorantLatinAmerica,
+        /// <summary>
+        /// Valorant Korea shard
+        /// </summary>
         ValorantKorea,
+        /// <summary>
+        /// Valorant Brazil shard
+        /// </summary>
         ValorantBrazil,
+        /// <summary>
+        /// Valorant Asia and Pacific shard
+        /// </summary>
         ValorantAsiaPacific
     }
-
+    
+    /// <summary>
+    /// Contains a static methods for <see cref="RiotShards"/> enum extensions
+    /// </summary>
     public static class RiotShardsExtensions
     {
+        /// <summary>
+        /// Gets a representing string for <see cref="RiotShards"/> value
+        /// </summary>
+        /// <param name="shard"><see cref="RiotShards"/> value</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         public static string GetShardString(this RiotShards shard)
         {
             switch (shard)

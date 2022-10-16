@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,18 +6,50 @@ using System.Threading.Tasks;
 
 namespace craftersmine.Riot.Api.League.SummonerLeagues
 {
+    /// <summary>
+    /// Represents League of Legends ranked tier
+    /// </summary>
     public enum LeagueRankedTier
     {
+        /// <summary>
+        /// Unknown rank
+        /// </summary>
         Unknown,
+        /// <summary>
+        /// Iron tier
+        /// </summary>
         Iron,
+        /// <summary>
+        /// Bronze tier
+        /// </summary>
         Bronze,
+        /// <summary>
+        /// Silver tier
+        /// </summary>
         Silver,
+        /// <summary>
+        /// Gold tier
+        /// </summary>
         Gold,
+        /// <summary>
+        /// Platinum tier
+        /// </summary>
         Platinum,
+        /// <summary>
+        /// Diamond tier
+        /// </summary>
         Diamond,
+        /// <summary>
+        /// Master tier
+        /// </summary>
         Master,
+        /// <summary>
+        /// Grandmaster tier
+        /// </summary>
         Grandmaster,
-        Challenger
+        /// <summary>
+        /// Challenger tier
+        /// </summary>
     }
 
     public static class LeagueRankedTierExtensions
@@ -32,6 +64,12 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
         internal const string GrandmasterTier = "GRANDMASTER";
         internal const string ChallengerTier = "CHALLENGER";
 
+        /// <summary>
+        /// Returns string for specified rank
+        /// </summary>
+        /// <param name="tier">League of Legends rank</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         public static string GetRankedTierString(this LeagueRankedTier tier)
         {
             switch (tier)

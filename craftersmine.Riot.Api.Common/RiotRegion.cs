@@ -30,7 +30,10 @@ namespace craftersmine.Riot.Api.Common
         /// </summary>
         Esports
     }
-
+    
+    /// <summary>
+    /// Contains a static methods for <see cref="RiotRegion"/> enum extensions
+    /// </summary>
     public static class RiotRegionExtensions
     {
         /// <summary>
