@@ -16,16 +16,16 @@ namespace craftersmine.Riot.Api.Account
         /// Gets Riot Account PUUID
         /// </summary>
         [JsonProperty("puuid")]
-        public string Puuid { get; private set; }
+        public string? Puuid { get; private set; }
         /// <summary>
         /// Gets Riot ID (value before # symbol)
         /// </summary>
         [JsonProperty("gameName")]
-        public string RiotId { get; private set; }
+        public string? RiotId { get; private set; }
         /// <summary>
         /// Gets Riot ID tag (value after # symbol)
         /// </summary>
         [JsonProperty("tagLine")]
-        public string RiotIdTag { get; private set; }
+        public string? RiotIdTag { get; private set; }
     }
 }
