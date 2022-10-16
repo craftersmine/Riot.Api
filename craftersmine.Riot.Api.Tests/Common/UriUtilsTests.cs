@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using craftersmine.Riot.Api.Common;
+using craftersmine.Riot.Api.Common.Utils;
 
 namespace craftersmine.Riot.Api.Tests.Common
 {
