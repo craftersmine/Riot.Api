@@ -7,7 +7,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues.Converters
 {
     internal class LeagueQueueTypeConverter : JsonConverter
     {
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
             if (value is LeagueQueueType)
             {
@@ -20,12 +20,12 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues.Converters
                         writer.WriteValue(LeagueQueueType.RankedFlex.GetLeagueQueueStringFor());
                         break;
                     default:
-                        throw new ArgumentException("Unknown shard game selected!", nameof(value));
+                        throw new ArgumentException("Unknown queue type selected!", nameof(value));
                 }
             }
         }
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
             if (reader.TokenType == JsonToken.String)
             {
