@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -35,7 +35,7 @@ namespace craftersmine.Riot.Api.Common
     /// </summary>
     public sealed class RiotApiClientSettingsBuilder
     {
-        internal RiotApiClientSettings Settings { get; }
+        private RiotApiClientSettings Settings { get; }
 
         /// <summary>
         /// Gets current settings
