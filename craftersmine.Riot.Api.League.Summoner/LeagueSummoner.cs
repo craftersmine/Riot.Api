@@ -40,7 +40,7 @@ namespace craftersmine.Riot.Api.League.Summoner
         [JsonProperty("summonerLevel")]
         public long SummonerLevel { get; private set; }
         /// <summary>
-        /// Gets a <see cref="DateTime"/> in GMT timezone when League of Legends summoner account was modified (summoner name change, level change or profile icon change
+        /// Gets a <see cref="DateTime"/> in GMT timezone when League of Legends summoner account was modified (summoner name change, level change or profile icon change)
         /// </summary>
         [JsonProperty("revisionDate"), JsonConverter(typeof(craftersmine.Riot.Api.Common.Converters.UnixDateTimeConverter))]
         public DateTime RevisionDate { get; private set; }
