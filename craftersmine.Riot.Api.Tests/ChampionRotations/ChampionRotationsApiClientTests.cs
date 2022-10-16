@@ -35,7 +35,7 @@ namespace craftersmine.Riot.Api.Tests.ChampionRotations
         public async Task GetChampionRotationsTests()
         {
             Assert.IsNotNull(Client, "Client is not initialized");
-            ChampionRotationsInfo rotations = await Client.GetCurrentChampionRotationsForRegion(RiotPlatform.Russia);
+            ChampionRotationsInfo rotations = await Client.GetCurrentChampionRotationsForRegionAsync(RiotPlatform.Russia);
             Assert.IsTrue(rotations.FreeChampionIds.Contains(FirstChampionId), "Rotations doesn't have champion " + FirstChampionId + "in rotations");
             Assert.IsTrue(rotations.FreeChampionIdsForNewPlayers.Contains(FirstChampionIdNewPlayers), "Rotations doesn't have champion " + FirstChampionIdNewPlayers + "in rotations for new players");
             Assert.AreEqual(MaxNewPlayerLevel, rotations.MaxNewPlayerLevel, "Max new player level are not equal to " + MaxNewPlayerLevel);

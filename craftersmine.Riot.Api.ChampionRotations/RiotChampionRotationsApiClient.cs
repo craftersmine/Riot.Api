@@ -22,7 +22,7 @@ namespace craftersmine.Riot.Api.League.ChampionRotations
         /// </summary>
         /// <param name="region"></param>
         /// <returns></returns>
-        public async Task<ChampionRotationsInfo> GetCurrentChampionRotationsForRegion(RiotPlatform region)
+        public async Task<ChampionRotationsInfo> GetCurrentChampionRotationsForRegionAsync(RiotPlatform region)
         {
             string endpoint =
                 UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "champion-rotations"));
