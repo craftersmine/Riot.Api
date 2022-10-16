@@ -63,10 +63,10 @@ namespace craftersmine.Riot.Api.Tests.Account
             Assert.AreEqual(shard.ActiveShard, MyShardValorant);
             Assert.AreEqual(shard.Game, RiotShardGame.Valorant);
             Assert.AreEqual(shard.Puuid, MyPuuid);
-            shard = await Client.GetActiveShardForPlayerByPuuidAsync(RiotShardGame.LegendsOfRunterra, MyPuuid);
+            shard = await Client.GetActiveShardForPlayerByPuuidAsync(RiotShardGame.LegendsOfRuneterra, MyPuuid);
             Assert.IsNotNull(shard);
             Assert.AreEqual(shard.ActiveShard, MyShardLor);
-            Assert.AreEqual(shard.Game, RiotShardGame.LegendsOfRunterra);
+            Assert.AreEqual(shard.Game, RiotShardGame.LegendsOfRuneterra);
             Assert.AreEqual(shard.Puuid, MyPuuid);
         }
     }

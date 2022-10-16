@@ -1,4 +1,4 @@
-using craftersmine.Riot.Api.Common.Utils;
+﻿using craftersmine.Riot.Api.Common.Utils;
 using Newtonsoft.Json;
 
 using System;
