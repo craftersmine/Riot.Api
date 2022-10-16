@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Resources;
 using System.Text;
 
-namespace craftersmine.Riot.Api.Common
+namespace craftersmine.Riot.Api.Common.Utils
 {
     internal static class UnixTimeHelper
     {
@@ -24,7 +24,7 @@ namespace craftersmine.Riot.Api.Common
             if (delta.TotalSeconds < 0)
                 throw new ArgumentOutOfRangeException(nameof(val), val, "Invalid datetime!");
 
-            return (long) delta.TotalSeconds;
+            return (long)delta.TotalSeconds;
         }
     }
 }

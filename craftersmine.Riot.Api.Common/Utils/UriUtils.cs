@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace craftersmine.Riot.Api.Common
+namespace craftersmine.Riot.Api.Common.Utils
 {
     internal static class UriUtils
     {
@@ -24,7 +24,7 @@ namespace craftersmine.Riot.Api.Common
 
             if (endpoint.StartsWith("/"))
                 endpoint = endpoint.Substring(1);
-            
+
             return region.GetAddressFor() + endpoint;
         }
 
