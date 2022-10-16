@@ -20,6 +20,7 @@
     <ProjectReference Include="..\craftersmine.Riot.Api.Account\craftersmine.Riot.Api.Account.csproj" />
     <ProjectReference Include="..\craftersmine.Riot.Api.ChampionRotations\craftersmine.Riot.Api.League.ChampionRotations.csproj" />
     <ProjectReference Include="..\craftersmine.Riot.Api.Common\craftersmine.Riot.Api.Common.csproj" />
+    <ProjectReference Include="..\craftersmine.Riot.Api.League.Mastery\craftersmine.Riot.Api.League.Mastery.csproj" />
     <ProjectReference Include="..\craftersmine.Riot.Api.League.SummonerLeagues\craftersmine.Riot.Api.League.SummonerLeagues.csproj" />
     <ProjectReference Include="..\craftersmine.Riot.Api.League.Summoner\craftersmine.Riot.Api.League.Summoner.csproj" />
   </ItemGroup>
