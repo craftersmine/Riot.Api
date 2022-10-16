@@ -1,4 +1,4 @@
-using craftersmine.Riot.Api.Common;
+﻿using craftersmine.Riot.Api.Common;
 using craftersmine.Riot.Api.Common.Utils;
 
 namespace craftersmine.Riot.Api.Account
@@ -8,9 +8,13 @@ namespace craftersmine.Riot.Api.Account
     /// </summary>
     public class RiotAccountApiClient : RiotApiClient
     {
-        private const string _apiEndpointRoot = "/riot/account/v1/accounts/";
-        private const string _apiEndpointActiveShardRoot = "/riot/account/v1/active-shards/";
+        private const string ApiEndpointRoot = "/riot/account/v1/accounts/";
+        private const string ApiEndpointActiveShardRoot = "/riot/account/v1/active-shards/";
 
+        /// <summary>
+        /// Creates a new instance of <see cref="RiotAccountApiClient"/> with specified settings
+        /// </summary>
+        /// <param name="settings">Settings for <see cref="RiotAccountApiClient"/></param>
         public RiotAccountApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
@@ -24,7 +28,7 @@ namespace craftersmine.Riot.Api.Account
             if (string.IsNullOrWhiteSpace(puuid))
                 throw new ArgumentNullException(nameof(puuid));
 
-            string endpoint = UriUtils.GetAddress(Settings.DefaultDataRegion, UriUtils.JoinEndpoints(_apiEndpointRoot, "by-puuid", puuid));
+            string endpoint = UriUtils.GetAddress(Settings.DefaultDataRegion, UriUtils.JoinEndpoints(ApiEndpointRoot, "by-puuid", puuid));
 
             RiotAccount account =
                 await Client.Get<RiotAccount>(endpoint, null);
@@ -46,7 +50,7 @@ namespace craftersmine.Riot.Api.Account
             if (string.IsNullOrWhiteSpace(tag))
                 throw new ArgumentNullException(nameof(tag));
 
-            string endpoint = UriUtils.GetAddress(Settings.DefaultDataRegion, UriUtils.JoinEndpoints(_apiEndpointRoot, "by-riot-id", riotId, tag));
+            string endpoint = UriUtils.GetAddress(Settings.DefaultDataRegion, UriUtils.JoinEndpoints(ApiEndpointRoot, "by-riot-id", riotId, tag));
 
             RiotAccount account = await Client.Get<RiotAccount>(endpoint, null);
             return account;
@@ -68,7 +72,7 @@ namespace craftersmine.Riot.Api.Account
                 throw new ArgumentNullException(nameof(puuid));
 
             string endpoint = UriUtils.GetAddress(Settings.DefaultDataRegion,
-                UriUtils.JoinEndpoints(_apiEndpointActiveShardRoot, "by-game", game.GetShardGameString(), "by-puuid",
+                UriUtils.JoinEndpoints(ApiEndpointActiveShardRoot, "by-game", game.GetShardGameString(), "by-puuid",
                     puuid));
 
             RiotActiveShard activeShard = await Client.Get<RiotActiveShard>(endpoint, null);

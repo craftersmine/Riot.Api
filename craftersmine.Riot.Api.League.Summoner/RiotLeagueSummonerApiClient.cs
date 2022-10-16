@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +14,7 @@ namespace craftersmine.Riot.Api.League.Summoner
     /// </summary>
     public class RiotLeagueSummonerApiClient : RiotApiClient
     {
-        private const string _apiEndpointRoot = "/lol/summoner/v4/summoners/";
+        private const string ApiEndpointRoot = "/lol/summoner/v4/summoners/";
 
         /// <summary>
         /// Creates new instance of <see cref="RiotLeagueSummonerApiClient"/> with specified settings
@@ -36,7 +36,7 @@ namespace craftersmine.Riot.Api.League.Summoner
                 throw new ArgumentNullException(nameof(summonerName));
 
             string endpoint =
-                UriUtils.GetAddress(region, UriUtils.JoinEndpoints(_apiEndpointRoot, "by-name", summonerName));
+                UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "by-name", summonerName));
 
             LeagueSummoner summoner = await Client.Get<LeagueSummoner>(endpoint, null);
             return summoner;
@@ -55,7 +55,7 @@ namespace craftersmine.Riot.Api.League.Summoner
             if (string.IsNullOrWhiteSpace(puuid))
                 throw new ArgumentNullException(nameof(puuid));
 
-            string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(_apiEndpointRoot, "by-puuid", puuid));
+            string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "by-puuid", puuid));
 
             LeagueSummoner summoner = await Client.Get<LeagueSummoner>(endpoint, null);
             return summoner;
@@ -65,7 +65,7 @@ namespace craftersmine.Riot.Api.League.Summoner
         /// Gets a League of legends Summoner account with specified account ID in specified region
         /// </summary>
         /// <param name="region">League of Legends server region</param>
-        /// <param name="puuid">Game account ID</param>
+        /// <param name="accountId">Game account ID</param>
         /// <returns><see cref="LeagueSummoner"/> object</returns>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="RiotApiException"></exception>
@@ -75,7 +75,7 @@ namespace craftersmine.Riot.Api.League.Summoner
                 throw new ArgumentNullException(nameof(accountId));
 
             string endpoint =
-                UriUtils.GetAddress(region, UriUtils.JoinEndpoints(_apiEndpointRoot, "by-account", accountId));
+                UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "by-account", accountId));
 
             LeagueSummoner summoner = await Client.Get<LeagueSummoner>(endpoint, null);
             return summoner;
@@ -85,7 +85,7 @@ namespace craftersmine.Riot.Api.League.Summoner
         /// Gets a League of legends Summoner account with specified League of Legends Summoner ID in specified region
         /// </summary>
         /// <param name="region">League of Legends server region</param>
-        /// <param name="puuid">League of Legends summoner ID</param>
+        /// <param name="summonerId">League of Legends summoner ID</param>
         /// <returns><see cref="LeagueSummoner"/> object</returns>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="RiotApiException"></exception>
@@ -94,7 +94,7 @@ namespace craftersmine.Riot.Api.League.Summoner
             if (string.IsNullOrWhiteSpace(summonerId))
                 throw new ArgumentNullException(nameof(summonerId));
 
-            string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(_apiEndpointRoot, summonerId));
+            string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, summonerId));
 
             LeagueSummoner summoner = await Client.Get<LeagueSummoner>(endpoint, null);
             return summoner;
