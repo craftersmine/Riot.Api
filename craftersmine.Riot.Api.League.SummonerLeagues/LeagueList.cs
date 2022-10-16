@@ -11,7 +11,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
     /// <summary>
     /// Represents a specific Ranked league in League of Legends
     /// </summary>
-    public class LeaguesList
+    public class LeagueList
     {
         /// <summary>
         /// Gets internal League GUID
