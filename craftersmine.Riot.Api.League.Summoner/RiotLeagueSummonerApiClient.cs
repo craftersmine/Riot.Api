@@ -1,10 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using craftersmine.Riot.Api.Common;
 using craftersmine.Riot.Api.Common.Exceptions;
+using craftersmine.Riot.Api.Common.Utils;
 
 namespace craftersmine.Riot.Api.League.Summoner
 {

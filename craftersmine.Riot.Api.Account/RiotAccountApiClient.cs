@@ -1,4 +1,5 @@
-﻿using craftersmine.Riot.Api.Common;
+using craftersmine.Riot.Api.Common;
+using craftersmine.Riot.Api.Common.Utils;
 
 namespace craftersmine.Riot.Api.Account
 {
