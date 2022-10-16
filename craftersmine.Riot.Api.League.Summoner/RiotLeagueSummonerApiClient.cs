@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using craftersmine.Riot.Api.Common;
-using craftersmine.Riot.Api.Common.Exceptions;
 using craftersmine.Riot.Api.Common.Utils;
 
 namespace craftersmine.Riot.Api.League.Summoner
@@ -28,8 +27,8 @@ namespace craftersmine.Riot.Api.League.Summoner
         /// <param name="region">League of Legends server region</param>
         /// <param name="summonerName">League of Legends summoner name</param>
         /// <returns><see cref="LeagueSummoner"/> object</returns>
-        /// <exception cref="ArgumentNullException"></exception>
-        /// <exception cref="RiotApiException"></exception>
+        /// <exception cref="ArgumentNullException">When summoner name is null or empty</exception>
+        /// <exception cref="craftersmine.Riot.Api.Common.Exceptions.RiotApiException">When Riot API request fails</exception>
         public async Task<LeagueSummoner> GetSummonerByNameAsync(RiotPlatform region, string summonerName)
         {
             if (string.IsNullOrWhiteSpace(summonerName))
@@ -48,8 +47,8 @@ namespace craftersmine.Riot.Api.League.Summoner
         /// <param name="region">League of Legends server region</param>
         /// <param name="puuid">Riot Account PUUID</param>
         /// <returns><see cref="LeagueSummoner"/> object</returns>
-        /// <exception cref="ArgumentNullException"></exception>
-        /// <exception cref="RiotApiException"></exception>
+        /// <exception cref="ArgumentNullException">When PUUID is null or empty</exception>
+        /// <exception cref="craftersmine.Riot.Api.Common.Exceptions.RiotApiException">When Riot API request fails</exception>
         public async Task<LeagueSummoner> GetSummonerByPuuidAsync(RiotPlatform region, string puuid)
         {
             if (string.IsNullOrWhiteSpace(puuid))
@@ -67,8 +66,8 @@ namespace craftersmine.Riot.Api.League.Summoner
         /// <param name="region">League of Legends server region</param>
         /// <param name="accountId">Game account ID</param>
         /// <returns><see cref="LeagueSummoner"/> object</returns>
-        /// <exception cref="ArgumentNullException"></exception>
-        /// <exception cref="RiotApiException"></exception>
+        /// <exception cref="ArgumentNullException">When Riot Account ID is null or empty</exception>
+        /// <exception cref="craftersmine.Riot.Api.Common.Exceptions.RiotApiException">When Riot API request fails</exception>
         public async Task<LeagueSummoner> GetSummonerByAccountIdAsync(RiotPlatform region, string accountId)
         {
             if (string.IsNullOrWhiteSpace(accountId))
@@ -87,8 +86,8 @@ namespace craftersmine.Riot.Api.League.Summoner
         /// <param name="region">League of Legends server region</param>
         /// <param name="summonerId">League of Legends summoner ID</param>
         /// <returns><see cref="LeagueSummoner"/> object</returns>
-        /// <exception cref="ArgumentNullException"></exception>
-        /// <exception cref="RiotApiException"></exception>
+        /// <exception cref="ArgumentNullException">When League of Legends summoner ID is null or empty</exception>
+        /// <exception cref="craftersmine.Riot.Api.Common.Exceptions.RiotApiException">When Riot API request fails</exception>
         public async Task<LeagueSummoner> GetSummonerByIdAsync(RiotPlatform region, string summonerId)
         {
             if (string.IsNullOrWhiteSpace(summonerId))

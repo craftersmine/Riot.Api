@@ -1,4 +1,6 @@
-﻿using craftersmine.Riot.Api.Common;
+﻿using System;
+using System.Threading.Tasks;
+using craftersmine.Riot.Api.Common;
 using craftersmine.Riot.Api.Common.Utils;
 
 namespace craftersmine.Riot.Api.Account
@@ -22,7 +24,8 @@ namespace craftersmine.Riot.Api.Account
         /// </summary>
         /// <param name="puuid">Riot Account PUUID</param>
         /// <returns><see cref="RiotAccount"/></returns>
-        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentNullException">When PUUID is null or empty</exception>
+        /// <exception cref="craftersmine.Riot.Api.Common.Exceptions.RiotApiException">When Riot API request fails</exception>
         public async Task<RiotAccount> GetAccountByPuuidAsync(string puuid)
         {
             if (string.IsNullOrWhiteSpace(puuid))
@@ -42,7 +45,8 @@ namespace craftersmine.Riot.Api.Account
         /// <param name="riotId">User RiotID</param>
         /// <param name="tag">User RiotID tag (value after # symbol)</param>
         /// <returns><see cref="RiotAccount"/></returns>
-        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentNullException">When RiotID or Tag is null or empty</exception>
+        /// <exception cref="craftersmine.Riot.Api.Common.Exceptions.RiotApiException">When Riot API request fails</exception>
         public async Task<RiotAccount> GetAccountByRiotIdAsync(string riotId, string tag)
         {
             if (string.IsNullOrWhiteSpace(riotId))
@@ -62,8 +66,9 @@ namespace craftersmine.Riot.Api.Account
         /// <param name="game"><see cref="RiotShardGame"/> for shard</param>
         /// <param name="puuid">User Riot Account PUUID</param>
         /// <returns><see cref="RiotActiveShard"/></returns>
-        /// <exception cref="ArgumentException"></exception>
-        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="ArgumentException">When selected game is Unknown</exception>
+        /// <exception cref="ArgumentNullException">When PUUID is null or empty</exception>
+        /// <exception cref="craftersmine.Riot.Api.Common.Exceptions.RiotApiException">When Riot API request fails</exception>
         public async Task<RiotActiveShard> GetActiveShardForPlayerByPuuidAsync(RiotShardGame game, string puuid)
         {
             if (game == RiotShardGame.Unknown)
