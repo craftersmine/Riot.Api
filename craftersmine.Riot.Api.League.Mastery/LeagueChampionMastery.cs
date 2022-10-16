@@ -54,7 +54,7 @@ namespace craftersmine.Riot.Api.League.Mastery
         /// <summary>
         /// Gets a <see cref="DateTime"/> of time the player has played on this champion in GMT timezone
         /// </summary>
-        [JsonProperty("lastPlayTime"), JsonConverter(typeof(UnixDateTimeConverter))]
+        [JsonProperty("lastPlayTime"), JsonConverter(typeof(Common.Converters.UnixDateTimeConverter))]
         public DateTime LastPlayedAt { get; private set; }
     }
 }
