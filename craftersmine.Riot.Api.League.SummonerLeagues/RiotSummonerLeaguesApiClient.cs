@@ -123,9 +123,15 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
             if (division == LeagueDivisionRank.Unknown)
                 throw new ArgumentException("Unknown division is selected!", nameof(division));
 
-            string endpoint = UriUtils.GetAddress(region,
-                UriUtils.JoinEndpoints(ApiEndpointRoot, "entries", queue.GetLeagueQueueStringFor(),
-                    tier.GetRankedTierString(), division.GetLeagueDivisionRankString()));
+            string endpoint = string.Empty;
+            if (!Settings.UseExperimentalLeaguesEndpoint)
+                endpoint = UriUtils.GetAddress(region,
+                    UriUtils.JoinEndpoints(ApiEndpointRoot, "entries", queue.GetLeagueQueueStringFor(),
+                        tier.GetRankedTierString(), division.GetLeagueDivisionRankString()));
+            else
+                endpoint = UriUtils.GetAddress(region,
+                    UriUtils.JoinEndpoints("/lol/league-exp/v4/entries", queue.GetLeagueQueueStringFor(),
+                        tier.GetRankedTierString(), division.GetLeagueDivisionRankString(), page.ToString()));
 
             SummonerLeague[] leagues = await Client.Get<SummonerLeague[]>(endpoint, new Dictionary<string, object>(){ { "page", page } });
             return leagues;
@@ -154,7 +160,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
         /// <returns><see cref="LeagueList"/> without inactive entries</returns>
         /// <exception cref="ArgumentNullException">When League ID is null or empty</exception>
         /// <exception cref="craftersmine.Riot.Api.Common.Exceptions.RiotApiException">When Riot API request fails</exception>
-        public async Task<LeagueList> GetLeagueEntriesByLeagueId(RiotPlatform region, string leagueId)
+        public async Task<LeagueList> GetLeagueEntriesByLeagueIdAsync(RiotPlatform region, string leagueId)
         {
             if (string.IsNullOrWhiteSpace(leagueId))
                 throw new ArgumentNullException(nameof(leagueId));
