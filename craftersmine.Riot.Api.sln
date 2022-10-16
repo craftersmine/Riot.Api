@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Tests
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Account", "craftersmine.Riot.Api.Account\craftersmine.Riot.Api.Account.csproj", "{B6A56583-AB44-4F85-AB4B-72FB71E93726}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.League.Summoner", "craftersmine.Riot.Api.League.Summoner\craftersmine.Riot.Api.League.Summoner.csproj", "{B9D78DDF-AB23-4473-ADCC-5CC1E7ED9DED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.League.Summoner", "craftersmine.Riot.Api.League.Summoner\craftersmine.Riot.Api.League.Summoner.csproj", "{B9D78DDF-AB23-4473-ADCC-5CC1E7ED9DED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.League.SummonerLeagues", "craftersmine.Riot.Api.League.SummonerLeagues\craftersmine.Riot.Api.League.SummonerLeagues.csproj", "{45B4FD8B-C919-4433-8F80-CB1CF5CD63F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.League.SummonerLeagues", "craftersmine.Riot.Api.League.SummonerLeagues\craftersmine.Riot.Api.League.SummonerLeagues.csproj", "{45B4FD8B-C919-4433-8F80-CB1CF5CD63F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.League.ChampionRotations", "craftersmine.Riot.Api.ChampionRotations\craftersmine.Riot.Api.League.ChampionRotations.csproj", "{C00375FD-5E78-4478-B51F-A2D8739F0B21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{45B4FD8B-C919-4433-8F80-CB1CF5CD63F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45B4FD8B-C919-4433-8F80-CB1CF5CD63F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45B4FD8B-C919-4433-8F80-CB1CF5CD63F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C00375FD-5E78-4478-B51F-A2D8739F0B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C00375FD-5E78-4478-B51F-A2D8739F0B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C00375FD-5E78-4478-B51F-A2D8739F0B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C00375FD-5E78-4478-B51F-A2D8739F0B21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
