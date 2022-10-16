@@ -39,6 +39,11 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
         [JsonProperty("tier"), JsonConverter(typeof(LeagueRankedTierConverter))]
         public LeagueRankedTier Tier { get; private set; }
         /// <summary>
+        /// 
+        /// </summary>
+        [JsonProperty("rank"), JsonConverter(typeof(LeagueDivisionRankConverter))]
+        public LeagueDivisionRank DivisionRank { get; private set; }
+        /// <summary>
         /// Gets League of Legends summoner ranked LP value
         /// </summary>
         [JsonProperty("leaguePoints")]
