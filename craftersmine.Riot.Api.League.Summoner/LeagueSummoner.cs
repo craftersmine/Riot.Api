@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
 namespace craftersmine.Riot.Api.League.Summoner
@@ -12,22 +13,22 @@ namespace craftersmine.Riot.Api.League.Summoner
         /// Gets an encrypted account ID. Max length is 56 characters
         /// </summary>
         [JsonProperty("accountId")]
-        public string? AccountId { get; private set; }
+        public string AccountId { get; private set; }
         /// <summary>
         /// Gets a League of Legends summoner account name
         /// </summary>
         [JsonProperty("name")]
-        public string? Name { get; private set; }
+        public string Name { get; private set; }
         /// <summary>
         /// Gets an encrypted summoner ID. Max length is 63 characters
         /// </summary>
         [JsonProperty("id")]
-        public string? Id { get; private set; }
+        public string Id { get; private set; }
         /// <summary>
         /// Gets a Riot Account PUUID
         /// </summary>
         [JsonProperty("puuid")]
-        public string? RiotPuuid { get; private set; }
+        public string RiotPuuid { get; private set; }
         /// <summary>
         /// Gets an ID of League of Legends summoner profile icon
         /// </summary>

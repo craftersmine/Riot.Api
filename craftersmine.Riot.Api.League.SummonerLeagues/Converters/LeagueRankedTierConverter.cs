@@ -9,7 +9,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues.Converters
 {
     internal class LeagueRankedTierConverter : JsonConverter
     {
-        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             if (value is LeagueRankedTier)
             {
@@ -48,7 +48,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues.Converters
             }
         }
 
-        public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             if (reader.TokenType == JsonToken.String)
             {

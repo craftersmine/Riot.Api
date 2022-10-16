@@ -17,12 +17,12 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
         /// Gets internal League GUID
         /// </summary> 
         [JsonProperty("leagueId")]
-        public string? LeagueId { get; private set; }
+        public string Id { get; private set; }
         /// <summary>
         /// Gets internal League name
         /// </summary>
         [JsonProperty("name")]
-        public string? Name { get; private set; }
+        public string Name { get; private set; }
         /// <summary>
         /// Gets League tier
         /// </summary>

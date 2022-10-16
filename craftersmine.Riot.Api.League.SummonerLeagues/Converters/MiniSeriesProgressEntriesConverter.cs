@@ -9,7 +9,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues.Converters
 {
     internal class MiniSeriesProgressEntriesConverter : JsonConverter
     {
-        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             if (value is MiniSeriesProgressEntry[] entries)
             {
@@ -36,26 +36,27 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues.Converters
                     nameof(value));
         }
 
-        public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             if (reader.TokenType == JsonToken.String)
             {
                 List<MiniSeriesProgressEntry> entries = new List<MiniSeriesProgressEntry>();
-                foreach (var entry in reader.Value!.ToString()!)
-                {
-                    switch (entry)
+                if (reader.Value != null)
+                    foreach (var entry in reader.Value.ToString())
                     {
-                        case 'W':
-                            entries.Add(MiniSeriesProgressEntry.Won);
-                            break;
-                        case 'L':
-                            entries.Add(MiniSeriesProgressEntry.Lost);
-                            break;
-                        case 'N':
-                            entries.Add(MiniSeriesProgressEntry.NotPlayed);
-                            break;
+                        switch (entry)
+                        {
+                            case 'W':
+                                entries.Add(MiniSeriesProgressEntry.Won);
+                                break;
+                            case 'L':
+                                entries.Add(MiniSeriesProgressEntry.Lost);
+                                break;
+                            case 'N':
+                                entries.Add(MiniSeriesProgressEntry.NotPlayed);
+                                break;
+                        }
                     }
-                }
 
                 return entries.ToArray();
             }

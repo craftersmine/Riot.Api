@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using craftersmine.Riot.Api.League.SummonerLeagues.Converters;
 using Newtonsoft.Json;
-using JsonConverter = System.Text.Json.Serialization.JsonConverter;
 
 namespace craftersmine.Riot.Api.League.SummonerLeagues
 {
@@ -33,7 +32,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
         /// 
         /// </summary>
         [JsonProperty("progress"), JsonConverter(typeof(MiniSeriesProgressEntriesConverter))]
-        public MiniSeriesProgressEntry[]? Progress { get; private set; }
+        public MiniSeriesProgressEntry[] Progress { get; private set; }
     }
 
     /// <summary>

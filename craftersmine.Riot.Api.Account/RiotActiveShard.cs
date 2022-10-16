@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using craftersmine.Riot.Api.Common;
 using craftersmine.Riot.Api.Common.Converters;
 using Newtonsoft.Json;
-using JsonConverter = System.Text.Json.Serialization.JsonConverter;
 
 namespace craftersmine.Riot.Api.Account
 {
@@ -19,7 +18,7 @@ namespace craftersmine.Riot.Api.Account
         /// Gets a Riot Account PUUID
         /// </summary>
         [JsonProperty("puuid")]
-        public string? Puuid { get; private set; }
+        public string Puuid { get; private set; }
         /// <summary>
         /// Gets a Riot Shard Game value for active shard
         /// </summary>
