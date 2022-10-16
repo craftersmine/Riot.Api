@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -50,6 +50,11 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
         /// <summary>
         /// Challenger tier
         /// </summary>
+        Challenger,
+        /// <summary>
+        /// Unranked
+        /// </summary>
+        Unranked
     }
 
     public static class LeagueRankedTierExtensions
@@ -63,6 +68,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
         internal const string MasterTier = "MASTER";
         internal const string GrandmasterTier = "GRANDMASTER";
         internal const string ChallengerTier = "CHALLENGER";
+        internal const string UnrankedTier = "UNRANKED";
 
         /// <summary>
         /// Returns string for specified rank
@@ -92,6 +98,8 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
                     return GrandmasterTier;
                 case LeagueRankedTier.Challenger:
                     return ChallengerTier;
+                case LeagueRankedTier.Unranked:
+                    return UnrankedTier;
                 default:
                     throw new ArgumentException("Unknown ranked tier selected!", nameof(tier));
             }
@@ -119,6 +127,8 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
                     return LeagueRankedTier.Grandmaster;
                 case ChallengerTier:
                     return LeagueRankedTier.Challenger;
+                case UnrankedTier:
+                    return LeagueRankedTier.Unranked;
                 default:
                     return LeagueRankedTier.Unknown;
             }
