@@ -9,3 +9,4 @@ using System.Text;
 [assembly:InternalsVisibleTo("craftersmine.Riot.Api.League.SummonerLeagues")]
 [assembly:InternalsVisibleTo("craftersmine.Riot.Api.League.ChampionRotations")]
 [assembly:InternalsVisibleTo("craftersmine.Riot.Api.League.Mastery")]
+[assembly:InternalsVisibleTo("craftersmine.Riot.Api.League.Clash")]
