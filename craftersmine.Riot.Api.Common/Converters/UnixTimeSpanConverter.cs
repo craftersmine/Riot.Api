@@ -7,6 +7,15 @@ namespace craftersmine.Riot.Api.Common.Converters
 {
     internal class UnixTimeSpanConverter : JsonConverter
     {
+        private bool useSeconds = false;
+
+        public UnixTimeSpanConverter() : this(false) {}
+
+        public UnixTimeSpanConverter(bool useSeconds)
+        {
+            this.useSeconds = useSeconds;
+        }
+
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             if (value is TimeSpan ts)
