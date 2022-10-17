@@ -15,9 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Leagu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.League.ChampionRotations", "craftersmine.Riot.Api.ChampionRotations\craftersmine.Riot.Api.League.ChampionRotations.csproj", "{C00375FD-5E78-4478-B51F-A2D8739F0B21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.League.Mastery", "craftersmine.Riot.Api.League.Mastery\craftersmine.Riot.Api.League.Mastery.csproj", "{0E400DDC-CA61-4914-A4D9-DC74E64B3403}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.League.Mastery", "craftersmine.Riot.Api.League.Mastery\craftersmine.Riot.Api.League.Mastery.csproj", "{0E400DDC-CA61-4914-A4D9-DC74E64B3403}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.League.Clash", "craftersmine.Riot.Api.League.Clash\craftersmine.Riot.Api.League.Clash.csproj", "{0AC88E92-885F-4DB7-9933-E3D0387C831C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.League.Clash", "craftersmine.Riot.Api.League.Clash\craftersmine.Riot.Api.League.Clash.csproj", "{0AC88E92-885F-4DB7-9933-E3D0387C831C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Misc", "_Misc", "{B324CD2D-0BF4-4627-A404-BD83D95D9E8D}"
 	ProjectSection(SolutionItems) = preProject
