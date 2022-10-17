@@ -1,4 +1,18 @@
-# TODO:
+# Notes
+## Unit Tests notes
+You must not rely on only Unit Tests to ensure that fetched data is correct. 
+Their purpose here to test and debug certain functions of certain libraries in development stage.
+
+Always make sure that data that you fetched is correct with [Riot Developer Portal](https://developer.riotgames.com/apis) values
+with values in Debugger inspectors for validity.
+
+Not all tests expected to complete successfully due to changes in fetched data. 
+You are required to provide your own data for tests to expect them complete successfully!
+
+Clash Tournaments tests cannot be always completed successfully due to perodic nature of Clash Tournaments,
+so expect some tests fail when there are no active or upcoming Clash Tournaments
+
+## TODO:
 All features to be implemented
 
 - [ ] Move tests settings from constants in .runsettings file
