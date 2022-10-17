@@ -124,7 +124,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
                 throw new ArgumentException("Unknown division is selected!", nameof(division));
 
             string endpoint = string.Empty;
-            if (!Settings.UseExperimentalLeaguesEndpoint)
+            if (!Settings.UseExperimentalLeaguesApi)
                 endpoint = UriUtils.GetAddress(region,
                     UriUtils.JoinEndpoints(ApiEndpointRoot, "entries", queue.GetLeagueQueueStringFor(),
                         tier.GetRankedTierString(), division.GetLeagueDivisionRankString()));

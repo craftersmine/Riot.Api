@@ -30,7 +30,7 @@ namespace craftersmine.Riot.Api.Tests.League
             if (string.IsNullOrWhiteSpace(ApiKey))
                 Assert.Fail("No Riot API key provided!");
             if (EnableExperimental)
-                Client = new RiotLeagueMasteryApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).UseExperimentalLeaguesEndpoint().Build());
+                Client = new RiotLeagueMasteryApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).UseExperimentalLeaguesApi().Build());
             else 
                 Client = new RiotLeagueMasteryApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
         }

@@ -22,7 +22,7 @@ namespace craftersmine.Riot.Api.Common
         /// <summary>
         /// Gets <see langword="true"/> to use experimental Ranked Leagues API. https://developer.riotgames.com/apis#league-exp-v4
         /// </summary>
-        public bool UseExperimentalLeaguesEndpoint { get; internal set; } = false;
+        public bool UseExperimentalLeaguesApi { get; internal set; } = false;
 
         /// <summary>
         /// Gets default Riot Data Region for Account API requests
@@ -105,9 +105,9 @@ namespace craftersmine.Riot.Api.Common
         /// Enables using of League-EXP v4 API for some requests in League.SummonerLeagues API
         /// </summary>
         /// <returns></returns>
-        public RiotApiClientSettingsBuilder UseExperimentalLeaguesEndpoint()
+        public RiotApiClientSettingsBuilder UseExperimentalLeaguesApi()
         {
-            Settings.UseExperimentalLeaguesEndpoint = true;
+            Settings.UseExperimentalLeaguesApi = true;
             return this;
         }
     }
