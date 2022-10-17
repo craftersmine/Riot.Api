@@ -19,7 +19,7 @@ namespace craftersmine.Riot.Api.League.Clash.Converters
         {
             if (reader.TokenType == JsonToken.Integer && !(reader.Value is null))
             {
-                switch ((int)reader.Value)
+                switch ((long)reader.Value)
                 {
                     case 1:
                         return LeagueClashTeamTier.TierI;
