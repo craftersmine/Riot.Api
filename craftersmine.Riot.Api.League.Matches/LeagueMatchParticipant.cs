@@ -104,6 +104,7 @@ namespace craftersmine.Riot.Api.League.Matches
         public string SummonerName { get; private set; }
 
         // enums
+        [JsonConverter(typeof(LeagueBountyLevelConverter))]
         public LeagueBountyLevel BountyLevel { get; private set; }
         public LeagueChampionTransform ChampionTransform { get; private set; } // currently only for Kayn transforms
         public LeagueMultikill LargestMultikill { get; private set; }
