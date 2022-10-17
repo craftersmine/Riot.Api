@@ -20,7 +20,7 @@ namespace craftersmine.Riot.Api.Common
         /// <summary>
         /// Unauthorized
         /// </summary>
-        Unautorized = 401,
+        Unauthorized = 401,
         /// <summary>
         /// Forbidden
         /// </summary>

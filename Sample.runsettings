@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+    <TestRunParameters>
+	    <Parameter name="ApiKey" value="RGAPI-00000000-0000-0000-0000-000000000000"/>
+	</TestRunParameters>
+</RunSettings>

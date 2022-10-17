@@ -4,43 +4,111 @@ using System.Text;
 
 namespace craftersmine.Riot.Api.Common
 {
-    public partial class RiotApiClientSettings : IRiotApiClientSettings
+    /// <summary>
+    /// Represents Riot API Client settings
+    /// </summary>
+    public class RiotApiClientSettings
     {
-        public string ApiKey { get; set; }
+        /// <summary>
+        /// Gets Riot API key
+        /// </summary>
+        public string ApiKey { get; internal set; }
+
+        /// <summary>
+        /// Gets <see langword="true"/> to use Riot Tournament Stub API instead of Riot Tournament API
+        /// </summary>
+        public bool UseTournamentStub { get; internal set; } = false;
+
+        /// <summary>
+        /// Gets <see langword="true"/> to use experimental Ranked Leagues API. https://developer.riotgames.com/apis#league-exp-v4
+        /// </summary>
+        public bool UseExperimentalLeaguesApi { get; internal set; } = false;
+
+        /// <summary>
+        /// Gets default Riot Data Region for Account API requests
+        /// </summary>
+        public RiotRegion DefaultDataRegion { get; internal set; } = RiotRegion.Europe;
+
+        /// <summary>
+        /// Use <see cref="RiotApiClientSettingsBuilder"/> instead
+        /// </summary>
+        internal RiotApiClientSettings() {}
     }
 
-    public partial class RiotApiClientSettings
+    /// <summary>
+    /// Allows you to create <see cref="RiotApiClientSettings"/> using fluent API
+    /// </summary>
+    public sealed class RiotApiClientSettingsBuilder
     {
-        public bool UseTournamentStub { get; set; }
-    }
+        private RiotApiClientSettings Settings { get; }
 
-    public static class RiotApiClientSettingsExtensions
-    {
-        public static RiotApiClientSettingsBuilder UseTournamentStub(this RiotApiClientSettingsBuilder settings)
-        {
-            ((RiotApiTournamentClientSettings)settings.Settings).UseTournamentStub = true;
-            return settings;
-        }
-
-        public static RiotApiClientSettingsBuilder UseApiKey(this RiotApiClientSettingsBuilder settings,
-            string apiKey)
-        {
-            settings.Settings.ApiKey = apiKey;
-            return settings;
-        }
-    }
-
-    public class RiotApiClientSettingsBuilder
-    {
-        internal IRiotApiClientSettings Settings { get; private set; }
-
+        /// <summary>
+        /// Gets current settings
+        /// </summary>
         public RiotApiClientSettingsBuilder() => Settings = new RiotApiClientSettings();
 
-        public IRiotApiClientSettings Build()
+        /// <summary>
+        /// Returns built settings
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException">If API key is not set (null or empty string)</exception>
+        public RiotApiClientSettings Build()
         {
             if (string.IsNullOrWhiteSpace(Settings.ApiKey))
                 throw new ArgumentNullException(nameof(Settings.ApiKey), "Riot API key cannot be empty or null!");
+
             return Settings;
+        }
+
+        /// <summary>
+        /// Sets Riot Games API key
+        /// </summary>
+        /// <param name="apiKey">Riot API key of your application</param>
+        /// <remarks>
+        ///  You can obtain development key here: https://developer.riotgames.com <br/>
+        ///  If you deploying an application for production you need to register your application to obtain permanent API key <br/>
+        ///  You can register your application here: https://developer.riotgames.com/app-type
+        /// </remarks>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException">If API keu is not set (null or empty string)</exception>
+        public RiotApiClientSettingsBuilder UseApiKey(string apiKey)
+        {
+            if (string.IsNullOrWhiteSpace(apiKey))
+                throw new ArgumentNullException(nameof(apiKey), "Riot API key cannot be empty or null!");
+
+            Settings.ApiKey = apiKey;
+            return this;
+        }
+
+        /// <summary>
+        /// Switches Riot API client to use Tournament Stub API instead of Tournament API if used
+        /// </summary>
+        /// <returns></returns>
+        public RiotApiClientSettingsBuilder UseTournamentStub()
+        {
+            Settings.UseTournamentStub = true;
+            return this;
+        }
+
+        /// <summary>
+        /// Sets default Riot Games Data Region for Account API requests. It is recommended by Riot to use a cluster near you (near application host)
+        /// </summary>
+        /// <param name="region">Riot Region</param>
+        /// <returns></returns>
+        public RiotApiClientSettingsBuilder UseDefaultDataRegion(RiotRegion region)
+        {
+            Settings.DefaultDataRegion = region;
+            return this;
+        }
+
+        /// <summary>
+        /// Enables using of League-EXP v4 API for some requests in League.SummonerLeagues API
+        /// </summary>
+        /// <returns></returns>
+        public RiotApiClientSettingsBuilder UseExperimentalLeaguesApi()
+        {
+            Settings.UseExperimentalLeaguesApi = true;
+            return this;
         }
     }
 }

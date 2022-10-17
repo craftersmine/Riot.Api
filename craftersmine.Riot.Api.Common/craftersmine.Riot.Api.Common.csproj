@@ -1,12 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.0.1</Version>
+    <Version>0.0.12</Version>
     <Authors>craftersmine</Authors>
     <Description>Common classes for craftesmine.Riot.Api libraries</Description>
-    <PackageOutputPath>$(OutputPath)</PackageOutputPath>
+    <PackageOutputPath>$(SolutionDir)_NUGETS\craftersmine.Riot.Api\</PackageOutputPath>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/craftersmine/Riot.Api/</RepositoryUrl>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
