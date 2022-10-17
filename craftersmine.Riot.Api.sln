@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
@@ -18,6 +18,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.League.Mastery", "craftersmine.Riot.Api.League.Mastery\craftersmine.Riot.Api.League.Mastery.csproj", "{0E400DDC-CA61-4914-A4D9-DC74E64B3403}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.League.Clash", "craftersmine.Riot.Api.League.Clash\craftersmine.Riot.Api.League.Clash.csproj", "{0AC88E92-885F-4DB7-9933-E3D0387C831C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Misc", "_Misc", "{B324CD2D-0BF4-4627-A404-BD83D95D9E8D}"
+	ProjectSection(SolutionItems) = preProject
+		Notes.md = Notes.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
