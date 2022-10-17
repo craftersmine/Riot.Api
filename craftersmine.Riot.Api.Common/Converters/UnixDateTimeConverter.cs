@@ -15,7 +15,7 @@ namespace craftersmine.Riot.Api.Common.Converters
             long val;
             if (value is DateTime)
             {
-                val = ((DateTime)value).ToUnixTime();
+                val = ((DateTime)value).ToUnixTimeSeconds();
             }
             else
             {
@@ -33,7 +33,7 @@ namespace craftersmine.Riot.Api.Common.Converters
                 throw new Exception("Expected integer value, got " + reader.TokenType);
 
             long ticks = (long)(reader.Value ?? 0);
-            return ticks.FromUnixTime();
+            return ticks.FromUnixTimeMilliseconds();
         }
 
         public override bool CanConvert(Type objectType)

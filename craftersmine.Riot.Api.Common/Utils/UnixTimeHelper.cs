@@ -9,12 +9,17 @@ namespace craftersmine.Riot.Api.Common.Utils
     {
         private static readonly DateTime UnixEpoch = new DateTime(1970, 1, 1);
 
-        public static DateTime FromUnixTime(this long val)
+        public static DateTime FromUnixTimeMilliseconds(this long val)
         {
             return UnixEpoch.AddMilliseconds(val);
         }
 
-        public static long ToUnixTime(this DateTime val)
+        public static DateTime FromUnixTimeSeconds(this long val)
+        {
+            return UnixEpoch.AddSeconds(val);
+        }
+
+        public static long ToUnixTimeSeconds(this DateTime val)
         {
             if (val == DateTime.MinValue)
                 return 0;
@@ -25,6 +30,19 @@ namespace craftersmine.Riot.Api.Common.Utils
                 throw new ArgumentOutOfRangeException(nameof(val), val, "Invalid datetime!");
 
             return (long)delta.TotalSeconds;
+        }
+
+        public static long ToUnixTimeMilliseconds(this DateTime val)
+        {
+            if (val == DateTime.MinValue)
+                return 0;
+
+            var delta = val - UnixEpoch;
+
+            if (delta.TotalMilliseconds < 0)
+                throw new ArgumentOutOfRangeException(nameof(val), val, "Invalid datetime!");
+
+            return (long) delta.TotalMilliseconds;
         }
     }
 }
