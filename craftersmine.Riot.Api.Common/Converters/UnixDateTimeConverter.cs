@@ -12,7 +12,9 @@ namespace craftersmine.Riot.Api.Common.Converters
     {
         private readonly bool useSeconds;
 
-        public UnixDateTimeConverter(bool useSeconds = false)
+        public UnixDateTimeConverter() : this(false) { }
+
+        public UnixDateTimeConverter(bool useSeconds)
         {
             this.useSeconds = useSeconds;
         }
