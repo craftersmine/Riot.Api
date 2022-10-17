@@ -1,29 +1,31 @@
-TODO: 
-	- [ ] Move tests settings from constants in .runsettings file
-	- [ ] Riot APIs
-		- [x] Common library
-		- [x] Account API
-		- [ ] League of Legends APIs
-			- [x] Champion Rotations API
-			- [x] Clash API
-			- [x] Mastery API
-			- [x] Summoner API
+# TODO:
+All features to be implemented
+
+- [ ] Move tests settings from constants in .runsettings file
+- [ ] Riot APIs
+	- [x] Common library
+	- [x] Account API
+	- [ ] League of Legends APIs
+		- [x] Champion Rotations API
+		- [x] Clash API
+		- [x] Mastery API
+		- [x] Summoner API
+		- [x] Leagues API
 			- [x] Leagues API
-				- [x] Leagues API
-				- [x] Leagues Experimental API
-			- [ ] LoL Challanges API
-			- [ ] LoL Status API
-			- [ ] Match API
-				- [x] Get Match IDs and make overloads for filters
-				- [ ] Get Match info by ID
-					- [ ] Make data objects
-				- [ ] Get Match timeline by ID
-					- [ ] Make data objects
- 			- [ ] Spectator API
-				- [ ] *info TBD*
-			- [ ] Tournament APIs
-				- [ ] Tournament API
-				- [ ] Tournament Stub API
-	- [ ] Riot Data Dragon API
-		- [ ] Static data requests from (game constants)[https://developer.riotgames.com/docs/lol#general_game-constants] (or from custom Git Repository static JSON files)
-		- [ ] *More Features TBD*
+			- [x] Leagues Experimental API
+		- [ ] LoL Challanges API
+		- [ ] LoL Status API
+		- [ ] Match API
+			- [x] Get Match IDs and make overloads for filters
+			- [ ] Get Match info by ID
+				- [ ] Make data objects
+			- [ ] Get Match timeline by ID
+				- [ ] Make data objects
+			- [ ] Spectator API
+			- [ ] ***info TBD***
+		- [ ] Tournament APIs
+			- [ ] Tournament API
+			- [ ] Tournament Stub API
+- [ ] Riot Data Dragon API
+	- [ ] Static data requests from [game constants](https://developer.riotgames.com/docs/lol#general_game-constants) (or from custom Git Repository static JSON files)
+	- [ ] ***More Features TBD***
