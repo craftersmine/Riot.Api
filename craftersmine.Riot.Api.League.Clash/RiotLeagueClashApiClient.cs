@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using craftersmine.Riot.Api.Common;
 using craftersmine.Riot.Api.Common.Utils;
@@ -46,7 +46,7 @@ namespace craftersmine.Riot.Api.League.Clash
         /// <returns>A <see cref="LeagueClashTeam"/> by specified team ID</returns>
         /// <exception cref="ArgumentNullException">When team ID is null or empty</exception>
         /// <exception cref="craftersmine.Riot.Api.Common.Exceptions.RiotApiException">When Riot API request fails</exception>
-        public async Task<LeagueClashTeam> GetClashTeamById(RiotPlatform region, string teamId)
+        public async Task<LeagueClashTeam> GetClashTeamByIdAsync(RiotPlatform region, string teamId)
         {
             if (string.IsNullOrWhiteSpace(teamId))
                 throw new ArgumentNullException(nameof(teamId));
