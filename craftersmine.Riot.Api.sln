@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Misc", "_Misc", "{B324CD2D
 		Notes.md = Notes.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.League.Matches", "craftersmine.Riot.Api.League.Matches\craftersmine.Riot.Api.League.Matches.csproj", "{3494899A-BD63-40CA-97BA-F96C8E00F6A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
