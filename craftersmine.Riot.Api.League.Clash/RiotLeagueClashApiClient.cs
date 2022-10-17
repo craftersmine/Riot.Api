@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading.Tasks;
 using craftersmine.Riot.Api.Common;
 using craftersmine.Riot.Api.Common.Utils;
@@ -39,7 +39,7 @@ namespace craftersmine.Riot.Api.League.Clash
         }
 
         /// <summary>
-        /// Gets a Clash team by team ID
+        /// Gets a Clash team by team ID in specified region
         /// </summary>
         /// <param name="region">League of Legends server region</param>
         /// <param name="teamId">League of Legends Clash team ID</param>
