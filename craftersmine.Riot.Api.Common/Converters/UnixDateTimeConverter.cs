@@ -10,12 +10,22 @@ namespace craftersmine.Riot.Api.Common.Converters
 {
     internal class UnixDateTimeConverter : JsonConverter
     {
+        private readonly bool useSeconds;
+
+        public UnixDateTimeConverter(bool useSeconds = false)
+        {
+            this.useSeconds = useSeconds;
+        }
+
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             long val;
             if (value is DateTime)
             {
-                val = ((DateTime)value).ToUnixTimeSeconds();
+                if (!useSeconds)
+                    val = ((DateTime) value).ToUnixTimeMilliseconds();
+                else
+                    val = ((DateTime) value).ToUnixTimeSeconds();
             }
             else
             {
@@ -33,7 +43,9 @@ namespace craftersmine.Riot.Api.Common.Converters
                 throw new Exception("Expected integer value, got " + reader.TokenType);
 
             long ticks = (long)(reader.Value ?? 0);
-            return ticks.FromUnixTimeMilliseconds();
+            if (!useSeconds)
+                return ticks.FromUnixTimeMilliseconds();
+            else return ticks.FromUnixTimeSeconds();
         }
 
         public override bool CanConvert(Type objectType)
