@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Leagu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.League.SummonerLeagues", "craftersmine.Riot.Api.League.SummonerLeagues\craftersmine.Riot.Api.League.SummonerLeagues.csproj", "{45B4FD8B-C919-4433-8F80-CB1CF5CD63F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.League.ChampionRotations", "craftersmine.Riot.Api.ChampionRotations\craftersmine.Riot.Api.League.ChampionRotations.csproj", "{C00375FD-5E78-4478-B51F-A2D8739F0B21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.League.ChampionRotations", "craftersmine.Riot.Api.ChampionRotations\craftersmine.Riot.Api.League.ChampionRotations.csproj", "{C00375FD-5E78-4478-B51F-A2D8739F0B21}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.League.Mastery", "craftersmine.Riot.Api.League.Mastery\craftersmine.Riot.Api.League.Mastery.csproj", "{0E400DDC-CA61-4914-A4D9-DC74E64B3403}"
 EndProject
