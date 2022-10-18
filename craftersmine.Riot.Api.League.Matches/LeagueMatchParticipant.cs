@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using craftersmine.Riot.Api.League.Matches.Converters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -106,11 +107,17 @@ namespace craftersmine.Riot.Api.League.Matches
         // enums
         [JsonConverter(typeof(LeagueBountyLevelConverter))]
         public LeagueBountyLevel BountyLevel { get; private set; }
+        [JsonConverter(typeof(LeagueChampionTransformConverter))]
         public LeagueChampionTransform ChampionTransform { get; private set; } // currently only for Kayn transforms
+        [JsonConverter(typeof(LeagueMultikillConverter))]
         public LeagueMultikill LargestMultikill { get; private set; }
+        [JsonConverter(typeof(LeagueMatchPositionConverter))]
         public LeagueMatchPosition IndividualPosition { get; private set; }
+        [JsonConverter(typeof(LeagueMatchPositionConverter))]
         public LeagueMatchPosition Lane { get; private set; }
+        [JsonConverter(typeof(LeagueMatchPositionConverter))]
         public LeagueMatchPosition TeamPosition { get; private set; }
+        [JsonConverter(typeof(LeagueMatchRoleConverter))]
         public LeagueMatchRole Role { get; private set; }
 
         // structs
