@@ -222,7 +222,7 @@ namespace craftersmine.Riot.Api.League.Matches
             if (string.IsNullOrWhiteSpace(matchId))
                 throw new ArgumentNullException(nameof(matchId));
 
-            string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "matches", matchId));
+            string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, matchId));
 
             LeagueMatch match = await Client.Get<LeagueMatch>(endpoint, null);
             return match;
