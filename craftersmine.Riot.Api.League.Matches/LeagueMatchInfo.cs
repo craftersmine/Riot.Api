@@ -52,7 +52,7 @@ namespace craftersmine.Riot.Api.League.Matches
         /// <summary>
         /// Gets a League of Legends server region where game was played
         /// </summary>
-        [JsonProperty("platformId"), JsonConverter(typeof(RiotPlatformConverter))]
+        [JsonProperty("platformId"), JsonConverter(typeof(RiotPlatformAsLeagueRegionConverter))]
         public RiotPlatform GameRegion { get; private set; }
 
         /// <summary>

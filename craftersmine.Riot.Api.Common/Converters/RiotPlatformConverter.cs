@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace craftersmine.Riot.Api.Common.Converters
 {
-    internal class RiotPlatformConverter : JsonConverter
+    internal class RiotPlatformAsLeagueRegionConverter : JsonConverter
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
