@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
@@ -45,7 +45,7 @@ namespace craftersmine.Riot.Api.Common.Converters
 
         public override bool CanConvert(Type objectType)
         {
-            throw new NotImplementedException();
+            return objectType == typeof(TimeSpan);
         }
     }
 }
