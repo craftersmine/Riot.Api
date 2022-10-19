@@ -12,6 +12,9 @@ You are required to provide your own data for tests to expect them complete succ
 Clash Tournaments tests cannot be always completed successfully due to perodic nature of Clash Tournaments,
 so expect some tests fail when there are no active or upcoming Clash Tournaments
 
+For champion rotations tests it is necessary to change values with correct values that were fetched from [Riot Developer Portal](https://developer.riotgames.com/apis)
+because of periodic nature of Champion Rotations
+
 ## TODO:
 All features to be implemented
 
