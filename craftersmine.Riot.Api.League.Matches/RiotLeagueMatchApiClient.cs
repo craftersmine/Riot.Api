@@ -203,6 +203,29 @@ namespace craftersmine.Riot.Api.League.Matches
             return matchIds;
         }
 
+        /// <summary>
+        /// Gets a League of Legends match information by match ID
+        /// </summary>
+        /// <param name="region">Riot Data region</param>
+        /// <param name="matchId">League of Legends match ID</param>
+        /// <returns>An information about match with specified ID</returns>
+        /// <exception cref="ArgumentNullException">When match ID is null or empty</exception>
+        /// <exception cref="craftersmine.Riot.Api.Common.Exceptions.RiotApiException">When Riot API request fails</exception>
+        /// <remarks>
+        ///  Americas Data region serves: NA, BR, LAN, LAS <br/>
+        ///  Asia Data region serves: KR, JP <br/>
+        ///  Europe Data region serves: EUNE, EUW, TR, RU <br/>
+        ///  Sea Data region serves: OCE
+        /// </remarks>
+        public async Task<LeagueMatch> GetMatchByIdAsync(RiotRegion region, string matchId)
+        {
+            if (string.IsNullOrWhiteSpace(matchId))
+                throw new ArgumentNullException(nameof(matchId));
 
+            string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "matches", matchId);
+
+            LeagueMatch match = await Client.Get<LeagueMatch>(endpoint, null);
+            return match;
+        }
     }
 }
