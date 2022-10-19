@@ -22,7 +22,7 @@ namespace craftersmine.Riot.Api.League.Matches.Converters
         {
             if (reader.TokenType is JsonToken.Integer)
             {
-                if (reader.Value != null) return (LeagueMultikill) reader.Value;
+                if (reader.Value != null) return (LeagueMultikill) Convert.ToInt32(reader.Value);
                 return LeagueMultikill.None;
             }
 

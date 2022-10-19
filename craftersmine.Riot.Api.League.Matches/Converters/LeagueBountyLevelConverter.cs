@@ -21,7 +21,7 @@ namespace craftersmine.Riot.Api.League.Matches.Converters
         {
             if (reader.TokenType is JsonToken.Integer)
             {
-                if (reader.Value != null) return (LeagueBountyLevel) reader.Value;
+                if (reader.Value != null) return (LeagueBountyLevel) (Convert.ToInt32(reader.Value));
                 return LeagueBountyLevel.None;
             }
 
