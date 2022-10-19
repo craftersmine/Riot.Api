@@ -74,7 +74,7 @@ namespace craftersmine.Riot.Api.Common
         public async Task<T> Get<T>(string address, IDictionary<string, object> queryParams)
         {
             string queryParamsString = string.Empty;
-            if (queryParams.Any())
+            if (!(queryParams is null) && queryParams.Any())
             {
                 foreach (var kvp in queryParams)
                 {
@@ -113,7 +113,7 @@ namespace craftersmine.Riot.Api.Common
         public async Task<T> Post<T>(string address, IDictionary<string, object> queryParams, object bodyContent)
         {
             string queryParamsString = string.Empty;
-            if (queryParams.Any())
+            if (!(queryParams is null) && queryParams.Any())
             {
                 foreach (var kvp in queryParams)
                 {
@@ -154,7 +154,7 @@ namespace craftersmine.Riot.Api.Common
         public async Task<T> Put<T>(string address, IDictionary<string, object> queryParams, object bodyContent)
         {
             string queryParamsString = string.Empty;
-            if (queryParams.Any())
+            if (!(queryParams is null) && queryParams.Any())
             {
                 foreach (var kvp in queryParams)
                 {
