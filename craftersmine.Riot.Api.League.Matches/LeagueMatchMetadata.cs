@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
@@ -10,6 +10,11 @@ namespace craftersmine.Riot.Api.League.Matches
     /// </summary>
     public class LeagueMatchMetadata
     {
+        /// <summary>
+        /// Gets a League of Legends match data version that is used for info
+        /// </summary>
+        [JsonProperty("dataVersion")]
+        public int DataVersion { get; private set; }
         /// <summary>
         /// Gets a League of Legends game version on which this match was played
         /// </summary>
