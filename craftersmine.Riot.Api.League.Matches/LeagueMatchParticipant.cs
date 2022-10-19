@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using craftersmine.Riot.Api.Common.Converters;
@@ -23,6 +23,11 @@ namespace craftersmine.Riot.Api.League.Matches
         /// </summary>
         [JsonProperty("baronKills")]
         public int BaronKills { get; private set; }
+        /// <summary>
+        /// Gets a total amount of pings used in game
+        /// </summary>
+        [JsonProperty("basicPings")]
+        public int BasicPings { get; private set; }
         /// <summary>
         /// Gets a total amount of experience earned on participant champion
         /// </summary>
