@@ -81,7 +81,7 @@ namespace craftersmine.Riot.Api.League.Matches
         /// <summary>
         /// Gets a total amount of self-mitigated damage dealt to champion of this participant
         /// </summary>
-        [JsonProperty("damageSelfMitigates")]
+        [JsonProperty("damageSelfMitigated")]
         public int DamageSelfMitigated { get; private set; }
         /// <summary>
         /// Gets an amount of total deaths in game for this participant
@@ -151,7 +151,7 @@ namespace craftersmine.Riot.Api.League.Matches
         /// <summary>
         /// Gets an ID of item in slot 5 (slot under key 6 in game) for this participant's champion
         /// </summary>
-        [JsonProperty("slot5")]
+        [JsonProperty("item5")]
         public int Slot5ItemId { get; private set; }
         /// <summary>
         /// Gets an ID of item in slot 6 (slot under key 7 in game) for this participant's champion
