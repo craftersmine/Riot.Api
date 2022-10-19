@@ -514,7 +514,7 @@ namespace craftersmine.Riot.Api.League.Matches
         /// Currently used only for Kayn transformations
         /// </remarks>
         [JsonProperty("championTransform"), JsonConverter(typeof(LeagueChampionTransformConverter))]
-        public LeagueChampionTransform ChampionTransform { get; private set; } // currently only for Kayn transforms
+        public LeagueChampionTransform ChampionTransform { get; private set; }
         /// <summary>
         /// Gets a largest multi kill this participant made in game
         /// </summary>
