@@ -58,12 +58,12 @@ namespace craftersmine.Riot.Api.League.Matches
         /// <summary>
         /// Gets a <see cref="DateTime"/> timestamp when game was created on League of Legends servers
         /// </summary>
-        [JsonProperty("gameCreation"), JsonConverter(typeof(UnixDateTimeConverter), true)]
+        [JsonProperty("gameCreation"), JsonConverter(typeof(UnixDateTimeConverter), false)]
         public DateTime GameCreationTimestamp { get; private set; }
         /// <summary>
         /// Gets a <see cref="DateTime"/> timestamp when game was started on League of Legends servers (usually after loading screen)
         /// </summary>
-        [JsonProperty("gameStartTimestamp"), JsonConverter(typeof(UnixDateTimeConverter), true)]
+        [JsonProperty("gameStartTimestamp"), JsonConverter(typeof(UnixDateTimeConverter), false)]
         public DateTime GameStartTimestamp { get; private set; }
         /// <summary>
         /// Gets a <see cref="DateTime"/> timestamp when game was ended on League of Legends servers
@@ -74,12 +74,12 @@ namespace craftersmine.Riot.Api.League.Matches
         ///  time played on any participant to the <see cref="GameStartTimestamp"/>
         /// </remarks>
         // TODO: Add extension method to calculate this automatically
-        [JsonProperty("gameEndTimestamp"), JsonConverter(typeof(UnixDateTimeConverter), true)]
+        [JsonProperty("gameEndTimestamp"), JsonConverter(typeof(UnixDateTimeConverter), false)]
         public DateTime GameEndTimestamp { get; private set; }
         /// <summary>
         /// Gets a <see cref="TimeSpan"/> of the game duration
         /// </summary>
-        [JsonProperty("gameDuration"), JsonConverter(typeof(UnixTimeSpanConverter))]
+        [JsonProperty("gameDuration"), JsonConverter(typeof(UnixTimeSpanConverter), true)] // BUG: incorrect value, try seconds
         public TimeSpan GameDuration { get; private set; }
 
         /// <summary>
