@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using craftersmine.Riot.Api.Common.Converters;
@@ -585,7 +585,7 @@ namespace craftersmine.Riot.Api.League.Matches
         /// <summary>
         /// Gets a changes of challenge progress for this participant
         /// </summary>
-        [JsonProperty("challenges"), JsonConverter(typeof(KeyValuePairConverter))]
-        public LeagueChallengesCollection ChallengesChanges { get; private set; } // challenges
+        [JsonProperty("challenges")]
+        public LeagueChallengesCollection ChallengesChanges { get; private set; }
     }
 }
