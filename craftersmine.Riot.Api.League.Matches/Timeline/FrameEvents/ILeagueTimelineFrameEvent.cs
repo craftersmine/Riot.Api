@@ -18,7 +18,7 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline.FrameEvents
         /// </summary>
         LeagueTimelineFrameEventType Type { get; }
         /// <summary>
-        /// Gets a League of Legends match timeline frame event timestamp from game start
+        /// Gets a League of Legends match timeline frame event timestamp within match from game start
         /// </summary>
         TimeSpan Timestamp { get; }
     }
