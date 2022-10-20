@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,6 +45,23 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
                 {
                     case LeagueTimelineFrameEventType.PauseEnd:
                         _events.Add(DeserializeJObjectTo<PauseEndTimelineFrameEvent>(e));
+                        break;
+                    case LeagueTimelineFrameEventType.SkillLevelUp:
+                        _events.Add(DeserializeJObjectTo<SkillLevelUpFrameEvent>(e));
+                        break;
+                    case LeagueTimelineFrameEventType.ItemPurchased:
+                    case LeagueTimelineFrameEventType.ItemDestroyed:
+                    case LeagueTimelineFrameEventType.ItemSold:
+                        _events.Add(DeserializeJObjectTo<ItemFrameEvent>(e));
+                        break;
+                    case LeagueTimelineFrameEventType.ItemUndo:
+                        _events.Add(DeserializeJObjectTo<ItemUndoFrameEvent>(e));
+                        break;
+                    case LeagueTimelineFrameEventType.WardKill:
+                        _events.Add(DeserializeJObjectTo<WardKilledFrameEvent>(e));
+                        break;
+                    case LeagueTimelineFrameEventType.WardPlaced:
+                        _events.Add(DeserializeJObjectTo<WardPlacedFrameEvent>(e));
                         break;
                     default:
                         _events.Add(evt);
