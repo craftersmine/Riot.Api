@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,8 +17,6 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
     /// </summary>
     public class LeagueMatchTimelineFrame
     {
-        private JsonSerializer serializer;
-
         [JsonProperty("events")]
         private JObject[] EventsRaw { get; set; }
 
@@ -39,14 +37,6 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
 
         internal ILeagueTimelineFrameEvent[] GetFromRawEvents()
         {
-            if (serializer is null)
-            {
-                serializer = JsonSerializer.CreateDefault();
-                
-                serializer.Converters.Add(new LeagueTimelineFrameEventTypeConverter());
-                serializer.Converters.Add(new UnixDateTimeConverter(true));
-            }
-
             List<ILeagueTimelineFrameEvent> _events = new List<ILeagueTimelineFrameEvent>();
             foreach (var e in EventsRaw)
             {
