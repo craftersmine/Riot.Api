@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using craftersmine.Riot.Api.League.Matches;
+using craftersmine.Riot.Api.League.Matches.Timeline;
 using Newtonsoft.Json;
 
 namespace craftersmine.Riot.Api.Tests.League
@@ -101,6 +102,14 @@ namespace craftersmine.Riot.Api.Tests.League
             Assert.AreEqual(10, match.Metadata.Participants.Length, "Match participants count is not 10");
             Assert.AreEqual(GameId, match.Metadata.MatchId, "Match ID is not the same as " + GameId);
             Assert.IsTrue(match.Metadata.Participants.Contains(MyPuuid), "Participants doesn't have " + MyPuuid);
+        }
+        
+        [TestMethod]
+        public async Task GetMatchTimelineByMatchIdTests()
+        {
+            Assert.IsNotNull(Client, "Client is not initialized!");
+            LeagueMatchTimeline match = await Client.GetMatchTimelineByMatchIdAsync(RiotRegion.Europe, GameId);
+            var events = match.Timeline.Frames[2].Events;
         }
     }
 }
