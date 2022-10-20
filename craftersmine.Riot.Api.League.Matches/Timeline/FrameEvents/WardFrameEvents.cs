@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
+using craftersmine.Riot.Api.League.Matches.Converters.FrameEvents;
 using Newtonsoft.Json;
 
 namespace craftersmine.Riot.Api.League.Matches.Timeline.FrameEvents
