@@ -35,7 +35,7 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
         [JsonProperty("timestamp"), JsonConverter(typeof(UnixTimeSpanConverter), true)]
         public TimeSpan Timestamp { get; private set; }
 
-        internal ILeagueTimelineFrameEvent[] GetFromRawEvents()
+        private ILeagueTimelineFrameEvent[] GetFromRawEvents()
         {
             List<ILeagueTimelineFrameEvent> _events = new List<ILeagueTimelineFrameEvent>();
             foreach (var e in EventsRaw)
