@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Threading.Tasks;
 using craftersmine.Riot.Api.Common;
 using craftersmine.Riot.Api.Common.Utils;
+using craftersmine.Riot.Api.League.Matches.Timeline;
 
 namespace craftersmine.Riot.Api.League.Matches
 {
@@ -226,6 +227,18 @@ namespace craftersmine.Riot.Api.League.Matches
 
             LeagueMatch match = await Client.Get<LeagueMatch>(endpoint, null);
             return match;
+        }
+
+        public async Task<LeagueMatchTimeline> GetMatchTimelineByMatchIdAsync(RiotRegion region, string matchId)
+        {
+            if (string.IsNullOrWhiteSpace(matchId))
+                throw new ArgumentNullException(nameof(matchId));
+
+            string endpoint =
+                UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, matchId, "/timeline"));
+
+            LeagueMatchTimeline timeline = await Client.Get<LeagueMatchTimeline>(endpoint, null);
+            return timeline;
         }
     }
 }
