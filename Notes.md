@@ -52,13 +52,13 @@ All features to be implemented
 - [ ] implement classes for frame event types
     - [x] Base Class (unknown)
     - [x] PauseEnd
-	- [ ] SkillLevelUp
-	- [ ] ItemPurchased
-	- [ ] ItemDestroyed
-	- [ ] ItemUndo
-	- [ ] ItemSold
-	- [ ] WardPlaced
-	- [ ] WardKill
+	- [x] SkillLevelUp
+	- [x] ItemPurchased
+	- [x] ItemDestroyed
+	- [x] ItemUndo
+	- [x] ItemSold
+	- [x] WardPlaced
+	- [x] WardKill
 	- [ ] LevelUp
 	- [ ] ChampionKill
 	- [ ] ChampionSpecialKill
