@@ -16,9 +16,9 @@ namespace craftersmine.Riot.Api.Tests.League
     public class MatchesApiClientTests
     {
         public const string MyPuuid = "XRWOl9NePvqBbDsCBQKMgks13Cyc5KO1N-ZCPE0xr8Yvt58H7JjiWx_jlkF4VSYc31kBYfoKZtSNhA";
-        public const string GameId = "RU_413971566";
+        public const string GameId = "RU_414155060";
         public const string GameMode = "CLASSIC";
-        public const long GameIdLong = 413971566;
+        public const long GameIdLong = 414155060;
         public const int QueueId = 420; // Ranked Solo Queue Summoner Rift
         public const int MapId = 11;
 
@@ -109,7 +109,7 @@ namespace craftersmine.Riot.Api.Tests.League
         {
             Assert.IsNotNull(Client, "Client is not initialized!");
             LeagueMatchTimeline match = await Client.GetMatchTimelineByMatchIdAsync(RiotRegion.Europe, GameId);
-            var events = match.Timeline.Frames[6].Events;
+            var events = match.Timeline.Frames[4].Events;
         }
     }
 }
