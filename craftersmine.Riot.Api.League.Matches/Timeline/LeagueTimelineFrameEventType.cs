@@ -73,8 +73,7 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
         /// <summary>
         /// Objective bounty ending
         /// </summary>
-        [Obsolete("Assumption. For now it is unknown if this value even exists")]
-        ObjectiveBountyPreend,
+        ObjectiveBountyFinish,
         /// <summary>
         /// Dragon soul was obtained
         /// </summary>
@@ -113,7 +112,7 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
         private const string TurretPlateDestroyed = "TURRET_PLATE_DESTROYED";
         private const string BuildingKill = "BUILDING_KILL";
         private const string ObjectiveBountyPrestart = "OBJECTIVE_BOUNTY_PRESTART";
-        private const string ObjectiveBountyPreend = "OBJECTIVE_BOUNTY_PREEND";
+        private const string ObjectiveBountyFinish = "OBJECTIVE_BOUNTY_FINISH";
         private const string DragonSoulGiven = "DRAGON_SOUL_GIVEN";
         private const string GameEnd = "GAME_END";
         private const string ChampionTranform = "CHAMPION_TRANSFORM";
@@ -157,8 +156,8 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
                     return BuildingKill;
                 case LeagueTimelineFrameEventType.ObjectiveBountyPrestart:
                     return ObjectiveBountyPrestart;
-                case LeagueTimelineFrameEventType.ObjectiveBountyPreend:
-                    return ObjectiveBountyPreend;
+                case LeagueTimelineFrameEventType.ObjectiveBountyFinish:
+                    return ObjectiveBountyFinish;
                 case LeagueTimelineFrameEventType.DragonSoulGiven:
                     return DragonSoulGiven;
                 case LeagueTimelineFrameEventType.GameEnd:
@@ -204,8 +203,8 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
                     return LeagueTimelineFrameEventType.BuildingKill;
                 case ObjectiveBountyPrestart:
                     return LeagueTimelineFrameEventType.ObjectiveBountyPrestart;
-                case ObjectiveBountyPreend:
-                    return LeagueTimelineFrameEventType.ObjectiveBountyPreend;
+                case ObjectiveBountyFinish:
+                    return LeagueTimelineFrameEventType.ObjectiveBountyFinish;
                 case DragonSoulGiven:
                     return LeagueTimelineFrameEventType.DragonSoulGiven;
                 case GameEnd:
