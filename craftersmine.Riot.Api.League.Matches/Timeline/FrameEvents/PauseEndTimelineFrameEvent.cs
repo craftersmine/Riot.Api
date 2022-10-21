@@ -12,7 +12,7 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline.FrameEvents
     public class PauseEndTimelineFrameEvent : BaseTimelineFrameEvent
     {
         /// <summary>
-        /// Gets a <see cref="DateTime"/> when <see cref="LeagueTimelineFrameEventType.PauseEnd"/> event was created
+        /// Gets a real world <see cref="DateTime"/> when <see cref="LeagueTimelineFrameEventType.PauseEnd"/> event was created
         /// </summary>
         [JsonProperty("realTimestamp"), JsonConverter(typeof(UnixDateTimeConverter), false)]
         public DateTime RealTimestamp { get; private set; }
