@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +23,7 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
         /// <summary>
         /// Gets an array of League of Legends match timeline current frame events
         /// </summary>
-        public ILeagueTimelineFrameEvent[] Events => GetFromRawEvents();
+        public LeagueMatchTimelineFrameEventCollection Events => GetFromRawEvents();
         /// <summary>
         /// Gets an array of League of Legends match timeline current participant frames
         /// </summary>
@@ -35,9 +35,9 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
         [JsonProperty("timestamp"), JsonConverter(typeof(UnixTimeSpanConverter), true)]
         public TimeSpan Timestamp { get; private set; }
 
-        private ILeagueTimelineFrameEvent[] GetFromRawEvents()
+        private LeagueMatchTimelineFrameEventCollection GetFromRawEvents()
         {
-            List<ILeagueTimelineFrameEvent> _events = new List<ILeagueTimelineFrameEvent>();
+            LeagueMatchTimelineFrameEventCollection _events = new LeagueMatchTimelineFrameEventCollection();
             foreach (var e in EventsRaw)
             {
                 BaseTimelineFrameEvent evt = DeserializeJObjectTo<BaseTimelineFrameEvent>(e);
@@ -69,7 +69,7 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
                 }
             }
 
-            return _events.ToArray();
+            return _events;
         }
 
         private T DeserializeJObjectTo<T>(JObject jObject)
