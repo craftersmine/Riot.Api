@@ -78,6 +78,9 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
                     case LeagueTimelineFrameEventType.TurretPlateDestroyed:
                         _events.Add(DeserializeJObjectTo<TurretPlateDestroyedFrameEvent>(e));
                         break;
+                    case LeagueTimelineFrameEventType.BuildingKill:
+                        _events.Add(DeserializeJObjectTo<BuildingKillFrameEvent>(e));
+                        break;
                     default:
                         _events.Add(evt);
                         break;
