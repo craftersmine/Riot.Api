@@ -4,7 +4,7 @@ using System.Text;
 
 namespace craftersmine.Riot.Api.Common
 {
-    internal class Constants
+    internal static class Constants
     {
         #region Data Regions
 
@@ -55,6 +55,22 @@ namespace craftersmine.Riot.Api.Common
 
         public const string ShardGameLegendsOfRunterra = "lor";
         public const string ShardGameValorant = "val";
+
+        #endregion
+
+        #region LoL server regions
+
+        public const string LolRuRegion   = "RU";
+        public const string LolEuneRegion = "EUNE";
+        public const string LolEuwRegion  = "EUW";
+        public const string LolBrRegion   = "BR";
+        public const string LolJpRegion   = "JP";
+        public const string LolKrRegion   = "KR";
+        public const string LolLanRegion  = "LAN";
+        public const string LolLasRegion  = "LAS";
+        public const string LolNaRegion   = "NA";
+        public const string LolOceRegion  = "OCE";
+        public const string LolTrRegion   = "TR";
 
         #endregion
     }

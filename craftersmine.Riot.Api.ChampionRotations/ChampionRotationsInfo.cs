@@ -5,6 +5,9 @@ using Newtonsoft.Json;
 
 namespace craftersmine.Riot.Api.League.ChampionRotations
 {
+    /// <summary>
+    /// Represents an information about current champion rotations in League of Legends
+    /// </summary>
     public class ChampionRotationsInfo
     {
         /// <summary>

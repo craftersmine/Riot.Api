@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS1574: Комментарий XML содержит атрибут cref, который не удалось разрешить
+dotnet_diagnostic.CS1574.severity = silent

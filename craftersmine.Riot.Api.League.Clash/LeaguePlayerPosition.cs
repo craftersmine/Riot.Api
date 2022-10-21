@@ -6,19 +6,52 @@ using System.Text;
 
 namespace craftersmine.Riot.Api.League.Clash
 {
+    /// <summary>
+    /// Represents a League of Legends player position
+    /// </summary>
     public enum LeaguePlayerPosition
     {
+        /// <summary>
+        /// Participant position is top lane
+        /// </summary>
         Top,
+        /// <summary>
+        /// Participant position is jungle
+        /// </summary>
         Jungle,
+        /// <summary>
+        /// Participant position is middle lane
+        /// </summary>
         Middle,
+        /// <summary>
+        /// Participant position is bottom lane
+        /// </summary>
         Bottom,
+        /// <summary>
+        /// Participant position is utility
+        /// </summary>
         Utility,
+        /// <summary>
+        /// Participant position is support (same as utility)
+        /// </summary>
         Support = Utility,
+        /// <summary>
+        /// Participant position is autofilled
+        /// </summary>
         Fill,
+        /// <summary>
+        /// Participant position is unselected
+        /// </summary>
         Unselected,
+        /// <summary>
+        /// Participant position is unknown
+        /// </summary>
         Unknown
     }
 
+    /// <summary>
+    /// Contains a static extensions for <see cref="LeaguePlayerPosition"/>
+    /// </summary>
     public static class LeaguePlayerPositionExtensions
     {
         private const string Top = "TOP";
@@ -29,6 +62,12 @@ namespace craftersmine.Riot.Api.League.Clash
         private const string Fill = "FILL";
         private const string Unselected = "UNSELECTED";
 
+        /// <summary>
+        /// Gets a corresponding string for <see cref="LeaguePlayerPosition"/> value
+        /// </summary>
+        /// <param name="pos">League of Legends Clash player position value</param>
+        /// <returns>A corresponding <see langword="string"/> for specified value</returns>
+        /// <exception cref="ArgumentException"></exception>
         public static string GetLeaguePlayerPositionString(this LeaguePlayerPosition pos)
         {
             switch (pos)

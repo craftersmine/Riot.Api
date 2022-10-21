@@ -29,10 +29,14 @@ namespace craftersmine.Riot.Api.Tests.League
             ApiKey = TestContext?.Properties["ApiKey"]?.ToString();
             if (string.IsNullOrWhiteSpace(ApiKey))
                 Assert.Fail("No Riot API key provided!");
+            
+            // Client is created differently depending whether experimental features are enabled or not
+#pragma warning disable CS0162 // Code is heuristically unreachable
             if (EnableExperimental)
                 Client = new RiotLeagueMasteryApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).UseExperimentalLeaguesApi().Build());
             else 
                 Client = new RiotLeagueMasteryApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
+#pragma warning restore CS0162 // Code is heuristically unreachable
         }
 
         [TestMethod]
