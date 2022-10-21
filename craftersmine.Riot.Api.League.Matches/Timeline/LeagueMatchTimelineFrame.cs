@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -71,6 +71,9 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
                         break;
                     case LeagueTimelineFrameEventType.ChampionSpecialKill:
                         _events.Add(DeserializeJObjectTo<ChampionSpecialKillFrameEvent>(e));
+                        break;
+                    case LeagueTimelineFrameEventType.EliteMonsterKill:
+                        _events.Add(DeserializeJObjectTo<EliteMonsterKillFrameEvent>(e));
                         break;
                     default:
                         _events.Add(evt);
