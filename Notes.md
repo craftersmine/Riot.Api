@@ -65,10 +65,10 @@ All features to be implemented
 	- [x] EliteMonsterKill
 	- [x] TurrentPlateDestroyed
 	- [x] BuildingKill
-    	- [ ] check Azir tower type
+    	- [x] check Azir tower type - works as generic tower
 	- [ ] ObjectiveBountyPrestart
-	- [ ] ObjectiveBoundyPreend ?
-    	- [ ] validate existance
+	- [ ] ObjectiveBoundyFinish
+    	- [x] validate existance
 	- [ ] DragonSoulGiven
 	- [ ] GameEnd
 	- [ ] ChampionTransform
