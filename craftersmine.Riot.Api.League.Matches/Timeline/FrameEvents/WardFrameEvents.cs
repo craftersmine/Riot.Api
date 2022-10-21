@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
@@ -24,6 +24,9 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline.FrameEvents
         public WardType WardType { get; private set; }
     }
 
+    /// <summary>
+    /// Represents a League of Legends match timeline ward destroyed frame event
+    /// </summary>
     public class WardKilledFrameEvent : BaseTimelineFrameEvent
     {
         /// <summary>
