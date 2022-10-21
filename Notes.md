@@ -63,7 +63,7 @@ All features to be implemented
 	- [x] ChampionKill
 	- [x] ChampionSpecialKill
 	- [x] EliteMonsterKill
-	- [ ] TurrentPlateDestroyed
+	- [x] TurrentPlateDestroyed
 	- [ ] BuildingKill
 	- [ ] ObjectiveBountyPrestart
 	- [ ] ObjectiveBoundyPreend ?
