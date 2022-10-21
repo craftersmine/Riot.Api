@@ -50,7 +50,7 @@ All features to be implemented
 ## Current WIP
 - [ ] perform more research about frame events
 - [ ] implement classes for frame event types
-    - [x] Base Class (unknown)
+    - [x] Base Class (or unknown event)
     - [x] PauseEnd
 	- [x] SkillLevelUp
 	- [x] ItemPurchased
@@ -64,9 +64,11 @@ All features to be implemented
 	- [x] ChampionSpecialKill
 	- [x] EliteMonsterKill
 	- [x] TurrentPlateDestroyed
-	- [ ] BuildingKill
+	- [x] BuildingKill
+    	- [ ] check Azir tower type
 	- [ ] ObjectiveBountyPrestart
 	- [ ] ObjectiveBoundyPreend ?
+    	- [ ] validate existance
 	- [ ] DragonSoulGiven
 	- [ ] GameEnd
 	- [ ] ChampionTransform
