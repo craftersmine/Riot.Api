@@ -16,7 +16,7 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline.FrameEvents
         [JsonProperty("type"), JsonConverter(typeof(LeagueTimelineFrameEventTypeConverter))]
         public LeagueTimelineFrameEventType Type { get; private set; }
         /// <inheritdoc cref="ILeagueTimelineFrameEvent.Timestamp"/>
-        [JsonProperty("timestamp"), JsonConverter(typeof(UnixTimeSpanConverter))]
+        [JsonProperty("timestamp"), JsonConverter(typeof(UnixTimeSpanConverter), false)]
         public TimeSpan Timestamp { get; private set; }
     }
 }
