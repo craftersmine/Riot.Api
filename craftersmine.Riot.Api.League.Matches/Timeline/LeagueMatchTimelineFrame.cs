@@ -32,7 +32,7 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
         /// <summary>
         /// Gets a <see cref="TimeSpan"/> timestamp of frame from the game beginning
         /// </summary>
-        [JsonProperty("timestamp"), JsonConverter(typeof(UnixTimeSpanConverter), true)]
+        [JsonProperty("timestamp"), JsonConverter(typeof(UnixTimeSpanConverter), false)]
         public TimeSpan Timestamp { get; private set; }
 
         private LeagueMatchTimelineFrameEventCollection GetFromRawEvents()
