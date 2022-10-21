@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
@@ -49,17 +49,17 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline.FrameEvents
         /// <summary>
         /// Unknown type of ward
         /// </summary>
-        Undefined, // UNDEFINED
+        Undefined,
         /// <summary>
         /// Stealth ward
         /// </summary>
-        StealthWard, // YELLOW_TRINKET
+        StealthWard,
         /// <summary>
         /// Control ward
         /// </summary>
-        ControlWard, // CONTROL_WARD
+        ControlWard,
         /// <summary>
-        /// FarsightAlteration
+        /// Farsight Alteration ward
         /// </summary>
         FarsightAlteration // SIGHT_WARD
     }
