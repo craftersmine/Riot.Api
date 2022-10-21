@@ -66,10 +66,12 @@ All features to be implemented
 	- [x] TurrentPlateDestroyed
 	- [x] BuildingKill
     	- [x] check Azir tower type - works as generic tower
-	- [ ] ObjectiveBountyPrestart
-	- [ ] ObjectiveBoundyFinish
+	- [x] ObjectiveBountyPrestart
+	- [x] ObjectiveBoundyFinish
     	- [x] validate existance
-	- [ ] DragonSoulGiven
+	- [x] DragonSoulGiven
 	- [ ] GameEnd
-	- [ ] ChampionTransform
+	- [x] ChampionTransform
 - [ ] move all match/timeline related stuff in separate module
+- [ ] implement timeline participant frame collection methods
+- [ ] implement timeline participant frame info
