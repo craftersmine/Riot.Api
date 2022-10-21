@@ -63,6 +63,9 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
                     case LeagueTimelineFrameEventType.WardPlaced:
                         _events.Add(DeserializeJObjectTo<WardPlacedFrameEvent>(e));
                         break;
+                    case LeagueTimelineFrameEventType.LevelUp:
+                        _events.Add(DeserializeJObjectTo<LevelUpFrameEvent>(e));
+                        break;
                     default:
                         _events.Add(evt);
                         break;
