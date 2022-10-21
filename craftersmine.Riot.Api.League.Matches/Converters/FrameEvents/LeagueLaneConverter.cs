@@ -18,7 +18,7 @@ namespace craftersmine.Riot.Api.League.Matches.Converters.FrameEvents
         {
             if (reader.TokenType == JsonToken.String)
                 if (reader.Value != null)
-                    reader.Value.ToString().GetLeagueLaneFromString();
+                    return reader.Value.ToString().GetLeagueLaneFromString();
             throw new JsonReaderException("Unable to convert value to LeagueLane: " + reader.Value);
         }
 
