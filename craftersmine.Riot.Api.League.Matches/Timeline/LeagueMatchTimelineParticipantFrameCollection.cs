@@ -6,6 +6,6 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
 {
     public class LeagueMatchTimelineParticipantFrameCollection : Dictionary<string, LeagueMatchTimelineParticipantFrame>
     {
-        // TODO (craftersmine): add methods for searching frames
+        // TODO (craftersmine): add methods for getting info by participant ID
     }
 }
