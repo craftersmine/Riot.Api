@@ -66,6 +66,9 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
                     case LeagueTimelineFrameEventType.LevelUp:
                         _events.Add(DeserializeJObjectTo<LevelUpFrameEvent>(e));
                         break;
+                    case LeagueTimelineFrameEventType.ChampionKill:
+                        _events.Add(DeserializeJObjectTo<ChampionKillFrameEvent>(e));
+                        break;
                     default:
                         _events.Add(evt);
                         break;
