@@ -27,6 +27,11 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline.FrameEvents
         [JsonProperty("killerTeamId")]
         public int KillerTeamId { get; private set; }
         /// <summary>
+        /// Gets an array of participants IDs in this match which participated in kill
+        /// </summary>
+        [JsonProperty("assistingParticipantIds")]
+        public int[] AssistingParticipantIds { get; private set; }
+        /// <summary>
         /// Gets a subtype of elite monster which was killed
         /// </summary>
         [JsonProperty("monsterSubType"), JsonConverter(typeof(EliteMonsterSubtypeConverter))]
