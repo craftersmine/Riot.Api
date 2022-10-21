@@ -32,7 +32,7 @@ All features to be implemented
 			- [x] Leagues Experimental API
 		- [ ] LoL Challanges API
 		- [ ] LoL Status API
-		- [ ] Match API
+		- [ ] **Match API** - currently in **WIP**
 			- [x] Get Match IDs and make overloads for filters
 			- [x] Get Match info by ID
 				- [x] Make data objects
@@ -59,9 +59,9 @@ All features to be implemented
 	- [x] ItemSold
 	- [x] WardPlaced
 	- [x] WardKill
-	- [ ] LevelUp
-	- [ ] ChampionKill
-	- [ ] ChampionSpecialKill
+	- [x] LevelUp
+	- [x] ChampionKill
+	- [x] ChampionSpecialKill
 	- [ ] EliteMonsterKill
 	- [ ] TurrentPlateDestroyed
 	- [ ] BuildingKill
@@ -70,3 +70,4 @@ All features to be implemented
 	- [ ] DragonSoulGiven
 	- [ ] GameEnd
 	- [ ] ChampionTransform
+- [ ] move all match/timeline related stuff in separate module
