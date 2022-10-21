@@ -81,6 +81,12 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
                     case LeagueTimelineFrameEventType.BuildingKill:
                         _events.Add(DeserializeJObjectTo<BuildingKillFrameEvent>(e));
                         break;
+                    case LeagueTimelineFrameEventType.ObjectiveBountyFinish:
+                        _events.Add(DeserializeJObjectTo<ObjectiveBountyFinishFrameEvent>(e));
+                        break;
+                    case LeagueTimelineFrameEventType.ObjectiveBountyPrestart:
+                        _events.Add(DeserializeJObjectTo<ObjectiveBountyPrestartFrameEvent>(e));
+                        break;
                     default:
                         _events.Add(evt);
                         break;
