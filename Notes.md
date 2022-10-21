@@ -49,7 +49,7 @@ All features to be implemented
 
 ## Current WIP
 - [ ] perform more research about frame events
-- [ ] implement classes for frame event types
+- [x] implement classes for frame event types
     - [x] Base Class (or unknown event)
     - [x] PauseEnd
 	- [x] SkillLevelUp
@@ -70,7 +70,7 @@ All features to be implemented
 	- [x] ObjectiveBoundyFinish
     	- [x] validate existance
 	- [x] DragonSoulGiven
-	- [ ] GameEnd
+	- [x] GameEnd
 	- [x] ChampionTransform
 - [ ] move all match/timeline related stuff in separate module
 - [ ] implement timeline participant frame collection methods
