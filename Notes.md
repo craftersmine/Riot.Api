@@ -62,7 +62,7 @@ All features to be implemented
 	- [x] LevelUp
 	- [x] ChampionKill
 	- [x] ChampionSpecialKill
-	- [ ] EliteMonsterKill
+	- [x] EliteMonsterKill
 	- [ ] TurrentPlateDestroyed
 	- [ ] BuildingKill
 	- [ ] ObjectiveBountyPrestart
