@@ -61,7 +61,8 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline.FrameEvents
         /// <summary>
         /// Farsight Alteration ward
         /// </summary>
-        FarsightAlteration // SIGHT_WARD
+        FarsightAlteration,
+        TeemoShroom
     }
 
     /// <summary>
@@ -73,6 +74,7 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline.FrameEvents
         private const string StealthWard = "YELLOW_TRINKET";
         private const string ControlWard = "CONTROL_WARD";
         private const string SightWard = "SIGHT_WARD";
+        private const string TeemoShroom = "TEEMO_MUSHROOM";
 
         /// <summary>
         /// Gets a corresponding string for <see cref="WardType"/> value
@@ -89,6 +91,8 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline.FrameEvents
                     return ControlWard;
                 case WardType.FarsightAlteration:
                     return SightWard;
+                case WardType.TeemoShroom:
+                    return TeemoShroom;
                 case WardType.Undefined:
                 default:
                     return Undefined;
@@ -105,6 +109,8 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline.FrameEvents
                     return WardType.ControlWard;
                 case SightWard:
                     return WardType.FarsightAlteration;
+                case TeemoShroom:
+                    return WardType.TeemoShroom;
                 default:
                     return WardType.Undefined;
             }
