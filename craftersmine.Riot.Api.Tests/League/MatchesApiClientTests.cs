@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using craftersmine.Riot.Api.League.Matches;
-using craftersmine.Riot.Api.League.Matches.Timeline;
 using Newtonsoft.Json;
 
 namespace craftersmine.Riot.Api.Tests.League
@@ -16,15 +15,14 @@ namespace craftersmine.Riot.Api.Tests.League
     public class MatchesApiClientTests
     {
         public const string MyPuuid = "XRWOl9NePvqBbDsCBQKMgks13Cyc5KO1N-ZCPE0xr8Yvt58H7JjiWx_jlkF4VSYc31kBYfoKZtSNhA";
-        public const string GameId = "RU_413971566";
+        public const string GameId = "RU_414155060";
         public const string GameMode = "CLASSIC";
-        public const long GameIdLong = 413971566;
+        public const long GameIdLong = 414155060;
         public const int QueueId = 420; // Ranked Solo Queue Summoner Rift
         public const int MapId = 11;
 
         public RiotLeagueMatchApiClient? Client { get; set; }
         public string? ApiKey { get; set; }
-        public string? ParticipantFilePath { get; private set; }
 
         public TestContext? TestContext { get; set; }
 
@@ -32,7 +30,6 @@ namespace craftersmine.Riot.Api.Tests.League
         public void Initialize()
         {
             ApiKey = TestContext?.Properties["ApiKey"]?.ToString();
-            ParticipantFilePath = TestContext?.Properties["ParticipantFilePath"]?.ToString();
             if (string.IsNullOrWhiteSpace(ApiKey))
                 Assert.Fail("No Riot API key provided!");
             Client = new RiotLeagueMatchApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
@@ -102,14 +99,6 @@ namespace craftersmine.Riot.Api.Tests.League
             Assert.AreEqual(10, match.Metadata.Participants.Length, "Match participants count is not 10");
             Assert.AreEqual(GameId, match.Metadata.MatchId, "Match ID is not the same as " + GameId);
             Assert.IsTrue(match.Metadata.Participants.Contains(MyPuuid), "Participants doesn't have " + MyPuuid);
-        }
-        
-        [TestMethod]
-        public async Task GetMatchTimelineByMatchIdTests()
-        {
-            Assert.IsNotNull(Client, "Client is not initialized!");
-            LeagueMatchTimeline match = await Client.GetMatchTimelineByMatchIdAsync(RiotRegion.Europe, GameId);
-            var events = match.Timeline.Frames[6].Events;
         }
     }
 }

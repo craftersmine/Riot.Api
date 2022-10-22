@@ -5,16 +5,18 @@ using System.Drawing;
 using System.Threading.Tasks;
 using craftersmine.Riot.Api.Common;
 using craftersmine.Riot.Api.Common.Utils;
-using craftersmine.Riot.Api.League.Matches.Timeline;
 
 namespace craftersmine.Riot.Api.League.Matches
 {
     /// <summary>
-    /// Represents a Riot Match v4 API
+    /// Represents a Riot Match v5 API
     /// </summary>
     public class RiotLeagueMatchApiClient : RiotApiClient
     {
-        private const string ApiEndpointRoot = "/lol/match/v5/matches";
+        /// <summary>
+        /// Gets a root for Riot Match v5 API endpoints
+        /// </summary>
+        protected const string ApiEndpointRoot = "/lol/match/v5/matches";
 
         /// <summary>
         /// Creates a new instance of <see cref="RiotLeagueMatchApiClient"/> instance
@@ -227,18 +229,6 @@ namespace craftersmine.Riot.Api.League.Matches
 
             LeagueMatch match = await Client.Get<LeagueMatch>(endpoint, null);
             return match;
-        }
-
-        public async Task<LeagueMatchTimeline> GetMatchTimelineByMatchIdAsync(RiotRegion region, string matchId)
-        {
-            if (string.IsNullOrWhiteSpace(matchId))
-                throw new ArgumentNullException(nameof(matchId));
-
-            string endpoint =
-                UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, matchId, "/timeline"));
-
-            LeagueMatchTimeline timeline = await Client.Get<LeagueMatchTimeline>(endpoint, null);
-            return timeline;
         }
     }
 }

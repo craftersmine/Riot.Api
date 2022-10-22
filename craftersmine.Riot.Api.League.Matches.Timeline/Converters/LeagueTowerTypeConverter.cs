@@ -1,31 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using craftersmine.Riot.Api.League.Matches.Timeline.FrameEvents;
 using Newtonsoft.Json;
 
-namespace craftersmine.Riot.Api.Common.Converters
+namespace craftersmine.Riot.Api.League.Matches.Timeline.Converters
 {
-    internal class RiotShardConverter : JsonConverter
+    internal class LeagueTowerTypeConverter : JsonConverter
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            if (value is RiotShards shard)
-                writer.WriteValue(shard.GetShardString());
-            writer.WriteNull();
+            if (value is LeagueTowerType towerType)
+                writer.WriteValue(towerType.GetStringFor());
         }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             if (reader.TokenType == JsonToken.String)
                 if (reader.Value != null)
-                    return reader.Value.ToString().GetShardFromString();
-
-            return RiotShardGame.Unknown;
+                    return reader.Value.ToString().GetLeagueTowerTypeFromString();
+            return LeagueTowerType.None;
         }
 
         public override bool CanConvert(Type objectType)
         {
-            return objectType == typeof(string);
+            return objectType == typeof(LeagueTowerType);
         }
     }
 }

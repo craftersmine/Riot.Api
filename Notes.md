@@ -31,43 +31,32 @@ All features to be implemented
 			- [x] Leagues API
 			- [x] Leagues Experimental API
 		- [ ] LoL Challanges API
-		- [ ] LoL Status API
-		- [ ] **Match API** - currently in **WIP**
+		- [x] Match API
 			- [x] Get Match IDs and make overloads for filters
 			- [x] Get Match info by ID
 				- [x] Make data objects
-			- [ ] Get Match timeline by ID
-				- [ ] Make data objects
+			- [x] Get Match timeline by ID
+				- [x] Make data objects
 		- [ ] Spectator API
 			- [ ] ***info TBD***
 		- [ ] Tournament APIs
 			- [ ] Tournament API
 			- [ ] Tournament Stub API
+	- [ ] Status APIs - ***Currently WIP***
+	- [ ] Valorant APIs
+    	- [ ] ***info TBD***
+	- [ ] Legends of Runterra APIs
+    	- [ ] ***info TBD***
 - [ ] Riot Data Dragon API
 	- [ ] Static data requests from [game constants](https://developer.riotgames.com/docs/lol#general_game-constants) (or from custom Git Repository static JSON files)
 	- [ ] ***More Features TBD***
 
 ## Current WIP
 - [ ] perform more research about frame events
-- [ ] implement classes for frame event types
-    - [x] Base Class (unknown)
-    - [x] PauseEnd
-	- [x] SkillLevelUp
-	- [x] ItemPurchased
-	- [x] ItemDestroyed
-	- [x] ItemUndo
-	- [x] ItemSold
-	- [x] WardPlaced
-	- [x] WardKill
-	- [x] LevelUp
-	- [x] ChampionKill
-	- [x] ChampionSpecialKill
-	- [ ] EliteMonsterKill
-	- [ ] TurrentPlateDestroyed
-	- [ ] BuildingKill
-	- [ ] ObjectiveBountyPrestart
-	- [ ] ObjectiveBoundyPreend ?
-	- [ ] DragonSoulGiven
-	- [ ] GameEnd
-	- [ ] ChampionTransform
-- [ ] move all match/timeline related stuff in separate module
+- [ ] add API settings builder creator method
+- [ ] fix LeagueMatchTimeline frame timespan to milliseconds
+- [ ] create Riot Status APIs DTOs
+    - [x] RiotServiceStatus
+	- [ ] RiotServiceStatusInfo
+	- [ ] RiotServiceStatusContentInfo
+	- [ ] RiotServiceStatusUpdateInfo

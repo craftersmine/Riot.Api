@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace craftersmine.Riot.Api.Common.Converters
+namespace craftersmine.Riot.Api.Status.Converters
 {
-    internal class RiotShardConverter : JsonConverter
+    internal class RiotServiceIncidentSeverityConverter : JsonConverter
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            if (value is RiotShards shard)
-                writer.WriteValue(shard.GetShardString());
+            if (value is RiotServiceIncidentSeverity incidentSeverity)
+                writer.WriteValue(incidentSeverity);
+
             writer.WriteNull();
         }
 
@@ -18,14 +19,13 @@ namespace craftersmine.Riot.Api.Common.Converters
         {
             if (reader.TokenType == JsonToken.String)
                 if (reader.Value != null)
-                    return reader.Value.ToString().GetShardFromString();
-
-            return RiotShardGame.Unknown;
+                    return reader.Value.ToString().GetRiotServiceIncidentSeverityFromString();
+            return RiotServiceIncidentSeverity.Unknown;
         }
 
         public override bool CanConvert(Type objectType)
         {
-            return objectType == typeof(string);
+            return objectType == typeof(RiotServiceIncidentSeverity);
         }
     }
 }
