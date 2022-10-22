@@ -32,5 +32,21 @@ namespace craftersmine.Riot.Api.Status
             RiotServiceStatus serviceStatus = await Client.Get<RiotServiceStatus>(endpoint, null);
             return serviceStatus;
         }
+
+        public async Task<RiotServiceStatus> GetLoRStatusForRegionAsync(RiotShards serverRegion)
+        {
+            if (serverRegion == RiotShards.Unknown || serverRegion == RiotShards.ValorantAsiaPacific ||
+                serverRegion == RiotShards.ValorantBrazil || serverRegion == RiotShards.ValorantEurope ||
+                serverRegion == RiotShards.ValorantKorea || serverRegion == RiotShards.ValorantLatinAmerica ||
+                serverRegion == RiotShards.ValorantNorthAmerica)
+                throw new ArgumentException("Unknown server region selected to fetch Legends of Runeterra status",
+                    nameof(serverRegion));
+
+            string endpoint =
+                UriUtils.GetAddress(serverRegion, UriUtils.JoinEndpoints("/lor/status/v1", "platform-data"));
+            
+            RiotServiceStatus serviceStatus = await Client.Get<RiotServiceStatus>(endpoint, null);
+            return serviceStatus;
+        }
     }
 }
