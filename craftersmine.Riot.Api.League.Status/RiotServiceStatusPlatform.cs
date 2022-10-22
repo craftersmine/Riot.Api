@@ -47,7 +47,7 @@ namespace craftersmine.Riot.Api.Status
     /// <summary>
     /// Contains static extension methods for <see cref="RiotServiceStatusPlatform"/>
     /// </summary>
-    public static class RiotServicePlatformExtensions
+    public static class RiotServiceStatusPlatformExtensions
     {
         private const string Windows = "windows";
         private const string MacOs = "macos";
@@ -86,7 +86,7 @@ namespace craftersmine.Riot.Api.Status
             }
         }
 
-        internal static RiotServiceStatusPlatform GetRiotServicePlatformFromString(this string str)
+        internal static RiotServiceStatusPlatform GetRiotServiceStatusPlatformFromString(this string str)
         {
             switch (str)
             {
