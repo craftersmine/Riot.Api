@@ -72,6 +72,8 @@ All features to be implemented
 	- [x] DragonSoulGiven
 	- [x] GameEnd
 	- [x] ChampionTransform
-- [ ] move all match/timeline related stuff in separate module
-- [ ] implement timeline participant frame collection methods
-- [ ] implement timeline participant frame info
+- [x] move all match/timeline related stuff in separate module
+- [x] implement timeline participant frame collection methods
+- [x] implement timeline participant frame info
+- [ ] add API settings builder creator method
+- [ ] fix LeagueMatchTimeline frame timespan to milliseconds
