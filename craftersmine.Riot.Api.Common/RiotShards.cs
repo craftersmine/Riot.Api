@@ -90,6 +90,16 @@ namespace craftersmine.Riot.Api.Common
             }
         }
 
+        /// <summary>
+        /// Gets a corresponding address for specified <see cref="RiotShards"/> value
+        /// </summary>
+        /// <param name="shard">Riot Active Shard value</param>
+        /// <returns>An URI for specified <see cref="RiotShards"/> value</returns>
+        public static string GetAddressFor(this RiotShards shard)
+        {
+            return $"https://{shard.GetShardString()}.api.riotgames.com/";
+        }
+
         internal static RiotShards GetShardFromString(this string str)
         {
             switch (str.ToLower())
