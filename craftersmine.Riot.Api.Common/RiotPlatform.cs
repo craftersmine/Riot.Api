@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -53,6 +53,10 @@ namespace craftersmine.Riot.Api.Common
         /// Republic of Korea region
         /// </summary>
         Korea,
+        /// <summary>
+        /// Public Beta Environment server
+        /// </summary>
+        Pbe
     }
 
     /// <summary>
@@ -158,6 +162,8 @@ namespace craftersmine.Riot.Api.Common
                     return RiotPlatform.Japan;
                 case Constants.LolKrRegion:
                     return RiotPlatform.Korea;
+                case Constants.LolPbe1Region:
+                    return RiotPlatform.Pbe;
                 default:
                     throw new ArgumentException("Unknown Riot Platform passed in!", nameof(str));
             }
