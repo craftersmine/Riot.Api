@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.League.Matches.Timeline", "craftersmine.Riot.Api.League.Matches.Timeline\craftersmine.Riot.Api.League.Matches.Timeline.csproj", "{A39B5F75-0B2D-4AC6-81A3-1CE15183470D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{3494899A-BD63-40CA-97BA-F96C8E00F6A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3494899A-BD63-40CA-97BA-F96C8E00F6A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3494899A-BD63-40CA-97BA-F96C8E00F6A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A39B5F75-0B2D-4AC6-81A3-1CE15183470D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A39B5F75-0B2D-4AC6-81A3-1CE15183470D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A39B5F75-0B2D-4AC6-81A3-1CE15183470D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A39B5F75-0B2D-4AC6-81A3-1CE15183470D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
