@@ -9,72 +9,17 @@ namespace craftersmine.Riot.Api.Common.Converters
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            if (value is RiotShards)
-            {
-                switch ((RiotShards) value)
-                {
-                    case RiotShards.LoREurope:
-                        writer.WriteValue(Constants.ShardLoREurope);
-                        break;
-                    case RiotShards.LoRAmericas:
-                        writer.WriteValue(Constants.ShardLoRAmericas);
-                        break;
-                    case RiotShards.LoRAsiaPacific:
-                        writer.WriteValue(Constants.ShardLoRAsiaPacific);
-                        break;
-                    case RiotShards.ValorantEurope:
-                        writer.WriteValue(Constants.ShardValorantEurope);
-                        break;
-                    case RiotShards.ValorantNorthAmerica:
-                        writer.WriteValue(Constants.ShardValorantNorthAmerica);
-                        break;
-                    case RiotShards.ValorantLatinAmerica:
-                        writer.WriteValue(Constants.ShardValorantLatinAmerica);
-                        break;
-                    case RiotShards.ValorantAsiaPacific:
-                        writer.WriteValue(Constants.ShardValorantAsiaPacific);
-                        break;
-                    case RiotShards.ValorantBrazil:
-                        writer.WriteValue(Constants.ShardValorantBrazil);
-                        break;
-                    case RiotShards.ValorantKorea:
-                        writer.WriteValue(Constants.ShardValorantKorea);
-                        break;
-                    default:
-                        throw new ArgumentException("Unknown shard game selected!", nameof(value));
-                }
-            }
+            if (value is RiotShards shard)
+                writer.WriteValue(shard.GetShardString());
+            writer.WriteNull();
         }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             if (reader.TokenType == JsonToken.String)
-            {
-                switch (reader.Value)
-                {
-                    case Constants.ShardLoREurope:
-                        return RiotShards.LoREurope;
-                    case Constants.ShardLoRAmericas:
-                        return RiotShards.LoRAmericas;
-                    case Constants.ShardLoRAsiaPacific:
-                        return RiotShards.LoRAsiaPacific;
-                    case Constants.ShardValorantEurope:
-                        return RiotShards.ValorantEurope;
-                    case Constants.ShardValorantNorthAmerica:
-                        return RiotShards.ValorantNorthAmerica;
-                    case Constants.ShardValorantLatinAmerica:
-                        return RiotShards.ValorantLatinAmerica;
-                    case Constants.ShardValorantAsiaPacific:
-                        return RiotShards.ValorantAsiaPacific;
-                    case Constants.ShardValorantBrazil:
-                        return RiotShards.ValorantBrazil;
-                    case Constants.ShardValorantKorea:
-                        return RiotShards.ValorantKorea;
-                    default:
-                        return RiotShards.Unknown;
-                }
-            }
-            
+                if (reader.Value != null)
+                    return reader.Value.ToString().GetShardFromString();
+
             return RiotShardGame.Unknown;
         }
 
