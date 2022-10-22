@@ -43,6 +43,10 @@ All features to be implemented
 		- [ ] Tournament APIs
 			- [ ] Tournament API
 			- [ ] Tournament Stub API
+	- [ ] Valorant APIs
+    	- [ ] ***info TBD***
+	- [ ] Legends of Runterra APIs
+    	- [ ] ***info TBD***
 - [ ] Riot Data Dragon API
 	- [ ] Static data requests from [game constants](https://developer.riotgames.com/docs/lol#general_game-constants) (or from custom Git Repository static JSON files)
 	- [ ] ***More Features TBD***
