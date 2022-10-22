@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using craftersmine.Riot.Api.Common;
 
 namespace craftersmine.Riot.Api.Status
 {
+    /// <summary>
+    /// Represents a Riot Service platform
+    /// </summary>
     public enum RiotServicePlatform
     {
         /// <inheritdoc cref="Common.RiotPlatform.Brazil"/>
@@ -27,8 +31,10 @@ namespace craftersmine.Riot.Api.Status
         LeagueTr1,
         /// <inheritdoc cref="Common.RiotPlatform.Japan"/>
         LeagueJp1,
-        /// <inheritdoc cref="Common.RiotPlatform.Korea"/>
-        LeagueKr,
+        /// <summary>
+        /// League of Legends or Valorant Korean Server
+        /// </summary>
+        LeagueOrValorantKr,
         /// <summary>
         /// Public Beta Environment server
         /// </summary>
@@ -88,28 +94,30 @@ namespace craftersmine.Riot.Api.Status
                     return Constants.LolTr1Region;
                 case RiotServicePlatform.LeagueJp1:
                     return Constants.LolJp1Region;
-                case RiotServicePlatform.LeagueKr:
-                    return Constants.LolKrRegion;
+                case RiotServicePlatform.LeagueOrValorantKr:
+                    return Constants.LolValorantKrRegion;
                 case RiotServicePlatform.LeaguePbe:
                     return Constants.LolPbe1Region;
+
                 case RiotServicePlatform.ValorantEurope:
-                    return Constants.ShardValorantEurope;
+                    return Constants.ShardValorantEurope.ToUpper();
                 case RiotServicePlatform.ValorantNorthAmerica:
-                    return Constants.ShardValorantNorthAmerica;
+                    return Constants.ShardValorantNorthAmerica.ToUpper();
                 case RiotServicePlatform.ValorantLatinAmerica:
-                    return Constants.ShardValorantLatinAmerica;
+                    return Constants.ShardValorantLatinAmerica.ToUpper();
                 case RiotServicePlatform.ValorantKorea:
-                    return Constants.ShardValorantKorea;
+                    return Constants.ShardValorantKorea.ToUpper();
                 case RiotServicePlatform.ValorantBrazil:
-                    return Constants.ShardValorantBrazil;
+                    return Constants.ShardValorantBrazil.ToUpper();
                 case RiotServicePlatform.ValorantAsiaPacific:
-                    return Constants.ShardValorantAsiaPacific;
+                    return Constants.ShardValorantAsiaPacific.ToUpper();
+
                 case RiotServicePlatform.LoREurope:
-                    return Constants.ShardLoREurope;
+                    return Constants.ShardLoREuropeU;
                 case RiotServicePlatform.LoRAmericas:
-                    return Constants.ShardLoRAmericas;
+                    return Constants.ShardLoRAmericasU;
                 case RiotServicePlatform.LoRAsiaPacific:
-                    return Constants.ShardLoRAsiaPacific;
+                    return Constants.ShardLoRAsiaPacificU;
                 default:
                     throw new ArgumentException("Unknown value selected for service platform", nameof(platform));
             }
@@ -139,31 +147,28 @@ namespace craftersmine.Riot.Api.Status
                     return RiotServicePlatform.LeagueTr1;
                 case Constants.LolJp1Region:
                     return RiotServicePlatform.LeagueJp1;
-                case Constants.LolKrRegion:
-                    return RiotServicePlatform.LeagueKr;
+                case Constants.LolValorantKrRegion:
+                    return RiotServicePlatform.LeagueOrValorantKr;
                 case Constants.LolPbe1Region:
                     return RiotServicePlatform.LeaguePbe;
-                case Constants.ShardValorantEurope:
-                    return RiotServicePlatform.ValorantEurope;
-                case Constants.ShardValorantNorthAmerica:
-                    return RiotServicePlatform.ValorantNorthAmerica;
-                case Constants.ShardValorantLatinAmerica:
-                    return RiotServicePlatform.ValorantLatinAmerica;
-                case Constants.ShardValorantKorea:
-                    return RiotServicePlatform.ValorantKorea;
-                case Constants.ShardValorantBrazil:
-                    return RiotServicePlatform.ValorantBrazil;
-                case Constants.ShardValorantAsiaPacific:
-                    return RiotServicePlatform.ValorantAsiaPacific;
-                case Constants.ShardLoREurope:
+                case Constants.ShardLoREuropeU:
                     return RiotServicePlatform.LoREurope;
-                case Constants.ShardLoRAmericas:
+                case Constants.ShardLoRAmericasU:
                     return RiotServicePlatform.LoRAmericas;
-                case Constants.ShardLoRAsiaPacific:
+                case Constants.ShardLoRAsiaPacificU:
                     return RiotServicePlatform.LoRAsiaPacific;
-                default:
-                    throw new ArgumentException("Unknown Riot service platform string: " + str, nameof(str));
+                case Constants.ShardValorantEuropeU:
+                    return RiotServicePlatform.ValorantEurope;
+                case Constants.ShardValorantNorthAmericaU:
+                    return RiotServicePlatform.ValorantNorthAmerica;
+                case Constants.ShardValorantLatinAmericaU:
+                    return RiotServicePlatform.ValorantLatinAmerica;
+                case Constants.ShardValorantBrazilU:
+                    return RiotServicePlatform.ValorantBrazil;
+                case Constants.ShardValorantAsiaPacificU:
+                    return RiotServicePlatform.ValorantAsiaPacific;
             }
+            throw new ArgumentException("Unknown Riot service platform string: " + str, nameof(str));
         }
     }
 }
