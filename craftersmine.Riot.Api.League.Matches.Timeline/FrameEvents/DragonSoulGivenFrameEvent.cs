@@ -17,6 +17,5 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline.FrameEvents
         /// </summary>
         [JsonProperty("name")]
         public string Name { get; private set; }
-        // TODO (craftersmine): add enum for dragon soul name?
     }
 }
