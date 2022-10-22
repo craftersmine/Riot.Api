@@ -16,8 +16,10 @@ namespace craftersmine.Riot.Api.Status
         public RiotPlatform ServerId { get; private set; }
         [JsonProperty("name")] public string ServerName { get; private set; }
         public CultureInfo[] ServerLocales => GetCultureInfosFromLocalesStrings();
-        public RiotServiceStatusInfo[] Maintenances { get; private set; }
-        public RiotServiceStatusInfo[] Incidents { get; private set; }
+        [JsonProperty("maintenances")]
+        public RiotServiceStatusInfoCollection Maintenances { get; private set; }
+        [JsonProperty("incidents")]
+        public RiotServiceStatusInfoCollection Incidents { get; private set; }
 
         private CultureInfo[] GetCultureInfosFromLocalesStrings()
         {
