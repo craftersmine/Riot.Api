@@ -13,7 +13,9 @@ namespace craftersmine.Riot.Api.Tests.League
     [TestClass]
     public class StatusApiClientTests
     {
-        public const RiotPlatform Region = RiotPlatform.EuropeNordicEast;
+        public const RiotPlatform LeagueRegion = RiotPlatform.Russia;
+        public const RiotShards ValorantShard = RiotShards.ValorantEurope;
+        public const RiotShards LoRShard = RiotShards.LoREurope;
 
         public RiotServiceStatusApiClient? Client { get; set; }
         public string? ApiKey { get; set; }
@@ -33,7 +35,9 @@ namespace craftersmine.Riot.Api.Tests.League
         public async Task GetServerStatus()
         {
             Assert.IsNotNull(Client, "Client is not initialized!");
-            RiotServiceStatus status = await Client.GetLeagueStatusForRegionAsync(Region);
+            RiotServiceStatus leagueStatus = await Client.GetLeagueStatusForRegionAsync(LeagueRegion);
+            RiotServiceStatus valorantStatus = await Client.GetValorantStatusForRegionAsync(ValorantShard);
+            RiotServiceStatus loRStatus = await Client.GetLoRStatusForRegionAsync(LoRShard);
         }
     }
 }
