@@ -74,7 +74,7 @@ namespace craftersmine.Riot.Api.Common
 
         #endregion
 
-        #region LoL server status regions
+        #region Server status regions
 
         public const string LolBr1Region = "BR1";
         public const string LolEun1Region = "EUN1";
@@ -86,6 +86,18 @@ namespace craftersmine.Riot.Api.Common
         public const string LolTr1Region = "TR1";
         public const string LolJp1Region = "JP1";
         public const string LolPbe1Region = "PBE1";
+        public const string LolValorantKrRegion = "KR";
+        
+        public const string ShardValorantEuropeU = "EU";
+        public const string ShardValorantNorthAmericaU = "NA";
+        public const string ShardValorantLatinAmericaU = "LATAM";
+        public const string ShardValorantKoreaU = "KR";
+        public const string ShardValorantBrazilU = "BR";
+        public const string ShardValorantAsiaPacificU = "AP";
+
+        public const string ShardLoREuropeU = "Europe";
+        public const string ShardLoRAmericasU = "Americas";
+        public const string ShardLoRAsiaPacificU = "APAC";
 
         #endregion
     }
