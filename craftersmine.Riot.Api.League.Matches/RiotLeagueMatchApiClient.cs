@@ -9,7 +9,7 @@ using craftersmine.Riot.Api.Common.Utils;
 namespace craftersmine.Riot.Api.League.Matches
 {
     /// <summary>
-    /// Represents a Riot Match v4 API
+    /// Represents a Riot Match v5 API
     /// </summary>
     public class RiotLeagueMatchApiClient : RiotApiClient
     {
