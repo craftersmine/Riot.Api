@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
@@ -13,7 +13,10 @@ namespace craftersmine.Riot.Api.League.Matches
     /// </summary>
     public class RiotLeagueMatchApiClient : RiotApiClient
     {
-        private const string ApiEndpointRoot = "/lol/match/v5/matches";
+        /// <summary>
+        /// Gets a root for Riot Match v5 API endpoints
+        /// </summary>
+        protected const string ApiEndpointRoot = "/lol/match/v5/matches";
 
         /// <summary>
         /// Creates a new instance of <see cref="RiotLeagueMatchApiClient"/> instance
