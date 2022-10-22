@@ -58,3 +58,5 @@ All features to be implemented
 - [ ] create Riot Status APIs DTOs
     - [x] RiotServiceStatus
 	- [ ] RiotServiceStatusInfo
+	- [ ] RiotServiceStatusContentInfo
+	- [ ] RiotServiceStatusUpdateInfo
