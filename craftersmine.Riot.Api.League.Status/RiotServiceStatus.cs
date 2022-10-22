@@ -8,16 +8,35 @@ using Newtonsoft.Json;
 
 namespace craftersmine.Riot.Api.Status
 {
+    /// <summary>
+    /// Represents a Riot Service Status information
+    /// </summary>
     public class RiotServiceStatus
     {
         [JsonProperty("locales")]
         private string[] ServerLocalesStrings { get; set; }
+
+        /// <summary>
+        /// Gets a Riot Games Platform ID on which incident happened
+        /// </summary>
         [JsonProperty("id"), JsonConverter(typeof(RiotPlatformAsLeagueRegionConverter))]
         public RiotPlatform ServerId { get; private set; }
+        /// <summary>
+        /// Gets a human-readable name of affected server
+        /// </summary>
         [JsonProperty("name")] public string ServerName { get; private set; }
+        /// <summary>
+        /// Gets an array of <see cref="CultureInfo"/> of available messages localizations
+        /// </summary>
         public CultureInfo[] ServerLocales => GetCultureInfosFromLocalesStrings();
+        /// <summary>
+        /// Gets a collection of currently ongoing maintenances
+        /// </summary>
         [JsonProperty("maintenances")]
         public RiotServiceStatusInfoCollection Maintenances { get; private set; }
+        /// <summary>
+        /// Gets a collection of current incidents which are not currently resolved
+        /// </summary>
         [JsonProperty("incidents")]
         public RiotServiceStatusInfoCollection Incidents { get; private set; }
 
