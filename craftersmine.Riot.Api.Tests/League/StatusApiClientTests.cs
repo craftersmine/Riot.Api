@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using craftersmine.Riot.Api.League.Status;
+using craftersmine.Riot.Api.Status;
 
 namespace craftersmine.Riot.Api.Tests.League
 {
