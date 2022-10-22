@@ -32,12 +32,12 @@ All features to be implemented
 			- [x] Leagues Experimental API
 		- [ ] LoL Challanges API
 		- [ ] LoL Status API
-		- [ ] **Match API** - currently in **WIP**
+		- [x] Match API
 			- [x] Get Match IDs and make overloads for filters
 			- [x] Get Match info by ID
 				- [x] Make data objects
-			- [ ] Get Match timeline by ID
-				- [ ] Make data objects
+			- [x] Get Match timeline by ID
+				- [x] Make data objects
 		- [ ] Spectator API
 			- [ ] ***info TBD***
 		- [ ] Tournament APIs
