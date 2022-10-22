@@ -28,6 +28,17 @@ namespace craftersmine.Riot.Api.Common.Utils
             return region.GetAddressFor() + endpoint;
         }
 
+        public static string GetAddress(RiotShards shard, string endpoint)
+        {
+            if (string.IsNullOrWhiteSpace(endpoint))
+                throw new ArgumentNullException(nameof(endpoint));
+
+            if (endpoint.StartsWith("/"))
+                endpoint = endpoint.Substring(1);
+
+            return shard.GetAddressFor() + endpoint;
+        }
+
         public static string JoinEndpoints(params string[] endpointsPaths)
         {
             string endpoint = string.Empty;
