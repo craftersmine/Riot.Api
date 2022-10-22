@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Text;
 using craftersmine.Riot.Api.Common;
 using craftersmine.Riot.Api.Common.Converters;
+using craftersmine.Riot.Api.Status.Converters;
 using Newtonsoft.Json;
 
 namespace craftersmine.Riot.Api.Status
@@ -19,8 +20,8 @@ namespace craftersmine.Riot.Api.Status
         /// <summary>
         /// Gets a Riot Games Platform ID on which incident happened
         /// </summary>
-        [JsonProperty("id"), JsonConverter(typeof(RiotPlatformAsLeagueRegionConverter))]
-        public RiotPlatform ServerId { get; private set; }
+        [JsonProperty("id"), JsonConverter(typeof(RiotServicePlatformConverter))]
+        public RiotServicePlatform ServerId { get; private set; }
         /// <summary>
         /// Gets a human-readable name of affected server
         /// </summary>
