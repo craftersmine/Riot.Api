@@ -42,7 +42,7 @@ All features to be implemented
 		- [ ] Tournament APIs
 			- [ ] Tournament API
 			- [ ] Tournament Stub API
-	- [ ] Status APIs - ***Currently WIP***
+	- [x] Status APIs
 	- [ ] Valorant APIs
     	- [ ] ***info TBD***
 	- [ ] Legends of Runterra APIs
