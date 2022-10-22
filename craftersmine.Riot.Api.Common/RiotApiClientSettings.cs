@@ -48,6 +48,25 @@ namespace craftersmine.Riot.Api.Common
         public RiotApiClientSettingsBuilder() => Settings = new RiotApiClientSettings();
 
         /// <summary>
+        /// Creates a new empty instance of <see cref="RiotApiClientSettingsBuilder"/>
+        /// </summary>
+        /// <returns></returns>
+        public static RiotApiClientSettingsBuilder CreateSettingsBuilder()
+        {
+            return new RiotApiClientSettingsBuilder();
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="RiotApiClientSettingsBuilder"/> with specified Riot Games API key
+        /// </summary>
+        /// <param name="apiKey">Riot Games API key</param>
+        /// <returns></returns>
+        public static RiotApiClientSettingsBuilder CreateSettingsBuilder(string apiKey)
+        {
+            return new RiotApiClientSettingsBuilder().UseApiKey(apiKey);
+        }
+
+        /// <summary>
         /// Returns built settings
         /// </summary>
         /// <returns></returns>
