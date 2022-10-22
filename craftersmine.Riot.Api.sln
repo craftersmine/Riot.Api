@@ -33,7 +33,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.League.Matches.Timeline", "craftersmine.Riot.Api.League.Matches.Timeline\craftersmine.Riot.Api.League.Matches.Timeline.csproj", "{A39B5F75-0B2D-4AC6-81A3-1CE15183470D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.League.Status", "craftersmine.Riot.Api.League.Status\craftersmine.Riot.Api.League.Status.csproj", "{1D4BACE4-3172-4E33-9672-7C84A69F9B8E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.Status", "craftersmine.Riot.Api.League.Status\craftersmine.Riot.Api.Status.csproj", "{1D4BACE4-3172-4E33-9672-7C84A69F9B8E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D462FE98-C60E-4D81-A5DC-306CC24E9DB1}"
 EndProject

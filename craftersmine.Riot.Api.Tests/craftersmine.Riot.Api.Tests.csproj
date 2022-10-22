@@ -24,6 +24,7 @@
     <ProjectReference Include="..\craftersmine.Riot.Api.League.Mastery\craftersmine.Riot.Api.League.Mastery.csproj" />
     <ProjectReference Include="..\craftersmine.Riot.Api.League.Matches.Timeline\craftersmine.Riot.Api.League.Matches.Timeline.csproj" />
     <ProjectReference Include="..\craftersmine.Riot.Api.League.Matches\craftersmine.Riot.Api.League.Matches.csproj" />
+    <ProjectReference Include="..\craftersmine.Riot.Api.League.Status\craftersmine.Riot.Api.Status.csproj" />
     <ProjectReference Include="..\craftersmine.Riot.Api.League.SummonerLeagues\craftersmine.Riot.Api.League.SummonerLeagues.csproj" />
     <ProjectReference Include="..\craftersmine.Riot.Api.League.Summoner\craftersmine.Riot.Api.League.Summoner.csproj" />
   </ItemGroup>
