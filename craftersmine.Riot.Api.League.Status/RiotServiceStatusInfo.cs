@@ -65,7 +65,7 @@ namespace craftersmine.Riot.Api.Status
             RiotServiceStatusPlatform flags = RiotServiceStatusPlatform.Unknown;
             foreach (var platform in PlatformsStrings)
             {
-                flags |= platform.GetRiotServicePlatformFromString();
+                flags |= platform.GetRiotServiceStatusPlatformFromString();
             }
 
             return flags;
