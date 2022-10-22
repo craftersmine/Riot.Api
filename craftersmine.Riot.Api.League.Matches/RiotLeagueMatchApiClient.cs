@@ -5,7 +5,6 @@ using System.Drawing;
 using System.Threading.Tasks;
 using craftersmine.Riot.Api.Common;
 using craftersmine.Riot.Api.Common.Utils;
-using craftersmine.Riot.Api.League.Matches.Timeline;
 
 namespace craftersmine.Riot.Api.League.Matches
 {
