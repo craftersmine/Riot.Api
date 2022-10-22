@@ -31,7 +31,7 @@ All features to be implemented
 			- [x] Leagues API
 			- [x] Leagues Experimental API
 		- [ ] LoL Challanges API
-		- [ ] LoL Status API
+		- [ ] LoL Status API - ***Currently WIP***
 		- [x] Match API
 			- [x] Get Match IDs and make overloads for filters
 			- [x] Get Match info by ID
