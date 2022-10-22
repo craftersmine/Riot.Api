@@ -53,10 +53,6 @@ namespace craftersmine.Riot.Api.Common
         /// Republic of Korea region
         /// </summary>
         Korea,
-        /// <summary>
-        /// Public Beta Environment server
-        /// </summary>
-        Pbe
     }
 
     /// <summary>
@@ -140,39 +136,28 @@ namespace craftersmine.Riot.Api.Common
         {
             switch (str)
             {
-                case Constants.LolBr1Region:
                 case Constants.LolBrRegion:
                     return RiotPlatform.Brazil;
                 case Constants.LolEuneRegion:
-                case Constants.LolEun1Region:
                     return RiotPlatform.EuropeNordicEast;
-                case Constants.LolEuw1Region:
                 case Constants.LolEuwRegion:
                     return RiotPlatform.EuropeWest;
-                case Constants.LolLa1Region:
                 case Constants.LolLanRegion:
                     return RiotPlatform.LatinAmericaNorth;
-                case Constants.LolLa2Region:
                 case Constants.LolLasRegion:
                     return RiotPlatform.LatinAmericaSouth;
-                case Constants.LolNa1Region:
                 case Constants.LolNaRegion:
                     return RiotPlatform.NorthAmerica;
-                case Constants.LolOc1Region:
                 case Constants.LolOceRegion:
                     return RiotPlatform.Oceania;
                 case Constants.LolRuRegion:
                     return RiotPlatform.Russia;
-                case Constants.LolTr1Region:
                 case Constants.LolTrRegion:
                     return RiotPlatform.Turkey;
-                case Constants.LolJp1Region:
                 case Constants.LolJpRegion:
                     return RiotPlatform.Japan;
                 case Constants.LolKrRegion:
                     return RiotPlatform.Korea;
-                case Constants.LolPbe1Region:
-                    return RiotPlatform.Pbe;
                 default:
                     throw new ArgumentException("Unknown Riot Platform passed in!", nameof(str));
             }
