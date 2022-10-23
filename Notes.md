@@ -30,7 +30,7 @@ All features to be implemented
 		- [x] Leagues API
 			- [x] Leagues API
 			- [x] Leagues Experimental API
-		- [ ] LoL Challanges API
+		- [ ] Challanges API - ***Currently WIP***
 		- [x] Match API
 			- [x] Get Match IDs and make overloads for filters
 			- [x] Get Match info by ID
@@ -55,8 +55,8 @@ All features to be implemented
 - [ ] perform more research about frame events
 - [ ] add API settings builder creator method
 - [ ] fix LeagueMatchTimeline frame timespan to milliseconds
-- [ ] create Riot Status APIs DTOs
+- [x] create Riot Status APIs DTOs
     - [x] RiotServiceStatus
-	- [ ] RiotServiceStatusInfo
-	- [ ] RiotServiceStatusContentInfo
-	- [ ] RiotServiceStatusUpdateInfo
+	- [x] RiotServiceStatusInfo
+	- [x] RiotServiceStatusContentInfo
+	- [x] RiotServiceStatusUpdateInfo
