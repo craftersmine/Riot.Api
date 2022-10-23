@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
@@ -10,8 +10,8 @@ namespace craftersmine.Riot.Api.League.Challenges
     /// <summary>
     /// Represents a collection of League of Legends challenge localized names and descriptions
     /// </summary>
-    [JsonConverter(typeof(CultureInfoConverter))]
-    public class LeagueChallengeNamesCollection : Dictionary<CultureInfo, LeagueChallengeName>
+    public class LeagueChallengeNamesCollection : Dictionary<string, LeagueChallengeName>
     {
+            {
     }
 }
