@@ -55,7 +55,7 @@ All features to be implemented
 - [ ] perform more research about frame events
 - [ ] implement DTO for player challenges data
     - [ ] player's challenge base values DTO for categories and total
-    - [ ] player's challenge values DTO for challenges (has same values as base DTO, but has challenge ID)
+    - [ ] player's challenge values DTO for challenges (has same values as base DTO, but has challenge ID and achieved time (assuming unix seconds timestamp))
     - [ ] player's client preferences DTO
     - [ ] find info aboud "bannerAccent" property for player client preferences
 - [ ] ***TBD***
