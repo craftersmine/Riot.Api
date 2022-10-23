@@ -18,10 +18,11 @@ namespace craftersmine.Riot.Api.League.ChampionRotations
         public RiotChampionRotationsApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
-        /// 
+        /// Gets current League of Legends champion rotations in specified server
         /// </summary>
-        /// <param name="region"></param>
-        /// <returns></returns>
+        /// <param name="region">League of Legends server region</param>
+        /// <returns>An information about current champion rotations in specified region</returns>
+        /// <exception cref="craftersmine.Riot.Api.Common.Exceptions.RiotApiException">When Riot API request fails</exception>
         public async Task<ChampionRotationsInfo> GetCurrentChampionRotationsForRegionAsync(RiotPlatform region)
         {
             string endpoint =
