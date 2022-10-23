@@ -30,7 +30,7 @@ All features to be implemented
 		- [x] Leagues API
 			- [x] Leagues API
 			- [x] Leagues Experimental API
-		- [ ] Challanges API - ***Currently WIP***
+		- [x] Challanges API
 		- [x] Match API
 			- [x] Get Match IDs and make overloads for filters
 			- [x] Get Match info by ID
@@ -55,5 +55,5 @@ All features to be implemented
 - [ ] find more information about API response objects
     - [ ] perform more research about match timeline frame event types
     - [ ] find info aboud "bannerAccent" property for player client preferences
-- [ ] add XML docs for RiotLeagueChallengesApiClient methods and class
+- [x] add XML docs for RiotLeagueChallengesApiClient methods and class
 - [ ] ***TBD***
