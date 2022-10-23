@@ -14,12 +14,12 @@ namespace craftersmine.Riot.Api.League.Challenges
         /// Gets a total information for challenges of player
         /// </summary>
         [JsonProperty("totalPoints")]
-        public LeagueChallengeBaseInfo TotalPoints { get; private set; }
+        public LeagueChallengeCategoryInfo TotalPoints { get; private set; }
         /// <summary>
         /// Gets an information about challenge categories of player
         /// </summary>
         [JsonProperty("categoryPoints")]
-        public LeagueChallengeCategoryInfo CategoryPoints { get; private set; }
+        public LeagueChallengeCategories CategoryPoints { get; private set; }
         /// <summary>
         /// Gets a collection of challenge infos for player
         /// </summary>
