@@ -37,7 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Statu
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D462FE98-C60E-4D81-A5DC-306CC24E9DB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.League.Challenges", "craftersmine.Riot.Api.League.Challenges\craftersmine.Riot.Api.League.Challenges.csproj", "{9478F99C-D722-4A19-8CDC-C85861F216B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.League.Challenges", "craftersmine.Riot.Api.League.Challenges\craftersmine.Riot.Api.League.Challenges.csproj", "{9478F99C-D722-4A19-8CDC-C85861F216B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.League.Tournament", "craftersmine.Riot.Api.League.Tournament\craftersmine.Riot.Api.League.Tournament.csproj", "{5748BC43-F0F0-4BD5-B988-956CAD18FB71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{9478F99C-D722-4A19-8CDC-C85861F216B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9478F99C-D722-4A19-8CDC-C85861F216B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9478F99C-D722-4A19-8CDC-C85861F216B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5748BC43-F0F0-4BD5-B988-956CAD18FB71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5748BC43-F0F0-4BD5-B988-956CAD18FB71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5748BC43-F0F0-4BD5-B988-956CAD18FB71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5748BC43-F0F0-4BD5-B988-956CAD18FB71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
