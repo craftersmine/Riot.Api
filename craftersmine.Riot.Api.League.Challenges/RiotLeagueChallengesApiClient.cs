@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using craftersmine.Riot.Api.Common;
@@ -87,6 +87,20 @@ namespace craftersmine.Riot.Api.League.Challenges
                 await Client.Get<LeagueChallengeLeaderboardEntryCollection>(endpoint, null);
 
             return leaderboardEntryCollection;
+        }
+
+        public async Task<LeagueChallengePercentiles> GetLeagueChallengePercentilesByChallengeIdAsync(
+            RiotPlatform region, int challengeId)
+        {
+            if (challengeId < 0)
+                throw new ArgumentOutOfRangeException(nameof(challengeId), "League of Legends Challenge ID cannot be less than 0");
+
+            string endpoint = UriUtils.GetAddress(region,
+                UriUtils.JoinEndpoints(ApiEndpointRoot, "challenges", challengeId.ToString(), "percentiles"));
+
+            LeagueChallengePercentiles challengePercentiles =
+                await Client.Get<LeagueChallengePercentiles>(endpoint, null);
+            return challengePercentiles;
         }
     }
 }
