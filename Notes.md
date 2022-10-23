@@ -53,5 +53,9 @@ All features to be implemented
 
 ## Current WIP
 - [ ] perform more research about frame events
-- [x] add API settings builder creator method
-- [x] fix LeagueMatchTimeline frame timespan to milliseconds
+- [ ] implement DTO for player challenges data
+    - [ ] player's challenge base values DTO for categories and total
+    - [ ] player's challenge values DTO for challenges (has same values as base DTO, but has challenge ID)
+    - [ ] player's client preferences DTO
+    - [ ] find info aboud "bannerAccent" property for player client preferences
+- [ ] ***TBD***
