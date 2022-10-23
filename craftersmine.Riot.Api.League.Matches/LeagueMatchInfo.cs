@@ -52,8 +52,10 @@ namespace craftersmine.Riot.Api.League.Matches
         /// <summary>
         /// Gets a League of Legends server region where game was played
         /// </summary>
+        // BUG (craftersmine): would return wrong value or even crash.
+        // NEEDTEST (craftersmine): test EUN1 region
         [JsonProperty("platformId"), JsonConverter(typeof(RiotPlatformAsLeagueRegionConverter))]
-        public RiotPlatform GameRegion { get; private set; }
+        public RiotPlatform GameRegion { get; private set; } 
 
         /// <summary>
         /// Gets a <see cref="DateTime"/> timestamp when game was created on League of Legends servers
@@ -79,7 +81,7 @@ namespace craftersmine.Riot.Api.League.Matches
         /// <summary>
         /// Gets a <see cref="TimeSpan"/> of the game duration
         /// </summary>
-        [JsonProperty("gameDuration"), JsonConverter(typeof(UnixTimeSpanConverter), true)] // BUG: incorrect value, try seconds
+        [JsonProperty("gameDuration"), JsonConverter(typeof(UnixTimeSpanConverter), true)]
         public TimeSpan GameDuration { get; private set; }
 
         /// <summary>
