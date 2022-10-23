@@ -51,6 +51,8 @@ All features to be implemented
 - [x] add XML docs for RiotLeagueChallengesApiClient methods and class
 - [ ] implement tournament API
     - [ ] implement Tournament DTOs
+        - [x] implement stub DTOs
     - [ ] implement tournemant-stub
     - [ ] implement full tournament API 
+- [ ] test new Matches.LeagueMatchInfo.GameRegion conversion on EUN1 server
 - [ ] ***TBD***
