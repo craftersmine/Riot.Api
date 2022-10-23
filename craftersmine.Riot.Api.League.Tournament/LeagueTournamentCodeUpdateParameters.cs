@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using craftersmine.Riot.Api.League.Tournament.Converters;
@@ -14,7 +14,7 @@ namespace craftersmine.Riot.Api.League.Tournament
         /// <summary>
         /// Gets or sets allowed players by their summoners IDs to participate in tournament
         /// </summary>
-        [JsonProperty("allowedSummonerIds")]
+        [JsonProperty("allowedSummonerIds", NullValueHandling = NullValueHandling.Ignore)]
         public string[] AllowedSummonerIds { get; set; }
         /// <summary>
         /// Gets or sets desired champion pick type for tournament
