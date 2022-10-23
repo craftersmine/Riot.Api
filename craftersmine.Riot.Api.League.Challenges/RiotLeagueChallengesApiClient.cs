@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using craftersmine.Riot.Api.Common;
@@ -20,7 +20,7 @@ namespace craftersmine.Riot.Api.League.Challenges
             return leagueChallenges;
         }
 
-        public async Task<LeagueChallengePercentilesCollection> GetLeagueChallengePercentiles(RiotPlatform region)
+        public async Task<LeagueChallengePercentilesCollection> GetLeagueChallengePercentilesAsync(RiotPlatform region)
         {
             string endpoint =
                 UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "challenges/percentiles"));
@@ -29,7 +29,7 @@ namespace craftersmine.Riot.Api.League.Challenges
             return leagueChallengePercentiles;
         }
 
-        public async Task<LeagueChallenge> GetLeagueChallengeById(RiotPlatform region, int challengeId)
+        public async Task<LeagueChallenge> GetLeagueChallengeByIdAsync(RiotPlatform region, int challengeId)
         {
             if (challengeId < 0)
                 throw new ArgumentOutOfRangeException(nameof(challengeId), "League of Legends Challenge ID cannot be less than 0");
@@ -41,7 +41,7 @@ namespace craftersmine.Riot.Api.League.Challenges
             return challenge;
         }
 
-        public async Task<LeagueChallengeLeaderboardEntryCollection> GetLeagueChallengeLeaderboardByChallengeId(
+        public async Task<LeagueChallengeLeaderboardEntryCollection> GetLeagueChallengeLeaderboardByChallengeIdAsync(
             RiotPlatform region, LeagueChallengeLevel challengeLevel, int challengeId, int amount)
         {
             if (challengeLevel != LeagueChallengeLevel.Master && challengeLevel != LeagueChallengeLevel.Grandmaster &&
@@ -67,7 +67,7 @@ namespace craftersmine.Riot.Api.League.Challenges
             return leaderboardEntryCollection;
         }
 
-        public async Task<LeagueChallengeLeaderboardEntryCollection> GetLeagueChallengeLeaderboardByChallengeId(
+        public async Task<LeagueChallengeLeaderboardEntryCollection> GetLeagueChallengeLeaderboardByChallengeIdAsync(
             RiotPlatform region, LeagueChallengeLevel challengeLevel, int challengeId)
         {
             if (challengeLevel != LeagueChallengeLevel.Master && challengeLevel != LeagueChallengeLevel.Grandmaster &&
