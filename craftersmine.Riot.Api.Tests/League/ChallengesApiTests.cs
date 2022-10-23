@@ -33,5 +33,12 @@ namespace craftersmine.Riot.Api.Tests.League
             Assert.IsNotNull(Client, "Client is not initialized");
             LeagueChallengeCollection challenges = await Client.GetLeagueChallenges(RiotPlatform.Russia);
         }
+
+        [TestMethod]
+        public async Task GetChallengePercentilesTests()
+        {
+            Assert.IsNotNull(Client, "Client is not initialized");
+            LeagueChallengePercentilesCollection challenges = await Client.GetLeagueChallengePercentiles(RiotPlatform.Russia);
+        }
     }
 }
