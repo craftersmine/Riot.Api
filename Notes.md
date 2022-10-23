@@ -53,10 +53,5 @@ All features to be implemented
 
 ## Current WIP
 - [ ] perform more research about frame events
-- [ ] add API settings builder creator method
-- [ ] fix LeagueMatchTimeline frame timespan to milliseconds
-- [x] create Riot Status APIs DTOs
-    - [x] RiotServiceStatus
-	- [x] RiotServiceStatusInfo
-	- [x] RiotServiceStatusContentInfo
-	- [x] RiotServiceStatusUpdateInfo
+- [x] add API settings builder creator method
+- [x] fix LeagueMatchTimeline frame timespan to milliseconds
