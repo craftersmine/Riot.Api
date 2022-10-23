@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using craftersmine.Riot.Api.League.Tournament.Converters;
@@ -31,5 +31,20 @@ namespace craftersmine.Riot.Api.League.Tournament
         /// </summary>
         [JsonProperty("spectatorType"), JsonConverter(typeof(LeagueSpectatorTypeConverter))]
         public LeagueSpectatorType SpectatorType { get; set; }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="LeagueTournamentCodeUpdateParameters"/>
+        /// </summary>
+        /// <param name="allowedSummonerIds">An array of summoners IDs in order to validate if the players are eligible to join the lobby, or <see langword="null"/></param>
+        /// <param name="pickType">Champion pick type</param>
+        /// <param name="mapType">Map type</param>
+        /// <param name="spectatorType">Spectators type</param>
+        public LeagueTournamentCodeUpdateParameters(string[] allowedSummonerIds, LeaguePickType pickType, LeagueMapType mapType, LeagueSpectatorType spectatorType)
+        {
+            AllowedSummonerIds = allowedSummonerIds;
+            PickType = pickType;
+            MapType = mapType;
+            SpectatorType = spectatorType;
+        }
     }
 }
