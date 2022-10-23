@@ -22,6 +22,7 @@ namespace craftersmine.Riot.Api.Status
         /// </summary>
         /// <param name="serverRegion">League of Legends server location</param>
         /// <returns>A status for specified League of Legends server</returns>
+        /// <exception cref="craftersmine.Riot.Api.Common.Exceptions.RiotApiException">When Riot API request fails</exception>
         public async Task<RiotServiceStatus> GetLeagueStatusForRegionAsync(RiotPlatform serverRegion)
         {
             string endpoint =
@@ -36,6 +37,7 @@ namespace craftersmine.Riot.Api.Status
         /// </summary>
         /// <param name="serverRegion">Valorant server location</param>
         /// <returns>A status for specified Valorant server</returns>
+        /// <exception cref="craftersmine.Riot.Api.Common.Exceptions.RiotApiException">When Riot API request fails</exception>
         public async Task<RiotServiceStatus> GetValorantStatusForRegionAsync(RiotShards serverRegion)
         {
             if (serverRegion == RiotShards.Unknown || serverRegion == RiotShards.LoREurope ||
@@ -55,6 +57,7 @@ namespace craftersmine.Riot.Api.Status
         /// </summary>
         /// <param name="serverRegion">Legends of Runeterra server location</param>
         /// <returns>A status for specified Legends of Runeterra server</returns>
+        /// <exception cref="craftersmine.Riot.Api.Common.Exceptions.RiotApiException">When Riot API request fails</exception>
         public async Task<RiotServiceStatus> GetLoRStatusForRegionAsync(RiotShards serverRegion)
         {
             if (serverRegion == RiotShards.Unknown || serverRegion == RiotShards.ValorantAsiaPacific ||
