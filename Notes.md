@@ -52,11 +52,12 @@ All features to be implemented
 	- [ ] ***More Features TBD***
 
 ## Current WIP
-- [ ] perform more research about frame events
+- [ ] find more information about API response objects
+    - [ ] perform more research about match timeline frame event types
+    - [ ] find info aboud "bannerAccent" property for player client preferences
 - [ ] add XML docs for RiotLeagueChallengesApiClient methods and class
-- [ ] implement DTO for player challenges data
+- [x] implement DTO for player challenges data
     - [x] player's challenge base values DTO for categories and total
     - [x] player's challenge values DTO for challenges (has same values as base DTO, but has challenge ID and achieved time (assuming unix seconds timestamp))
     - [x] player's client preferences DTO
-    - [ ] find info aboud "bannerAccent" property for player client preferences
 - [ ] ***TBD***
