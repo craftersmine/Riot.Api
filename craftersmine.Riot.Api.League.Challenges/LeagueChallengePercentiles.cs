@@ -11,6 +11,11 @@ namespace craftersmine.Riot.Api.League.Challenges
     public class LeagueChallengePercentiles
     {
         /// <summary>
+        /// Gets a percentile of players that has unranked challenge badge
+        /// </summary>
+        [JsonProperty("none")]
+        public float None { get; private set; }
+        /// <summary>
         /// Gets a percentile of players that achieved Iron badge
         /// </summary>
         [JsonProperty("iron")]
