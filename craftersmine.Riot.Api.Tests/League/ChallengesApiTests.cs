@@ -16,6 +16,10 @@ namespace craftersmine.Riot.Api.Tests.League
         public const string MyPuuid = "XRWOl9NePvqBbDsCBQKMgks13Cyc5KO1N-ZCPE0xr8Yvt58H7JjiWx_jlkF4VSYc31kBYfoKZtSNhA";
         public const int ChallengesAreHereId = 600012;
         public const int OldFriendId = 501004;
+        public const int SelectedTitleIdInClient = 20100304;
+        public const LeagueChallengeLevel TotalLevel = LeagueChallengeLevel.Gold;
+        public const LeagueChallengeLevel CollectionLevel = LeagueChallengeLevel.Platinum;
+        public const LeagueChallengeLevel OldFriendChallengeLevel = LeagueChallengeLevel.Grandmaster;
 
         public RiotLeagueChallengesApiClient? Client { get; set; }
         public string? ApiKey { get; set; }
@@ -107,6 +111,40 @@ namespace craftersmine.Riot.Api.Tests.League
             Assert.IsTrue(challengePercentiles.Master >= 0.045);
             Assert.IsTrue(challengePercentiles.Grandmaster >= 0.012);
             Assert.IsTrue(challengePercentiles.Challenger >= 0.0025);
+        }
+
+        [TestMethod]
+        public async Task GetPlayerChallengesInfoByPuuidTests()
+        {
+            Assert.IsNotNull(Client, "Client is not initialized");
+            LeagueChallengesPlayerData challengesPlayerData = await Client.GetLeagueChallengesForPlayerByPuuid(RiotPlatform.Russia, MyPuuid);
+            Assert.IsTrue(challengesPlayerData.TotalPoints.CurrentValue > 6800, "Current total value is less than 6800");
+            Assert.AreEqual(28780, challengesPlayerData.TotalPoints.MaxValue, "Max value for total stats is not equal to 28780");
+            Assert.AreEqual(TotalLevel, challengesPlayerData.TotalPoints.Level, "Total level is not equals to " + TotalLevel.GetStringFor());
+            Assert.IsTrue(challengesPlayerData.TotalPoints.Percentile >= 0.100);
+            
+            Assert.IsTrue(challengesPlayerData.CategoryPoints.Collection.CurrentValue > 1200, "Collection current value is less than 1200");
+            Assert.AreEqual(4200, challengesPlayerData.CategoryPoints.Collection.MaxValue, "Collection max value is not equals to 4200");
+            Assert.AreEqual(CollectionLevel, challengesPlayerData.CategoryPoints.Collection.Level,
+                "Collection level is not " + CollectionLevel.GetStringFor());
+            Assert.IsTrue(challengesPlayerData.CategoryPoints.Collection.Percentile >= 0.086, "Collection percentile is less than 0.086");
+
+            LeaguePlayerChallengeInfo oldFriendsChallengeInfo = challengesPlayerData.Challenges[OldFriendId];
+            Assert.IsNotNull(oldFriendsChallengeInfo, "No \"Old friends\" challenge data fetched");
+            Assert.AreEqual(OldFriendId, oldFriendsChallengeInfo.ChallengeId, "\"Old friends\" ID is not " + OldFriendId);
+            Assert.IsTrue(oldFriendsChallengeInfo.AchievedAt >= new DateTime(2022, 6, 28), "\"Old friends\" achieved date is less than 28 jun. 2022");
+            Assert.AreEqual(OldFriendChallengeLevel, oldFriendsChallengeInfo.Level, "\"Old friends\" level is not " + OldFriendChallengeLevel.GetStringFor());
+            Assert.IsTrue(oldFriendsChallengeInfo.Percentile >= 0.0, "\"Old friends\" percentile is less than 0.171");
+            Assert.IsTrue(oldFriendsChallengeInfo.Value >= 7.0, "\"Old friends\" current value is less than 7.0");
+            Assert.IsTrue(oldFriendsChallengeInfo.PlayersInLevel >= 15000, "Players in level " + OldFriendChallengeLevel.GetStringFor() + " of challenge \"Old friends\" is less than 15000");
+            Assert.IsTrue(oldFriendsChallengeInfo.Position >= 10,
+                "Player position in " + OldFriendChallengeLevel.GetStringFor() +
+                " of challenge \"Old friends\" is less than 10");
+
+            LeagueChallengesPlayerClientPreferences clientPreferences = challengesPlayerData.ClientPreferences;
+            Assert.IsTrue(string.IsNullOrWhiteSpace(clientPreferences.BannerAccent), "Banner accent value in client is not empty");
+            Assert.AreEqual(SelectedTitleIdInClient, clientPreferences.TitleId, "Title ID is not for \"Unkillable Demon\"");
+            Assert.IsTrue(clientPreferences.ChallengeTokensIds.Contains(OldFriendId), "Selected challenge tokens does not contain \"Old friends\" token");
         }
     }
 }

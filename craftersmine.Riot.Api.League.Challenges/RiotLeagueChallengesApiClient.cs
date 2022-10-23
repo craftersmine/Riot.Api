@@ -102,5 +102,20 @@ namespace craftersmine.Riot.Api.League.Challenges
                 await Client.Get<LeagueChallengePercentiles>(endpoint, null);
             return challengePercentiles;
         }
+
+        public async Task<LeagueChallengesPlayerData> GetLeagueChallengesForPlayerByPuuid(RiotPlatform region,
+            string puuid)
+        {
+            if (string.IsNullOrWhiteSpace(puuid))
+                throw new ArgumentNullException(nameof(puuid));
+
+            string endpoint =
+                UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "player-data", puuid));
+
+            LeagueChallengesPlayerData challengesPlayerData =
+                await Client.Get<LeagueChallengesPlayerData>(endpoint, null);
+
+            return challengesPlayerData;
+        }
     }
 }
