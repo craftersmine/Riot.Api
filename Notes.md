@@ -39,7 +39,7 @@ All features to be implemented
 				- [x] Make data objects
 		- [ ] Spectator API
 			- [ ] ***info TBD***
-		- [ ] Tournament APIs
+		- [ ] Tournament APIs - ***Currently WIP***
 			- [ ] Tournament API
 			- [ ] Tournament Stub API
 	- [x] Status APIs
@@ -56,4 +56,8 @@ All features to be implemented
     - [ ] perform more research about match timeline frame event types
     - [ ] find info aboud "bannerAccent" property for player client preferences
 - [x] add XML docs for RiotLeagueChallengesApiClient methods and class
+- [ ] implement tournament API
+    - [ ] implement Tournament DTOs
+    - [ ] implement tournemant-stub
+    - [ ] implement full tournament API 
 - [ ] ***TBD***
