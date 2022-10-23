@@ -33,12 +33,12 @@ namespace craftersmine.Riot.Api.League.Challenges
         [JsonProperty("tracking"), JsonConverter(typeof(LeagueChallengeTrackingStateConverter))]
         public LeagueChallengeTrackingState Tracking { get; private set; }
         /// <summary>
-        /// Gets a <see cref="DateTime"/> timestamp when challenge is being started calculated
+        /// Gets a <see cref="DateTime"/> timestamp in GMT timezone when challenge is being started calculated
         /// </summary>
         [JsonProperty("startTimestamp"), JsonConverter(typeof(UnixDateTimeConverter))]
         public DateTime StartTimestamp { get; private set; }
         /// <summary>
-        /// Gets a <see cref="DateTime"/> timestamp when challenge will be stopped being calculated
+        /// Gets a <see cref="DateTime"/> timestamp in GMT timezone when challenge will be stopped being calculated
         /// </summary>
         [JsonProperty("endTimestamp"), JsonConverter(typeof(UnixDateTimeConverter))]
         public DateTime EndTimestamp { get; private set; }
