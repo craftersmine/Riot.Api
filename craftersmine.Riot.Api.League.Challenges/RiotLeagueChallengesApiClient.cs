@@ -18,5 +18,14 @@ namespace craftersmine.Riot.Api.League.Challenges
             LeagueChallengeCollection leagueChallenges = await Client.Get<LeagueChallengeCollection>(endpoint, null);
             return leagueChallenges;
         }
+
+        public async Task<LeagueChallengePercentilesCollection> GetLeagueChallengePercentiles(RiotPlatform region)
+        {
+            string endpoint =
+                UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "challenges/percentiles"));
+
+            LeagueChallengePercentilesCollection leagueChallengePercentiles = await Client.Get<LeagueChallengePercentilesCollection>(endpoint, null);
+            return leagueChallengePercentiles;
+        }
     }
 }
