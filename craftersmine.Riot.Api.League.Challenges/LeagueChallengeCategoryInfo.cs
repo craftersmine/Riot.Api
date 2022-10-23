@@ -1,39 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using craftersmine.Riot.Api.League.Challenges.Converters;
 using Newtonsoft.Json;
 
 namespace craftersmine.Riot.Api.League.Challenges
 {
     /// <summary>
-    /// Represents a League of Legends challenge categories information for player
+    /// Represents basic League of Legends information about challenge for player
     /// </summary>
     public class LeagueChallengeCategoryInfo
     {
         /// <summary>
-        /// Gets a current Imagination challenges category stats for player
+        /// Gets current challenge category value for player
         /// </summary>
-        [JsonProperty("IMAGINATION")]
-        public LeagueChallengeBaseInfo Imagination { get; private set; }
+        [JsonProperty("current")]
+        public int CurrentValue { get; private set; }
         /// <summary>
-        /// Gets a current Teamwork challenges category stats for player
+        /// Gets a maximum value for challenge category that can be achieved
         /// </summary>
-        [JsonProperty("TEAMWORK")]
-        public LeagueChallengeBaseInfo Teamwork { get; private set; }
+        [JsonProperty("max")]
+        public int MaxValue { get; private set; }
         /// <summary>
-        /// Gets a current Expertise challenges category stats for player
+        /// Gets a current percentile on challenge category leaderboard for player position
         /// </summary>
-        [JsonProperty("EXPERTISE")]
-        public LeagueChallengeBaseInfo Expertise { get; private set; }
+        [JsonProperty("percentile")]
+        public float Percentile { get; private set; }
         /// <summary>
-        /// Gets a current Collection challenges category stats for player
+        /// Gets current challenge category level for player
         /// </summary>
-        [JsonProperty("COLLECTION")]
-        public LeagueChallengeBaseInfo Collection { get; private set; }
-        /// <summary>
-        /// Gets a current Veterancy challenges category stats for player
-        /// </summary>
-        [JsonProperty("VETERANCY")]
-        public LeagueChallengeBaseInfo Veterancy { get; private set; }
+        [JsonProperty("level"), JsonConverter(typeof(LeagueChallengeLevelConverter))]
+        public LeagueChallengeLevel Level { get; private set; }
     }
 }
