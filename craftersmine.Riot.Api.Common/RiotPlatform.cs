@@ -107,6 +107,72 @@ namespace craftersmine.Riot.Api.Common
             switch (platform)
             {
                 case RiotPlatform.Brazil:
+                    return Constants.LolBr1Region;
+                case RiotPlatform.EuropeNordicEast:
+                    return Constants.LolEun1Region;
+                case RiotPlatform.EuropeWest:
+                    return Constants.LolEuw1Region;
+                case RiotPlatform.LatinAmericaNorth:
+                    return Constants.LolLa1Region;
+                case RiotPlatform.LatinAmericaSouth:
+                    return Constants.LolLa2Region;
+                case RiotPlatform.NorthAmerica:
+                    return Constants.LolNa1Region;
+                case RiotPlatform.Oceania:
+                    return Constants.LolOc1Region;
+                case RiotPlatform.Russia:
+                    return Constants.LolRuRegion;
+                case RiotPlatform.Turkey:
+                    return Constants.LolTr1Region;
+                case RiotPlatform.Japan:
+                    return Constants.LolJp1Region;
+                case RiotPlatform.Korea:
+                    return Constants.LolKrRegion;
+            }
+            throw new ArgumentException("Unknown Riot Platform passed in!", nameof(platform));
+        }
+
+        internal static RiotPlatform GetRiotPlatformFromString(this string str)
+        {
+            switch (str)
+            {
+                case Constants.LolBr1Region:
+                    return RiotPlatform.Brazil;
+                case Constants.LolEun1Region:
+                    return RiotPlatform.EuropeNordicEast;
+                case Constants.LolEuw1Region:
+                    return RiotPlatform.EuropeWest;
+                case Constants.LolLa1Region:
+                    return RiotPlatform.LatinAmericaNorth;
+                case Constants.LolLa2Region:
+                    return RiotPlatform.LatinAmericaSouth;
+                case Constants.LolNa1Region:
+                    return RiotPlatform.NorthAmerica;
+                case Constants.LolOc1Region:
+                    return RiotPlatform.Oceania;
+                case Constants.LolRuRegion:
+                    return RiotPlatform.Russia;
+                case Constants.LolTr1Region:
+                    return RiotPlatform.Turkey;
+                case Constants.LolJp1Region:
+                    return RiotPlatform.Japan;
+                case Constants.LolKrRegion:
+                    return RiotPlatform.Korea;
+                default:
+                    throw new ArgumentException("Unknown Riot Platform passed in!", nameof(str));
+            }
+        }
+
+        /// <summary>
+        /// Returns an corresponding full string for <see cref="RiotPlatform"/>
+        /// </summary>
+        /// <param name="platform"><see cref="RiotPlatform"/></param>
+        /// <exception cref="ArgumentException">Should not happen</exception>
+        public static string GetRiotPlatformFullString(this RiotPlatform platform)
+        {
+            switch (platform)
+            {
+                case RiotPlatform.Brazil:
                     return Constants.LolBrRegion;
                 case RiotPlatform.EuropeNordicEast:
                     return Constants.LolEuneRegion;
@@ -132,7 +198,7 @@ namespace craftersmine.Riot.Api.Common
             throw new ArgumentException("Unknown Riot Platform passed in!", nameof(platform));
         }
 
-        internal static RiotPlatform GetRiotPlatformFromString(this string str)
+        internal static RiotPlatform GetRiotPlatformFromFullString(this string str)
         {
             switch (str)
             {
