@@ -27,5 +27,17 @@ namespace craftersmine.Riot.Api.League.Challenges
             LeagueChallengePercentilesCollection leagueChallengePercentiles = await Client.Get<LeagueChallengePercentilesCollection>(endpoint, null);
             return leagueChallengePercentiles;
         }
+
+        public async Task<LeagueChallenge> GetLeagueChallengeById(RiotPlatform region, int challengeId)
+        {
+            if (challengeId < 0)
+                throw new ArgumentOutOfRangeException(nameof(challengeId), "League of Legends Challenge ID cannot be less than 0");
+
+            string endpoint = UriUtils.GetAddress(region,
+                UriUtils.JoinEndpoints(ApiEndpointRoot, "challenges", challengeId.ToString(), "config"));
+
+            LeagueChallenge challenge = await Client.Get<LeagueChallenge>(endpoint, null);
+            return challenge;
+        }
     }
 }
