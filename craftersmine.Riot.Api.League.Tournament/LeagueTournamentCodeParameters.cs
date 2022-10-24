@@ -27,8 +27,11 @@ namespace craftersmine.Riot.Api.League.Tournament
             get => teamSize;
             set
             {
-                if (value >= 1 && value <= 5)
+                if (value > 0 || value < 6)
+                {
                     teamSize = value;
+                    return;
+                }
                 throw new ArgumentOutOfRangeException(nameof(TeamSize),
                     $"Team size cannot have {value} amount of participants, valid size is ranged from 1 to 5");
             }
