@@ -41,10 +41,23 @@ namespace craftersmine.Riot.Api.Common.Converters
             if (reader.TokenType == JsonToken.Null)
                 return new DateTime(1970, 1, 1);
 
-            if (reader.TokenType != JsonToken.Integer)
-                throw new Exception("Expected integer value, got " + reader.TokenType);
+            long val = 0;
 
-            long ticks = (long)(reader.Value ?? 0);
+            if (reader.TokenType != JsonToken.Integer)
+            {
+                if (reader.TokenType == JsonToken.String)
+                {
+                    if (reader.Value != null) val = long.Parse(reader.Value.ToString());
+                }
+                else
+                    throw new Exception("Expected integer value, got " + reader.TokenType);
+            }
+
+            long ticks;
+            if (val == 0)
+                ticks = (long) (reader.Value ?? 0);
+            else ticks = val;
+
             if (!useSeconds)
                 return ticks.FromUnixTimeMilliseconds();
             else return ticks.FromUnixTimeSeconds();

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using craftersmine.Riot.Api.Common.Exceptions;
 using craftersmine.Riot.Api.Status;
 
 namespace craftersmine.Riot.Api.Tests.League
@@ -35,9 +36,17 @@ namespace craftersmine.Riot.Api.Tests.League
         public async Task GetServerStatus()
         {
             Assert.IsNotNull(Client, "Client is not initialized!");
-            RiotServiceStatus leagueStatus = await Client.GetLeagueStatusForRegionAsync(LeagueRegion);
-            RiotServiceStatus valorantStatus = await Client.GetValorantStatusForRegionAsync(ValorantShard);
-            RiotServiceStatus loRStatus = await Client.GetLoRStatusForRegionAsync(LoRShard);
+            try
+            {
+                RiotServiceStatus leagueStatus = await Client.GetLeagueStatusForRegionAsync(LeagueRegion);
+                RiotServiceStatus valorantStatus = await Client.GetValorantStatusForRegionAsync(ValorantShard);
+                RiotServiceStatus loRStatus = await Client.GetLoRStatusForRegionAsync(LoRShard);
+            }
+            catch (RiotApiException e)
+            {
+                if (e.ResponseCode == HttpResponseCode.ServiceUnavailable)
+                    Assert.Inconclusive("Riot Service Status API returned code 503 - Service Unavailable. Try again");
+            }
         }
     }
 }

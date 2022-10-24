@@ -28,18 +28,11 @@ All features to be implemented
 		- [x] Mastery API
 		- [x] Summoner API
 		- [x] Leagues API
-			- [x] Leagues API
-			- [x] Leagues Experimental API
-		- [ ] LoL Challanges API
+		- [x] Challanges API
 		- [x] Match API
-			- [x] Get Match IDs and make overloads for filters
-			- [x] Get Match info by ID
-				- [x] Make data objects
-			- [x] Get Match timeline by ID
-				- [x] Make data objects
 		- [ ] Spectator API
 			- [ ] ***info TBD***
-		- [ ] Tournament APIs
+		- [ ] Tournament APIs - ***Currently WIP***
 			- [ ] Tournament API
 			- [ ] Tournament Stub API
 	- [x] Status APIs
@@ -52,11 +45,15 @@ All features to be implemented
 	- [ ] ***More Features TBD***
 
 ## Current WIP
-- [ ] perform more research about frame events
-- [ ] add API settings builder creator method
-- [ ] fix LeagueMatchTimeline frame timespan to milliseconds
-- [ ] create Riot Status APIs DTOs
-    - [x] RiotServiceStatus
-	- [ ] RiotServiceStatusInfo
-	- [ ] RiotServiceStatusContentInfo
-	- [ ] RiotServiceStatusUpdateInfo
+- [ ] find more information about API response objects
+    - [ ] perform more research about match timeline frame event types
+    - [ ] find info aboud "bannerAccent" property for player client preferences
+- [x] add XML docs for RiotLeagueChallengesApiClient methods and class
+- [x] implement tournament API
+    - [x] implement Tournament DTOs
+        - [x] implement stub DTOs
+    - [x] implement tournemant-stub
+    - [x] implement full tournament API 
+	- [x] determine why Tournament-Stub API returns 403 forbidden status code
+- [x] test new Matches.LeagueMatchInfo.GameRegion conversion on EUN1 server
+- [ ] ***TBD***

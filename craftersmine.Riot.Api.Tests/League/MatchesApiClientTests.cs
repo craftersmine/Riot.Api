@@ -15,11 +15,17 @@ namespace craftersmine.Riot.Api.Tests.League
     public class MatchesApiClientTests
     {
         public const string MyPuuid = "XRWOl9NePvqBbDsCBQKMgks13Cyc5KO1N-ZCPE0xr8Yvt58H7JjiWx_jlkF4VSYc31kBYfoKZtSNhA";
-        public const string GameId = "RU_414155060";
+
+        public const string MyEuPuuid =
+            "n6r5fAuMxbY5fdDs-DulcDfg81DuaTi2vjjSXIlE3b2j0BRl3UOalqO-pMFy7GcX9vaCR-6pU-zOcg";
+        public const string GameId = "RU_414456897";
+        public const string GameEuId = "EUN1_3231727530";
         public const string GameMode = "CLASSIC";
-        public const long GameIdLong = 414155060;
+        public const long GameIdLong = 414456897;
+        public const long GameEuIdLong = 3231727530;
         public const int QueueId = 420; // Ranked Solo Queue Summoner Rift
         public const int MapId = 11;
+        public const LeagueMatchType MatchType = LeagueMatchType.Normal;
 
         public RiotLeagueMatchApiClient? Client { get; set; }
         public string? ApiKey { get; set; }
@@ -40,18 +46,18 @@ namespace craftersmine.Riot.Api.Tests.League
         {
             Assert.IsNotNull(Client, "Client is not initialized!");
             string[] matches =
-                await Client.GetMatchesForPlayerByPuuidAsync(RiotRegion.Europe, MyPuuid, DateTime.Today - TimeSpan.FromDays(1), DateTime.Now, QueueId, LeagueMatchType.Ranked, 1, 5);
+                await Client.GetMatchesForPlayerByPuuidAsync(RiotRegion.Europe, MyPuuid, DateTime.Today - TimeSpan.FromDays(1), DateTime.Now, QueueId, MatchType, 1, 5);
             Assert.AreEqual(5, matches.Length, "Length is not 5");
             Assert.IsTrue(matches.Any(), "No matches fetched");
             Assert.IsTrue(matches.Contains(GameId), "No game with ID " + GameId + " found in list");
 
             string[] matches1 = await Client.GetMatchesForPlayerByPuuidAsync(RiotRegion.Europe, MyPuuid,
-                DateTime.Today - TimeSpan.FromDays(1), DateTime.Now, QueueId, LeagueMatchType.Ranked);
+                DateTime.Today - TimeSpan.FromDays(1), DateTime.Now, QueueId, MatchType);
             Assert.AreEqual(20, matches1.Length, "Length is not 20");
             Assert.IsTrue(matches1.Any(), "No matches fetched");
             Assert.IsTrue(matches1.Contains(GameId), "No game with ID " + GameId + " found in list");
 
-            string[] matches2 = await Client.GetMatchesForPlayerByPuuidAsync(RiotRegion.Europe, MyPuuid, QueueId, LeagueMatchType.Ranked);
+            string[] matches2 = await Client.GetMatchesForPlayerByPuuidAsync(RiotRegion.Europe, MyPuuid, QueueId, MatchType);
             Assert.AreEqual(20, matches2.Length, "Length is not 20");
             Assert.IsTrue(matches2.Any(), "No matches fetched");
             Assert.IsTrue(matches2.Contains(GameId), "No game with ID " + GameId + " found in list");
@@ -59,9 +65,12 @@ namespace craftersmine.Riot.Api.Tests.League
             string[] matches3 = await Client.GetMatchesForPlayerByPuuidAsync(RiotRegion.Europe, MyPuuid, QueueId);
             Assert.AreEqual(20, matches3.Length, "Length is not 20");
             Assert.IsTrue(matches3.Any(), "No matches fetched");
-            Assert.IsTrue(matches3.Contains(GameId), "No game with ID " + GameId + " found in list");
+            if (MatchType == LeagueMatchType.Ranked)
+            {
+                Assert.IsTrue(matches3.Contains(GameId), "No game with ID " + GameId + " found in list");
+            }
             
-            string[] matches4 = await Client.GetMatchesForPlayerByPuuidAsync(RiotRegion.Europe, MyPuuid, LeagueMatchType.Ranked);
+            string[] matches4 = await Client.GetMatchesForPlayerByPuuidAsync(RiotRegion.Europe, MyPuuid, MatchType);
             Assert.AreEqual(20, matches4.Length, "Length is not 20");
             Assert.IsTrue(matches4.Any(), "No matches fetched");
             Assert.IsTrue(matches4.Contains(GameId), "No game with ID " + GameId + " found in list");
@@ -70,16 +79,23 @@ namespace craftersmine.Riot.Api.Tests.League
                 await Client.GetMatchesForPlayerByPuuidAsync(RiotRegion.Europe, MyPuuid, DateTime.Today - TimeSpan.FromDays(1), DateTime.Now);
             Assert.AreEqual(20, matches5.Length, "Length is not 5");
             Assert.IsTrue(matches5.Any(), "No matches fetched");
-            Assert.IsTrue(matches5.Contains(GameId), "No game with ID " + GameId + " found in list");
-            
+            if (MatchType == LeagueMatchType.Ranked)
+            {
+                Assert.IsTrue(matches5.Contains(GameId), "No game with ID " + GameId + " found in list");
+            }
+
             string[] matches6 =
                 await Client.GetMatchesForPlayerByPuuidAsync(RiotRegion.Europe, MyPuuid, DateTime.Today - TimeSpan.FromDays(1), DateTime.Now, QueueId);
             Assert.AreEqual(20, matches6.Length, "Length is not 5");
             Assert.IsTrue(matches6.Any(), "No matches fetched");
-            Assert.IsTrue(matches6.Contains(GameId), "No game with ID " + GameId + " found in list");
+            if (MatchType == LeagueMatchType.Ranked)
+            {
+                Assert.IsTrue(matches6.Contains(GameId), "No game with ID " + GameId + " found in list");
+            }
+            
             
             string[] matches7 =
-                await Client.GetMatchesForPlayerByPuuidAsync(RiotRegion.Europe, MyPuuid, DateTime.Today - TimeSpan.FromDays(1), DateTime.Now, LeagueMatchType.Ranked);
+                await Client.GetMatchesForPlayerByPuuidAsync(RiotRegion.Europe, MyPuuid, DateTime.Today - TimeSpan.FromDays(1), DateTime.Now, MatchType);
             Assert.AreEqual(20, matches7.Length, "Length is not 5");
             Assert.IsTrue(matches7.Any(), "No matches fetched");
             Assert.IsTrue(matches7.Contains(GameId), "No game with ID " + GameId + " found in list");
@@ -99,6 +115,18 @@ namespace craftersmine.Riot.Api.Tests.League
             Assert.AreEqual(10, match.Metadata.Participants.Length, "Match participants count is not 10");
             Assert.AreEqual(GameId, match.Metadata.MatchId, "Match ID is not the same as " + GameId);
             Assert.IsTrue(match.Metadata.Participants.Contains(MyPuuid), "Participants doesn't have " + MyPuuid);
+
+            
+            LeagueMatch match1 = await Client.GetMatchByIdAsync(RiotRegion.Europe, GameEuId);
+            Assert.AreEqual(GameEuIdLong, match1.Info.GameId, "Game ID is not equal");
+            Assert.IsTrue(match1.Info.GameVersion.Major == 12 && match1.Info.GameVersion.Minor == 19, "Game patch version is not 12.20");
+            Assert.AreEqual(GameMode, match1.Info.GameMode, "Game mode is not " + GameMode);
+            Assert.AreEqual(MapId, match1.Info.MapId, "Map ID is not " + MapId);
+            Assert.AreEqual(10, match1.Info.Participants.Length, "Participants count is not 10");
+            Assert.AreEqual(2, match1.Metadata.DataVersion, "Data version for match is not 2");
+            Assert.AreEqual(10, match1.Metadata.Participants.Length, "Match participants count is not 10");
+            Assert.AreEqual(GameEuId, match1.Metadata.MatchId, "Match ID is not the same as " + GameEuId);
+            Assert.IsTrue(match1.Metadata.Participants.Contains(MyEuPuuid), "Participants doesn't have " + MyEuPuuid);
         }
     }
 }

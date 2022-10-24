@@ -12,4 +12,6 @@ using System.Text;
 [assembly:InternalsVisibleTo("craftersmine.Riot.Api.League.Clash")]
 [assembly:InternalsVisibleTo("craftersmine.Riot.Api.League.Matches")]
 [assembly:InternalsVisibleTo("craftersmine.Riot.Api.League.Matches.Timeline")]
+[assembly:InternalsVisibleTo("craftersmine.Riot.Api.League.Challenges")]
 [assembly:InternalsVisibleTo("craftersmine.Riot.Api.Status")]
+[assembly:InternalsVisibleTo("craftersmine.Riot.Api.League.Tournament")]
