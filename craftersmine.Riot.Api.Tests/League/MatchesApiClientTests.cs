@@ -15,9 +15,14 @@ namespace craftersmine.Riot.Api.Tests.League
     public class MatchesApiClientTests
     {
         public const string MyPuuid = "XRWOl9NePvqBbDsCBQKMgks13Cyc5KO1N-ZCPE0xr8Yvt58H7JjiWx_jlkF4VSYc31kBYfoKZtSNhA";
+
+        public const string MyEuPuuid =
+            "n6r5fAuMxbY5fdDs-DulcDfg81DuaTi2vjjSXIlE3b2j0BRl3UOalqO-pMFy7GcX9vaCR-6pU-zOcg";
         public const string GameId = "RU_414456897";
+        public const string GameEuId = "EUN1_3231727530";
         public const string GameMode = "CLASSIC";
         public const long GameIdLong = 414456897;
+        public const long GameEuIdLong = 3231727530;
         public const int QueueId = 420; // Ranked Solo Queue Summoner Rift
         public const int MapId = 11;
         public const LeagueMatchType MatchType = LeagueMatchType.Normal;
@@ -110,6 +115,18 @@ namespace craftersmine.Riot.Api.Tests.League
             Assert.AreEqual(10, match.Metadata.Participants.Length, "Match participants count is not 10");
             Assert.AreEqual(GameId, match.Metadata.MatchId, "Match ID is not the same as " + GameId);
             Assert.IsTrue(match.Metadata.Participants.Contains(MyPuuid), "Participants doesn't have " + MyPuuid);
+
+            
+            LeagueMatch match1 = await Client.GetMatchByIdAsync(RiotRegion.Europe, GameEuId);
+            Assert.AreEqual(GameEuIdLong, match1.Info.GameId, "Game ID is not equal");
+            Assert.IsTrue(match1.Info.GameVersion.Major == 12 && match1.Info.GameVersion.Minor == 19, "Game patch version is not 12.20");
+            Assert.AreEqual(GameMode, match1.Info.GameMode, "Game mode is not " + GameMode);
+            Assert.AreEqual(MapId, match1.Info.MapId, "Map ID is not " + MapId);
+            Assert.AreEqual(10, match1.Info.Participants.Length, "Participants count is not 10");
+            Assert.AreEqual(2, match1.Metadata.DataVersion, "Data version for match is not 2");
+            Assert.AreEqual(10, match1.Metadata.Participants.Length, "Match participants count is not 10");
+            Assert.AreEqual(GameEuId, match1.Metadata.MatchId, "Match ID is not the same as " + GameEuId);
+            Assert.IsTrue(match1.Metadata.Participants.Contains(MyEuPuuid), "Participants doesn't have " + MyEuPuuid);
         }
     }
 }
