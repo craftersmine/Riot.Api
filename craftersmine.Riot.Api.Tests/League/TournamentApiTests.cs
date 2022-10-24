@@ -36,24 +36,24 @@ namespace craftersmine.Riot.Api.Tests.League
             LeagueTournamentProviderRegistrationParameters providerRegistrationParameters =
                 new LeagueTournamentProviderRegistrationParameters(RiotPlatform.Russia, "http://localhost");
             int providerId =
-                await Client.RegisterLeagueTournamentProviderAsync(RiotRegion.Americas, providerRegistrationParameters);
+                await Client.RegisterLeagueTournamentProviderAsync(providerRegistrationParameters);
             Assert.IsTrue(providerId > 0, "No provider ID fetched, provider probably not registered");
             LeagueTournamentRegistrationParameters tournamentRegistrationParameters =
                 new LeagueTournamentRegistrationParameters("Test Tournament", providerId);
             int tournamentId =
-                await Client.RegisterLeagueTournamentAsync(RiotRegion.Europe, tournamentRegistrationParameters);
+                await Client.RegisterLeagueTournamentAsync(tournamentRegistrationParameters);
             Assert.IsTrue(tournamentId > 0, "No tournament ID fetched, tournament probably no registered");
 
             LeagueTournamentCodeParameters tournamentCodeParameters = new LeagueTournamentCodeParameters(null,
                 LeaguePickType.Draft, LeagueMapType.SummonersRift, LeagueSpectatorType.All, 5);
             string[] tournamentCodes =
-                await Client.CreateTournamentCodesAsync(RiotRegion.Europe, tournamentCodeParameters, tournamentId);
+                await Client.CreateTournamentCodesAsync(tournamentCodeParameters, tournamentId);
             Assert.IsTrue(tournamentCodes.Length > 0 && tournamentCodes.Length == 1, "No tournament code fetched");
-            tournamentCodes = await Client.CreateTournamentCodesAsync(RiotRegion.Europe, tournamentCodeParameters, tournamentId, 50);
+            tournamentCodes = await Client.CreateTournamentCodesAsync(tournamentCodeParameters, tournamentId, 50);
             Assert.IsTrue(tournamentCodes.Length > 0 && tournamentCodes.Length == 50);
 
             LeagueTournamentEvent[] tournamentEvents =
-                await Client.GetLobbyEventsByTournamentCodeAsync(RiotRegion.Europe, tournamentCodes[0]);
+                await Client.GetLobbyEventsByTournamentCodeAsync(tournamentCodes[0]);
             Assert.IsTrue(tournamentEvents.Any(), "No tournament events fetched");
             DateTime evtTimestamp = new DateTime(2009, 02, 13, 11, 31, 30);
             foreach (var evt in tournamentEvents)
