@@ -54,6 +54,6 @@ All features to be implemented
         - [x] implement stub DTOs
     - [x] implement tournemant-stub
     - [x] implement full tournament API 
-	- [ ] determine why Tournament-Stub API returns 403 forbidden status code
-- [ ] test new Matches.LeagueMatchInfo.GameRegion conversion on EUN1 server
+	- [x] determine why Tournament-Stub API returns 403 forbidden status code
+- [x] test new Matches.LeagueMatchInfo.GameRegion conversion on EUN1 server
 - [ ] ***TBD***
