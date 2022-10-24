@@ -49,10 +49,11 @@ All features to be implemented
     - [ ] perform more research about match timeline frame event types
     - [ ] find info aboud "bannerAccent" property for player client preferences
 - [x] add XML docs for RiotLeagueChallengesApiClient methods and class
-- [ ] implement tournament API
-    - [ ] implement Tournament DTOs
+- [x] implement tournament API
+    - [x] implement Tournament DTOs
         - [x] implement stub DTOs
-    - [ ] implement tournemant-stub
-    - [ ] implement full tournament API 
+    - [x] implement tournemant-stub
+    - [x] implement full tournament API 
+	- [ ] determine why Tournament-Stub API returns 403 forbidden status code
 - [ ] test new Matches.LeagueMatchInfo.GameRegion conversion on EUN1 server
 - [ ] ***TBD***
