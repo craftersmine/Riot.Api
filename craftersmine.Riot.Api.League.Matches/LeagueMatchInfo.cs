@@ -52,8 +52,6 @@ namespace craftersmine.Riot.Api.League.Matches
         /// <summary>
         /// Gets a League of Legends server region where game was played
         /// </summary>
-        // BUG (craftersmine): would return wrong value or even crash.
-        // NEEDTEST (craftersmine): test EUN1 region
         [JsonProperty("platformId"), JsonConverter(typeof(RiotPlatformAsLeagueRegionConverter))]
         public RiotPlatform GameRegion { get; private set; } 
 
