@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -73,14 +74,15 @@ namespace craftersmine.Riot.Api.Common
         /// <exception cref="RiotApiException"></exception>
         public async Task<T> Get<T>(string address, IDictionary<string, object> queryParams)
         {
-            string queryParamsString = string.Empty;
+            List<string> _queryParamsList = new List<string>();
             if (!(queryParams is null) && queryParams.Any())
             {
                 foreach (var kvp in queryParams)
                 {
-                    queryParamsString = string.Join("&", string.Join("=", kvp.Key, kvp.Value));
+                    _queryParamsList.Add(string.Join("=", kvp.Key, kvp.Value));
                 }
 
+                string queryParamsString = string.Join("&", _queryParamsList);
                 queryParamsString = Uri.EscapeUriString(queryParamsString);
                 address = string.Join("?", address, queryParamsString);
             }
@@ -112,14 +114,15 @@ namespace craftersmine.Riot.Api.Common
         /// <exception cref="RiotApiException"></exception>
         public async Task<T> Post<T>(string address, IDictionary<string, object> queryParams, object bodyContent)
         {
-            string queryParamsString = string.Empty;
+            List<string> _queryParamsList = new List<string>();
             if (!(queryParams is null) && queryParams.Any())
             {
                 foreach (var kvp in queryParams)
                 {
-                    queryParamsString = string.Join("&", string.Join("=", kvp.Key, kvp.Value));
+                    _queryParamsList.Add(string.Join("=", kvp.Key, kvp.Value));
                 }
 
+                string queryParamsString = string.Join("&", _queryParamsList);
                 queryParamsString = Uri.EscapeUriString(queryParamsString);
                 address = string.Join("?", address, queryParamsString);
             }
@@ -153,14 +156,15 @@ namespace craftersmine.Riot.Api.Common
         /// <exception cref="RiotApiException"></exception>
         public async Task<T> Put<T>(string address, IDictionary<string, object> queryParams, object bodyContent)
         {
-            string queryParamsString = string.Empty;
+            List<string> _queryParamsList = new List<string>();
             if (!(queryParams is null) && queryParams.Any())
             {
                 foreach (var kvp in queryParams)
                 {
-                    queryParamsString = string.Join("&", string.Join("=", kvp.Key, kvp.Value));
+                    _queryParamsList.Add(string.Join("=", kvp.Key, kvp.Value));
                 }
 
+                string queryParamsString = string.Join("&", _queryParamsList);
                 queryParamsString = Uri.EscapeUriString(queryParamsString);
                 address = string.Join("?", address, queryParamsString);
             }
