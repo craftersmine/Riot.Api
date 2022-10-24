@@ -10,7 +10,10 @@ namespace craftersmine.Riot.Api.League.Tournament.Converters
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             if (value is LeaguePickType pickType)
+            {
                 writer.WriteValue(pickType.GetStringFor());
+                return;
+            }
 
             writer.WriteNull();
         }
