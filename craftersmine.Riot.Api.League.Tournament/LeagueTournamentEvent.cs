@@ -15,7 +15,7 @@ namespace craftersmine.Riot.Api.League.Tournament
         /// <summary>
         /// Gets a <see cref="DateTime"/> timestamp when event occurred
         /// </summary>
-        [JsonProperty("timestamp"), JsonConverter(typeof(UnixDateTimeConverter), true)]
+        [JsonProperty("timestamp"), JsonConverter(typeof(UnixDateTimeConverter))]
         public DateTime Timestamp { get; private set; }
         /// <summary>
         /// Gets a type of tournament event
