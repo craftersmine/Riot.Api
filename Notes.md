@@ -31,7 +31,6 @@ All features to be implemented
 		- [x] Challanges API
 		- [x] Match API
 		- [ ] Spectator API
-			- [ ] ***info TBD***
 		- [x] Tournament APIs
 			- [x] Tournament API
 			- [x] Tournament Stub API
@@ -48,4 +47,8 @@ All features to be implemented
 - [ ] find more information about API response objects
     - [ ] perform more research about match timeline frame event types
     - [ ] find info aboud "bannerAccent" property for player client preferences
+- [ ] implement Spectator v4 API
+    - [ ] make spectator DTOs
+    - [ ] implement API class and methods
+- [ ] ...
 - [ ] ***TBD***
