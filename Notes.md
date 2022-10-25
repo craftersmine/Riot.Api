@@ -48,7 +48,7 @@ All features to be implemented
     - [ ] perform more research about match timeline frame event types
     - [ ] find info aboud "bannerAccent" property for player client preferences
 - [ ] implement Spectator v4 API
-    - [ ] make spectator DTOs
+    - [x] make spectator DTOs
     - [ ] implement API class and methods
 - [ ] ...
 - [ ] ***TBD***
