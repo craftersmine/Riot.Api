@@ -53,7 +53,7 @@ namespace craftersmine.Riot.Api.League.Spectator
         /// <remarks>
         /// Negative <see cref="TimeSpan"/> indicates that the game is not currently started for spectators
         /// </remarks>
-        [JsonProperty("gameLength"), JsonConverter(typeof(UnixTimeSpanConverter))]
+        [JsonProperty("gameLength"), JsonConverter(typeof(UnixTimeSpanConverter), true)]
         public TimeSpan GameLength { get; private set; }
         /// <summary>
         /// Gets an array of game participants information
