@@ -40,7 +40,9 @@ All features to be implemented
 	- [ ] Legends of Runterra APIs
     	- [ ] ***info TBD***
 	- [ ] TFT APIs
-    	- [ ] ***info TBD***
+    	- [ ] Leagues API
+		- [ ] Match API
+		- [ ] Summoner API
 	- [ ] League of Legends Client APIs
     	- [ ] ***info TBD***
 - [ ] Riot Data Dragon API
@@ -51,8 +53,14 @@ All features to be implemented
 - [ ] find more information about API response objects
     - [ ] perform more research about match timeline frame event types
     - [ ] find info aboud "bannerAccent" property for player client preferences
-- [x] implement Spectator v4 API
-    - [x] make spectator DTOs
-    - [x] implement API class and methods
+- [ ] implement TFT leagues API
+    - [ ] implement API DTOs
+    - [ ] implement API endpoint methods
+- [ ] implement TFT summoner API
+    - [ ] implement API DTOs
+    - [ ] implement API endpoint methods
+- [ ] implement TFT match API
+    - [ ] implement API DTOs
+    - [ ] implement API endpoint methods
 - [ ] ...
 - [ ] ***TBD***
