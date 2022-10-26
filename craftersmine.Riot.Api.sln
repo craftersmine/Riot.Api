@@ -52,7 +52,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Riot", "Riot", "{5E23B67B-9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Teamfight Tactics", "Teamfight Tactics", "{FEDF63E4-448B-4E79-89CA-C63EEDDC1A9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.Tft.Summoner", "craftersmine.Riot.Api.Tft.Summoner\craftersmine.Riot.Api.Tft.Summoner.csproj", "{497D8D1C-6DC5-429C-AA67-5E7F4346AFA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Tft.Summoner", "craftersmine.Riot.Api.Tft.Summoner\craftersmine.Riot.Api.Tft.Summoner.csproj", "{497D8D1C-6DC5-429C-AA67-5E7F4346AFA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.Tft.Leagues", "craftersmine.Riot.Api.Tft.Leagues\craftersmine.Riot.Api.Tft.Leagues.csproj", "{CC90CAEE-FEBE-42F7-95F5-88D9F1AA92B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -120,6 +122,10 @@ Global
 		{497D8D1C-6DC5-429C-AA67-5E7F4346AFA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{497D8D1C-6DC5-429C-AA67-5E7F4346AFA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{497D8D1C-6DC5-429C-AA67-5E7F4346AFA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC90CAEE-FEBE-42F7-95F5-88D9F1AA92B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC90CAEE-FEBE-42F7-95F5-88D9F1AA92B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC90CAEE-FEBE-42F7-95F5-88D9F1AA92B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC90CAEE-FEBE-42F7-95F5-88D9F1AA92B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -140,6 +146,7 @@ Global
 		{5748BC43-F0F0-4BD5-B988-956CAD18FB71} = {F8CD6F7F-11FD-4D78-932E-5400EE06E461}
 		{F3BC32AA-7DAD-4DD1-A736-11C56ED6B057} = {F8CD6F7F-11FD-4D78-932E-5400EE06E461}
 		{497D8D1C-6DC5-429C-AA67-5E7F4346AFA2} = {FEDF63E4-448B-4E79-89CA-C63EEDDC1A9E}
+		{CC90CAEE-FEBE-42F7-95F5-88D9F1AA92B4} = {FEDF63E4-448B-4E79-89CA-C63EEDDC1A9E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9933B26A-16A4-4BEC-BA5E-63EE5C11C574}
