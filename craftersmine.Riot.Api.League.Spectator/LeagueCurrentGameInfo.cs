@@ -33,6 +33,11 @@ namespace craftersmine.Riot.Api.League.Spectator
         [JsonProperty("gameType")]
         public string GameType { get; private set; }
         /// <summary>
+        /// Gets a game mode type
+        /// </summary>
+        [JsonProperty("gameMode")]
+        public string GameMode { get; private set; }
+        /// <summary>
         /// Gets a League of Legends game server region on which game is running
         /// </summary>
         [JsonProperty("platformId"), JsonConverter(typeof(RiotPlatformAsLeagueRegionConverter), false)]
