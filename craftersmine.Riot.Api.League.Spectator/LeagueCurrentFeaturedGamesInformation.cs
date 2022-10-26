@@ -19,7 +19,7 @@ namespace craftersmine.Riot.Api.League.Spectator
         /// <summary>
         /// Gets a <see cref="TimeSpan"/> interval to wait before next featured games list update
         /// </summary>
-        [JsonProperty("clientRefreshInterval"), JsonConverter(typeof(UnixTimeSpanConverter))]  // TODO (craftersmine): determine whether this value is in seconds or milliseconds
+        [JsonProperty("clientRefreshInterval"), JsonConverter(typeof(UnixTimeSpanConverter), true)]
         public TimeSpan ClientRefreshInterval { get; private set; }
     }
 }
