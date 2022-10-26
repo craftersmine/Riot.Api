@@ -42,7 +42,7 @@ All features to be implemented
 	- [ ] TFT APIs
     	- [ ] Leagues API
 		- [ ] Match API
-		- [ ] Summoner API
+		- [x] Summoner API
 	- [ ] League of Legends Client APIs
     	- [ ] ***info TBD***
 - [ ] Riot Data Dragon API
