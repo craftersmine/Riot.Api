@@ -33,7 +33,7 @@ namespace craftersmine.Riot.Api.Tests.League
         public async Task GetFeaturedGamesTests()
         {
             Assert.IsNotNull(Client, "Client is not initialized");
-            LeagueCurrentFeaturedGamesInformation featuredGamesInformation = await Client.GetCurrentFeaturedGames(RiotPlatform.Russia);
+            LeagueCurrentFeaturedGamesInformation featuredGamesInformation = await Client.GetCurrentFeaturedGamesAsync(RiotPlatform.Russia);
             Assert.IsTrue(featuredGamesInformation.GameList.Any(), "Featured games list fetched empty");
             Assert.IsTrue(featuredGamesInformation.ClientRefreshInterval > TimeSpan.Zero, "Client refresh interval is 0");
         }
@@ -45,7 +45,7 @@ namespace craftersmine.Riot.Api.Tests.League
             try
             {
                 LeagueCurrentGameInfo currentGameInfo =
-                    await Client.GetCurrentGameBySummonerId(RiotPlatform.Russia, MySummonerId);
+                    await Client.GetCurrentGameBySummonerIdAsync(RiotPlatform.Russia, MySummonerId);
                 Assert.AreEqual(RiotPlatform.Russia, currentGameInfo.ServerId, "League game server region is not " + RiotPlatform.Russia);
                 Assert.IsTrue(currentGameInfo.GameId > 0, "Game ID is not fetched properly");
                 Assert.AreEqual(11, currentGameInfo.MapId, "Map ID is not correct for Summoners Rift");

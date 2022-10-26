@@ -24,7 +24,7 @@ namespace craftersmine.Riot.Api.League.Spectator
         /// <param name="region">League of Legends server region</param>
         /// <returns><see cref="LeagueCurrentFeaturedGamesInformation"/> with current featured games in specified region</returns>
         /// <exception cref="craftersmine.Riot.Api.Common.Exceptions.RiotApiException">When Riot API request fails</exception>
-        public async Task<LeagueCurrentFeaturedGamesInformation> GetCurrentFeaturedGames(RiotPlatform region)
+        public async Task<LeagueCurrentFeaturedGamesInformation> GetCurrentFeaturedGamesAsync(RiotPlatform region)
         {
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "featured-games"));
 
@@ -42,7 +42,7 @@ namespace craftersmine.Riot.Api.League.Spectator
         /// or throws <see cref="Common.Exceptions.RiotApiException"/> with status code 404 if summoner is not currently playing any game</returns>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="craftersmine.Riot.Api.Common.Exceptions.RiotApiException">When Riot API request fails or 404 when summoner is not currently participating in any game</exception>
-        public async Task<LeagueCurrentGameInfo> GetCurrentGameBySummonerId(RiotPlatform region, string summonerId)
+        public async Task<LeagueCurrentGameInfo> GetCurrentGameBySummonerIdAsync(RiotPlatform region, string summonerId)
         {
             if (string.IsNullOrWhiteSpace(summonerId))
                 throw new ArgumentNullException(nameof(summonerId));
