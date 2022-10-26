@@ -49,6 +49,6 @@ All features to be implemented
     - [ ] find info aboud "bannerAccent" property for player client preferences
 - [ ] implement Spectator v4 API
     - [x] make spectator DTOs
-    - [ ] implement API class and methods
+    - [x] implement API class and methods
 - [ ] ...
 - [ ] ***TBD***
