@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -22,4 +22,10 @@ using System.Text;
 [assembly:InternalsVisibleTo("craftersmine.Riot.Api.League.Tournament")]
 [assembly:InternalsVisibleTo("craftersmine.Riot.Api.League.Spectator")]
 
-#endregion
+#endregion
+
+#region Teamfight Tactics
+
+[assembly:InternalsVisibleTo("craftersmine.Riot.Api.Tft.Summoner")]
+
+#endregion
