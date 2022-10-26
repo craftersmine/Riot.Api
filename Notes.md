@@ -56,9 +56,9 @@ All features to be implemented
 - [ ] implement TFT leagues API
     - [ ] implement API DTOs
     - [ ] implement API endpoint methods
-- [ ] implement TFT summoner API
-    - [ ] implement API DTOs
-    - [ ] implement API endpoint methods
+- [x] implement TFT summoner API
+    - [x] implement API DTOs
+    - [x] implement API endpoint methods
 - [ ] implement TFT match API
     - [ ] implement API DTOs
     - [ ] implement API endpoint methods
