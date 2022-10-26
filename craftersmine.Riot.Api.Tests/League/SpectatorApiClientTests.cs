@@ -50,6 +50,7 @@ namespace craftersmine.Riot.Api.Tests.League
                 Assert.IsTrue(currentGameInfo.GameId > 0, "Game ID is not fetched properly");
                 Assert.AreEqual(11, currentGameInfo.MapId, "Map ID is not correct for Summoners Rift");
                 Assert.IsTrue(currentGameInfo.BannedChampions.Any(), "No banned champions");
+                Assert.IsTrue(currentGameInfo.GameLength > TimeSpan.FromMinutes(-3));
                 Assert.IsFalse(string.IsNullOrWhiteSpace(currentGameInfo.Observers?.EncryptionKey), "Observers Encryption key is null or empty");
                 Assert.AreEqual("CUSTOM_GAME", currentGameInfo.GameType, "Game type is not custom");
                 Assert.AreEqual("CLASSIC", currentGameInfo.GameMode, "Game mode is not classic");
