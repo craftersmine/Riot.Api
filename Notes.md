@@ -22,7 +22,7 @@ All features to be implemented
 - [ ] Riot APIs
 	- [x] Common library
 	- [x] Account API
-	- [ ] League of Legends APIs
+	- [x] League of Legends APIs
 		- [x] Champion Rotations API
 		- [x] Clash API
 		- [x] Mastery API
@@ -30,7 +30,7 @@ All features to be implemented
 		- [x] Leagues API
 		- [x] Challanges API
 		- [x] Match API
-		- [ ] Spectator API
+		- [x] Spectator API
 		- [x] Tournament APIs
 			- [x] Tournament API
 			- [x] Tournament Stub API
@@ -38,6 +38,8 @@ All features to be implemented
 	- [ ] Valorant APIs
     	- [ ] ***info TBD***
 	- [ ] Legends of Runterra APIs
+    	- [ ] ***info TBD***
+	- [ ] League of Legends Client APIs
     	- [ ] ***info TBD***
 - [ ] Riot Data Dragon API
 	- [ ] Static data requests from [game constants](https://developer.riotgames.com/docs/lol#general_game-constants) (or from custom Git Repository static JSON files)
@@ -47,7 +49,7 @@ All features to be implemented
 - [ ] find more information about API response objects
     - [ ] perform more research about match timeline frame event types
     - [ ] find info aboud "bannerAccent" property for player client preferences
-- [ ] implement Spectator v4 API
+- [x] implement Spectator v4 API
     - [x] make spectator DTOs
     - [x] implement API class and methods
 - [ ] ...
