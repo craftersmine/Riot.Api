@@ -39,6 +39,8 @@ All features to be implemented
     	- [ ] ***info TBD***
 	- [ ] Legends of Runterra APIs
     	- [ ] ***info TBD***
+	- [ ] TFT APIs
+    	- [ ] ***info TBD***
 	- [ ] League of Legends Client APIs
     	- [ ] ***info TBD***
 - [ ] Riot Data Dragon API
