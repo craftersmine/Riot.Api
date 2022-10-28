@@ -28,5 +28,6 @@ using System.Text;
 
 [assembly:InternalsVisibleTo("craftersmine.Riot.Api.Tft.Summoner")]
 [assembly:InternalsVisibleTo("craftersmine.Riot.Api.Tft.Leagues")]
+[assembly:InternalsVisibleTo("craftersmine.Riot.Api.Tft.Matches")]
 
 #endregion
