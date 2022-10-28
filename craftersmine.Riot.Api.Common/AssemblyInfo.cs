@@ -27,5 +27,6 @@ using System.Text;
 #region Teamfight Tactics
 
 [assembly:InternalsVisibleTo("craftersmine.Riot.Api.Tft.Summoner")]
+[assembly:InternalsVisibleTo("craftersmine.Riot.Api.Tft.Leagues")]
 
 #endregion
