@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
@@ -31,7 +31,7 @@ namespace craftersmine.Riot.Api.Common.Converters
 
             if (reader.Value != null)
             {
-                if (reader.TokenType != JsonToken.Integer || reader.TokenType != JsonToken.Float)
+                if (reader.TokenType != JsonToken.Integer && reader.TokenType != JsonToken.Float)
                     throw new Exception("Expected integer or float value, got " + reader.TokenType);
                 if (reader.TokenType == JsonToken.Integer)
                 {
