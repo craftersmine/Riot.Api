@@ -2,7 +2,7 @@
 
 namespace craftersmine.Riot.Api.Tft.Matches
 {
-    public class Class1
+    public class RiotTftMatchesApiClient
     {
 
     }
