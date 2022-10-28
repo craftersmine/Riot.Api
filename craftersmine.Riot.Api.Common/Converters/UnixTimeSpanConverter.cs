@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
@@ -44,9 +44,9 @@ namespace craftersmine.Riot.Api.Common.Converters
                 else
                 {
                     if (useSeconds)
-                        return TimeSpan.FromSeconds((float) reader.Value);
+                        return TimeSpan.FromSeconds((double) reader.Value);
                     else
-                        return TimeSpan.FromMilliseconds((float) reader.Value);
+                        return TimeSpan.FromMilliseconds((double) reader.Value);
                 }
             }
 
