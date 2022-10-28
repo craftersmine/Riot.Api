@@ -40,7 +40,7 @@ All features to be implemented
 	- [ ] Legends of Runterra APIs
     	- [ ] ***info TBD***
 	- [ ] TFT APIs
-    	- [ ] Leagues API
+    	- [x] Leagues API
 		- [ ] Match API
 		- [x] Summoner API
 	- [ ] League of Legends Client APIs
@@ -54,11 +54,11 @@ All features to be implemented
 - [ ] find more information about API response objects
     - [ ] perform more research about match timeline frame event types
     - [ ] find info aboud "bannerAccent" property for player client preferences
-- [ ] implement TFT leagues API
-    - [ ] implement API DTOs
-    - [ ] implement API endpoint methods
+- [x] implement TFT leagues API
+    - [x] implement API DTOs
+    - [x] implement API endpoint methods
 - [x] implement TFT summoner API
-    - [ ] implement API DTOs
+    - [x] implement API DTOs
     - [x] implement API endpoint methods
 - [ ] implement TFT match API
     - [ ] implement API DTOs
