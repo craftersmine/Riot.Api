@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using craftersmine.Riot.Api.Common;
@@ -6,12 +6,27 @@ using craftersmine.Riot.Api.Common.Utils;
 
 namespace craftersmine.Riot.Api.Tft.Matches
 {
+    /// <summary>
+    /// Represents a Teamfight Tactics Match v1 API client
+    /// </summary>
     public class RiotTftMatchesApiClient : RiotApiClient
     {
         private const string ApiEndpointRoot = "/tft/match/v1/matches";
 
+        /// <summary>
+        /// Creates a new instance <see cref="RiotTftMatchesApiClient"/> with specified settings
+        /// </summary>
+        /// <param name="settings">Settings for <see cref="RiotTftMatchesApiClient"/></param>
         public RiotTftMatchesApiClient(RiotApiClientSettings settings) : base(settings) { }
 
+        /// <summary>
+        /// Gets Teamfight Tactics match information by match ID
+        /// </summary>
+        /// <param name="region">Teamfight Tactics region on which perform request</param>
+        /// <param name="matchId">Teamfight Tactics match ID</param>
+        /// <returns>Information about Teamfight Tactics match</returns>
+        /// <exception cref="ArgumentNullException">When match ID is null or empty</exception>
+        /// <exception cref="craftersmine.Riot.Api.Common.Exceptions.RiotApiException">When Riot API request fails</exception>
         public async Task<TftMatch> GetMatchByIdAsync(RiotRegion region, string matchId)
         {
             if (string.IsNullOrWhiteSpace(matchId))
