@@ -85,6 +85,7 @@ namespace craftersmine.Riot.Api.Tests.Tft
             Assert.AreEqual(Placement, participant.Placement, "Participant's placement is not " + Placement);
             Assert.AreEqual(PlayersEliminated, participant.PlayersEliminated, "Eliminated by participant value is not " + PlayersEliminated);
             Assert.AreEqual(TotalDamageDealtToPlayers, participant.TotalDamageDealtToPlayers);
+            Assert.IsTrue(participant.TimeBeforeEliminated >= TimeEliminated, "Time Eliminated is less than " + TimeEliminated.ToString());
             Assert.IsTrue(participant.Traits.Any(), "No traits found");
             TftTrait? trait = participant.Traits.FirstOrDefault(t => t.Name == TraitName);
             Assert.IsNotNull(trait, "Trait is not found");
@@ -102,6 +103,15 @@ namespace craftersmine.Riot.Api.Tests.Tft
             Assert.IsTrue(unit.ItemsIds.Contains(UnitItemId), "No item ID found with value: " + UnitItemId);
             Assert.AreEqual(UnitRarity, unit.Rarity, "Unit's rarity is not " + UnitRarity);
             Assert.AreEqual(UnitTier, unit.Tier, "Unit's tier is not " + UnitTier);
+        }
+
+        [TestMethod]
+        public async Task GetMatchesByPuuidTests()
+        {
+            Assert.IsNotNull(Client, "Client is not initialized!");
+            string[] matches = await Client.GetMatchesForSummonerByPuuidAsync(Region, SummonerPuuid, DateTime.Now - TimeSpan.FromDays(2), DateTime.Now, 0, 10);
+            Assert.IsTrue(matches.Any(), "No matches fetched");
+            Assert.IsTrue(matches.Contains(MatchId), "Fetched matches does not contain " + MatchId);
         }
     }
 }
