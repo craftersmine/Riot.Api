@@ -31,13 +31,23 @@ namespace craftersmine.Riot.Api.Common.Converters
 
             if (reader.Value != null)
             {
-                if (reader.TokenType != JsonToken.Integer)
-                    throw new Exception("Expected integer value, got " + reader.TokenType);
-                long msTs = (long) reader.Value;
-                if (useSeconds)
-                    return TimeSpan.FromSeconds(msTs);
+                if (reader.TokenType != JsonToken.Integer && reader.TokenType != JsonToken.Float)
+                    throw new Exception("Expected integer or float value, got " + reader.TokenType);
+                if (reader.TokenType == JsonToken.Integer)
+                {
+                    long msTs = (long) reader.Value;
+                    if (useSeconds)
+                        return TimeSpan.FromSeconds(msTs);
+                    else
+                        return TimeSpan.FromMilliseconds(msTs);
+                }
                 else
-                    return TimeSpan.FromMilliseconds(msTs);
+                {
+                    if (useSeconds)
+                        return TimeSpan.FromSeconds((double) reader.Value);
+                    else
+                        return TimeSpan.FromMilliseconds((double) reader.Value);
+                }
             }
 
             return new TimeSpan(0, 0, 0, 0, 0);

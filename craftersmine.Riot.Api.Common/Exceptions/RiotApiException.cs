@@ -38,6 +38,7 @@ namespace craftersmine.Riot.Api.Common.Exceptions
         public RiotApiException(ErrorResponse response) : base(response.Status.Message)
         {
             RiotApiResponse = response;
+            ResponseCode = (HttpResponseCode)response.Status.StatusCode;
         }
         
         /// <summary>
@@ -48,6 +49,7 @@ namespace craftersmine.Riot.Api.Common.Exceptions
         public RiotApiException(ErrorResponse response, Exception inner) : base(response.Status.Message, inner)
         {
             RiotApiResponse = response;
+            ResponseCode = (HttpResponseCode)response.Status.StatusCode;
         }
         
         /// <summary>

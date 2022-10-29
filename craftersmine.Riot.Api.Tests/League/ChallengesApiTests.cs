@@ -53,7 +53,7 @@ namespace craftersmine.Riot.Api.Tests.League
             Assert.IsTrue(challenges.Any(), "No challenges percentile data fetched");
             LeagueChallengePercentiles challengesAreHere = challenges.FirstOrDefault(c => c.Key == ChallengesAreHereId).Value;
             Assert.IsNotNull(challengesAreHere, "No \"Challenges are here!\" challenge percentiles fetched!");
-            Assert.IsTrue(challengesAreHere.Bronze > 0.45, "\"Challenges Are Here\" challenge bronze percentiles are less than 0.45");
+            Assert.IsTrue(challengesAreHere.Bronze > 0.44, "\"Challenges Are Here\" challenge bronze percentiles are less than 0.45");
         }
 
         [TestMethod]

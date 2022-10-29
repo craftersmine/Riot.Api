@@ -22,7 +22,7 @@ All features to be implemented
 - [ ] Riot APIs
 	- [x] Common library
 	- [x] Account API
-	- [ ] League of Legends APIs
+	- [x] League of Legends APIs
 		- [x] Champion Rotations API
 		- [x] Clash API
 		- [x] Mastery API
@@ -30,30 +30,38 @@ All features to be implemented
 		- [x] Leagues API
 		- [x] Challanges API
 		- [x] Match API
-		- [ ] Spectator API
-			- [ ] ***info TBD***
-		- [ ] Tournament APIs - ***Currently WIP***
-			- [ ] Tournament API
-			- [ ] Tournament Stub API
+		- [x] Spectator API
+		- [x] Tournament APIs
+			- [x] Tournament API
+			- [x] Tournament Stub API
 	- [x] Status APIs
 	- [ ] Valorant APIs
     	- [ ] ***info TBD***
 	- [ ] Legends of Runterra APIs
+    	- [ ] ***info TBD***
+	- [ ] TFT APIs
+    	- [x] Leagues API
+		- [ ] Match API
+		- [x] Summoner API
+	- [ ] League of Legends Client APIs
     	- [ ] ***info TBD***
 - [ ] Riot Data Dragon API
 	- [ ] Static data requests from [game constants](https://developer.riotgames.com/docs/lol#general_game-constants) (or from custom Git Repository static JSON files)
 	- [ ] ***More Features TBD***
 
 ## Current WIP
+- [ ] !!! REIMPLEMENT ALL TFT LEAGUES DTOs !!! (inherit and hide tier)
 - [ ] find more information about API response objects
     - [ ] perform more research about match timeline frame event types
     - [ ] find info aboud "bannerAccent" property for player client preferences
-- [x] add XML docs for RiotLeagueChallengesApiClient methods and class
-- [x] implement tournament API
-    - [x] implement Tournament DTOs
-        - [x] implement stub DTOs
-    - [x] implement tournemant-stub
-    - [x] implement full tournament API 
-	- [x] determine why Tournament-Stub API returns 403 forbidden status code
-- [x] test new Matches.LeagueMatchInfo.GameRegion conversion on EUN1 server
+- [x] implement TFT leagues API
+    - [x] implement API DTOs
+    - [x] implement API endpoint methods
+- [x] implement TFT summoner API
+    - [x] implement API DTOs
+    - [x] implement API endpoint methods
+- [ ] implement TFT match API
+    - [ ] implement API DTOs
+    - [ ] implement API endpoint methods
+- [ ] ...
 - [ ] ***TBD***

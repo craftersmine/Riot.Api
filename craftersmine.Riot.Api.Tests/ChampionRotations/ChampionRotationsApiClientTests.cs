@@ -13,7 +13,7 @@ namespace craftersmine.Riot.Api.Tests.ChampionRotations
     [TestClass]
     public class ChampionRotationsApiClientTests
     {
-        public const int FirstChampionId = 3;
+        public const int FirstChampionId = 9;
         public const int FirstChampionIdNewPlayers = 222;
         public const int MaxNewPlayerLevel = 10;
 

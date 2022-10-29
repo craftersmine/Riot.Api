@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	  <Version>0.0.12</Version>
+	  <Authors>craftersmine</Authors>
+	  <Description>Riot League of Legends Spectator v4 API wrapper for .NET</Description>
+	  <PackageOutputPath>$(SolutionDir)_NUGETS\craftersmine.Riot.Api\</PackageOutputPath>
+	  <RepositoryType>git</RepositoryType>
+	  <RepositoryUrl>https://github.com/craftersmine/Riot.Api/</RepositoryUrl>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\craftersmine.Riot.Api.Common\craftersmine.Riot.Api.Common.csproj" />
+  </ItemGroup>
+
+</Project>
