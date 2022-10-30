@@ -33,6 +33,7 @@
     <ProjectReference Include="..\craftersmine.Riot.Api.Tft.Matches\craftersmine.Riot.Api.Tft.Matches.csproj" />
     <ProjectReference Include="..\craftersmine.Riot.Api.Tft.Summoner\craftersmine.Riot.Api.Tft.Summoner.csproj" />
     <ProjectReference Include="..\craftersmine.Riot.Api.Valorant.Content\craftersmine.Riot.Api.Valorant.Content.csproj" />
+    <ProjectReference Include="..\craftersmine.Riot.Api.Valorant.Ranked\craftersmine.Riot.Api.Valorant.Ranked.csproj" />
   </ItemGroup>
 
 </Project>
