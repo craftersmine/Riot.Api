@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -27,6 +27,9 @@ namespace craftersmine.Riot.Api.Common
         /// <summary>
         /// Gets default Riot Data Region for Account API requests
         /// </summary>
+        /// <remarks>
+        /// Default value is <see cref="RiotRegion.Europe"/>
+        /// </remarks>
         public RiotRegion DefaultDataRegion { get; internal set; } = RiotRegion.Europe;
 
         /// <summary>
