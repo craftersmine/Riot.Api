@@ -11,7 +11,7 @@ namespace craftersmine.Riot.Api.League.Matches
     /// <summary>
     /// Represents a Riot Match v5 API
     /// </summary>
-    public class RiotLeagueMatchApiClient : RiotApiClient
+    public class LeagueMatchApiClient : RiotApiClient
     {
         /// <summary>
         /// Gets a root for Riot Match v5 API endpoints
@@ -19,10 +19,10 @@ namespace craftersmine.Riot.Api.League.Matches
         protected const string ApiEndpointRoot = "/lol/match/v5/matches";
 
         /// <summary>
-        /// Creates a new instance of <see cref="RiotLeagueMatchApiClient"/> instance
+        /// Creates a new instance of <see cref="LeagueMatchApiClient"/> instance
         /// </summary>
-        /// <param name="settings">Settings for <see cref="RiotLeagueMatchApiClient"/></param>
-        public RiotLeagueMatchApiClient(RiotApiClientSettings settings) : base(settings) { }
+        /// <param name="settings">Settings for <see cref="LeagueMatchApiClient"/></param>
+        public LeagueMatchApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
         /// Gets a list of match IDs for player by specified Riot PUUID

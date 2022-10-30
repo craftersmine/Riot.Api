@@ -9,15 +9,15 @@ namespace craftersmine.Riot.Api.League.Challenges
     /// <summary>
     /// Represents a League of Legends Challenges v1 API client
     /// </summary>
-    public class RiotLeagueChallengesApiClient : RiotApiClient
+    public class LeagueChallengesApiClient : RiotApiClient
     {
         private const string ApiEndpointRoot = "/lol/challenges/v1/";
         
         /// <summary>
-        /// Creates a new instance of <see cref="RiotLeagueChallengesApiClient"/> instance
+        /// Creates a new instance of <see cref="LeagueChallengesApiClient"/> instance
         /// </summary>
-        /// <param name="settings">Settings for <see cref="RiotLeagueChallengesApiClient"/></param>
-        public RiotLeagueChallengesApiClient(RiotApiClientSettings settings) : base(settings) { }
+        /// <param name="settings">Settings for <see cref="LeagueChallengesApiClient"/></param>
+        public LeagueChallengesApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
         /// Gets a collection of available challenges and their data in specified League of Legends server region

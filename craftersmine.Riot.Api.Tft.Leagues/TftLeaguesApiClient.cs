@@ -10,15 +10,15 @@ namespace craftersmine.Riot.Api.Tft.Leagues
     /// <summary>
     /// Represents a Riot Teamfight Tactics Leagues v1 API
     /// </summary>
-    public class RiotTftLeaguesApiClient : RiotApiClient
+    public class TftLeaguesApiClient : RiotApiClient
     {
         private const string ApiEndpointRoot = "/tft/league/v1/";
 
         /// <summary>
-        /// Creates a new instance of <see cref="RiotTftLeaguesApiClient"/> instance
+        /// Creates a new instance of <see cref="TftLeaguesApiClient"/> instance
         /// </summary>
-        /// <param name="settings">Settings for <see cref="RiotTftLeaguesApiClient"/></param>
-        public RiotTftLeaguesApiClient(RiotApiClientSettings settings) : base(settings) { }
+        /// <param name="settings">Settings for <see cref="TftLeaguesApiClient"/></param>
+        public TftLeaguesApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
         /// Gets Teamfight Tactics Challenger League in specified region

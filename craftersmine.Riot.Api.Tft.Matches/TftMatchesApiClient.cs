@@ -9,15 +9,15 @@ namespace craftersmine.Riot.Api.Tft.Matches
     /// <summary>
     /// Represents a Teamfight Tactics Match v1 API client
     /// </summary>
-    public class RiotTftMatchesApiClient : RiotApiClient
+    public class TftMatchesApiClient : RiotApiClient
     {
         private const string ApiEndpointRoot = "/tft/match/v1/matches";
 
         /// <summary>
-        /// Creates a new instance <see cref="RiotTftMatchesApiClient"/> with specified settings
+        /// Creates a new instance <see cref="TftMatchesApiClient"/> with specified settings
         /// </summary>
-        /// <param name="settings">Settings for <see cref="RiotTftMatchesApiClient"/></param>
-        public RiotTftMatchesApiClient(RiotApiClientSettings settings) : base(settings) { }
+        /// <param name="settings">Settings for <see cref="TftMatchesApiClient"/></param>
+        public TftMatchesApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
         /// Gets Teamfight Tactics match information by match ID

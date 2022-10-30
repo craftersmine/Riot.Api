@@ -15,7 +15,7 @@ namespace craftersmine.Riot.Api.Tests.League
     {
         public const string MySummonerId = "PtRpTVHs2N12hcdRB5OgxNcs2y4wAK7yg4K38y8028YwBGw";
         
-        public RiotLeagueSpectatorApiClient? Client { get; set; }
+        public LeagueSpectatorApiClient? Client { get; set; }
         public string? ApiKey { get; set; }
 
         public TestContext? TestContext { get; set; }
@@ -26,7 +26,7 @@ namespace craftersmine.Riot.Api.Tests.League
             ApiKey = TestContext?.Properties["ApiKey"]?.ToString();
             if (string.IsNullOrWhiteSpace(ApiKey))
                 Assert.Fail("No Riot API key provided!");
-            Client = new RiotLeagueSpectatorApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
+            Client = new LeagueSpectatorApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
         }
 
         [TestMethod]

@@ -9,15 +9,15 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
     /// <summary>
     /// Represents a Riot League v4 API
     /// </summary>
-    public class RiotSummonerLeaguesApiClient : RiotApiClient
+    public class LeagueSummonerLeaguesApiClient : RiotApiClient
     {
         private const string ApiEndpointRoot = "/lol/league/v4/";
 
         /// <summary>
-        /// Creates a new instance of <see cref="RiotSummonerLeaguesApiClient"/> instance
+        /// Creates a new instance of <see cref="LeagueSummonerLeaguesApiClient"/> instance
         /// </summary>
-        /// <param name="settings">Settings for <see cref="RiotSummonerLeaguesApiClient"/></param>
-        public RiotSummonerLeaguesApiClient(RiotApiClientSettings settings) : base(settings) { }
+        /// <param name="settings">Settings for <see cref="LeagueSummonerLeaguesApiClient"/></param>
+        public LeagueSummonerLeaguesApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
         /// Gets Ranked League of Legends entries for summoner with summoner ID from specified region

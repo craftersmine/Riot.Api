@@ -9,15 +9,15 @@ namespace craftersmine.Riot.Api.League.Mastery
     /// <summary>
     /// Represents a Riot Champion-Mastery v4 API
     /// </summary>
-    public class RiotLeagueMasteryApiClient : RiotApiClient
+    public class LeagueMasteryApiClient : RiotApiClient
     {
         private const string ApiEndpointRoot = "/lol/champion-mastery/v4/";
 
         /// <summary>
-        /// Creates a new instance of <see cref="RiotLeagueMasteryApiClient"/> instance
+        /// Creates a new instance of <see cref="LeagueMasteryApiClient"/> instance
         /// </summary>
-        /// <param name="settings">Settings for <see cref="RiotLeagueMasteryApiClient"/></param>
-        public RiotLeagueMasteryApiClient(RiotApiClientSettings settings) : base(settings) { }
+        /// <param name="settings">Settings for <see cref="LeagueMasteryApiClient"/></param>
+        public LeagueMasteryApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
         /// Gets all champion masteries existing on champions for League of Legends summoner by League of Legends summoner ID

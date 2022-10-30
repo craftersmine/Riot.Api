@@ -10,16 +10,16 @@ namespace craftersmine.Riot.Api.League.Tournament
     /// <summary>
     /// Represents a League of Legends Tournament API and Tournament API stub
     /// </summary>
-    public class RiotLeagueTournamentApiClient : RiotApiClient
+    public class LeagueTournamentApiClient : RiotApiClient
     {
         private const string ApiEndpointRoot = "/lol/tournament/v4/";
         private const string ApiStubEndpointRoot = "/lol/tournament-stub/v4/";
 
         /// <summary>
-        /// Creates new instance of <see cref="RiotLeagueTournamentApiClient"/> with specified settings
+        /// Creates new instance of <see cref="LeagueTournamentApiClient"/> with specified settings
         /// </summary>
-        /// <param name="settings">Settings for <see cref="RiotLeagueTournamentApiClient"/></param>
-        public RiotLeagueTournamentApiClient(RiotApiClientSettings settings) : base(settings) { }
+        /// <param name="settings">Settings for <see cref="LeagueTournamentApiClient"/></param>
+        public LeagueTournamentApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
         /// Registers a new Tournament provider with specified parameters

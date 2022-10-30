@@ -9,14 +9,14 @@ namespace craftesmine.Riot.Api.Tft.Summoner
     /// <summary>
     /// Represents Riot Teamfight Tactics Summoner v1 API
     /// </summary>
-    public class RiotTftSummonerApiClient : RiotApiClient
+    public class TftSummonerApiClient : RiotApiClient
     {
         private const string ApiEndpointsRoot = "/tft/summoner/v1/summoners";
         /// <summary>
-        /// Creates new instance of <see cref="RiotTftSummonerApiClient"/> with specified settings
+        /// Creates new instance of <see cref="TftSummonerApiClient"/> with specified settings
         /// </summary>
-        /// <param name="settings">Settings for <see cref="RiotTftSummonerApiClient"/></param>
-        public RiotTftSummonerApiClient(RiotApiClientSettings settings) : base(settings) { }
+        /// <param name="settings">Settings for <see cref="TftSummonerApiClient"/></param>
+        public TftSummonerApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
         /// Gets a Teamfight Tactics Summoner account with specified Teamfight Tactics Summoner ID in specified region

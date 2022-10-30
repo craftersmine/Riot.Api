@@ -8,7 +8,7 @@ namespace craftersmine.Riot.Api.League.ChampionRotations
     /// <summary>
     /// Represents an information about current champion rotations in League of Legends
     /// </summary>
-    public class ChampionRotationsInfo
+    public class LeagueChampionRotationsInfo
     {
         /// <summary>
         /// Gets current champions IDs in current free champions rotation

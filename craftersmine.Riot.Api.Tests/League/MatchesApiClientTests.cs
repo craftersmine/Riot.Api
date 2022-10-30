@@ -27,7 +27,7 @@ namespace craftersmine.Riot.Api.Tests.League
         public const int MapId = 11;
         public const LeagueMatchType MatchType = LeagueMatchType.Ranked;
 
-        public RiotLeagueMatchApiClient? Client { get; set; }
+        public LeagueMatchApiClient? Client { get; set; }
         public string? ApiKey { get; set; }
 
         public TestContext? TestContext { get; set; }
@@ -38,7 +38,7 @@ namespace craftersmine.Riot.Api.Tests.League
             ApiKey = TestContext?.Properties["ApiKey"]?.ToString();
             if (string.IsNullOrWhiteSpace(ApiKey))
                 Assert.Fail("No Riot API key provided!");
-            Client = new RiotLeagueMatchApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
+            Client = new LeagueMatchApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
         }
 
         [TestMethod]

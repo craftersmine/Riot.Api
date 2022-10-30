@@ -8,15 +8,15 @@ namespace craftersmine.Riot.Api.League.Clash
     /// <summary>
     /// Represents Riot League of Legends Clash v1 API
     /// </summary>
-    public class RiotLeagueClashApiClient : RiotApiClient
+    public class LeagueClashApiClient : RiotApiClient
     {
         private const string ApiEndpointRoot = "/lol/clash/v1/";
 
         /// <summary>
-        /// Creates a new instance of <see cref="RiotLeagueClashApiClient"/> instance
+        /// Creates a new instance of <see cref="LeagueClashApiClient"/> instance
         /// </summary>
-        /// <param name="settings">Settings for <see cref="RiotLeagueClashApiClient"/></param>
-        public RiotLeagueClashApiClient(RiotApiClientSettings settings) : base(settings) { }
+        /// <param name="settings">Settings for <see cref="LeagueClashApiClient"/></param>
+        public LeagueClashApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
         /// Gets a list of Clash players for specified summoner by summoner ID in all registered tournaments

@@ -17,7 +17,7 @@ namespace craftersmine.Riot.Api.Tests.ChampionRotations
         public const int FirstChampionIdNewPlayers = 222;
         public const int MaxNewPlayerLevel = 10;
 
-        public RiotChampionRotationsApiClient? Client { get; set; }
+        public LeagueChampionRotationsApiClient? Client { get; set; }
         public string? ApiKey { get; set; }
 
         public TestContext? TestContext { get; set; }
@@ -28,14 +28,14 @@ namespace craftersmine.Riot.Api.Tests.ChampionRotations
             ApiKey = TestContext?.Properties["ApiKey"]?.ToString();
             if (string.IsNullOrWhiteSpace(ApiKey))
                 Assert.Fail("No Riot API key provided!");
-            Client = new RiotChampionRotationsApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
+            Client = new LeagueChampionRotationsApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
         }
 
         [TestMethod]
         public async Task GetChampionRotationsTests()
         {
             Assert.IsNotNull(Client, "Client is not initialized");
-            ChampionRotationsInfo rotations = await Client.GetCurrentChampionRotationsForRegionAsync(RiotPlatform.Russia);
+            LeagueChampionRotationsInfo rotations = await Client.GetCurrentChampionRotationsForRegionAsync(RiotPlatform.Russia);
             Assert.IsTrue(rotations.FreeChampionIds.Contains(FirstChampionId), "Rotations doesn't have champion " + FirstChampionId + "in rotations");
             Assert.IsTrue(rotations.FreeChampionIdsForNewPlayers.Contains(FirstChampionIdNewPlayers), "Rotations doesn't have champion " + FirstChampionIdNewPlayers + "in rotations for new players");
             Assert.AreEqual(MaxNewPlayerLevel, rotations.MaxNewPlayerLevel, "Max new player level are not equal to " + MaxNewPlayerLevel);

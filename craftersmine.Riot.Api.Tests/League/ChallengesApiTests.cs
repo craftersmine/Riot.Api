@@ -21,7 +21,7 @@ namespace craftersmine.Riot.Api.Tests.League
         public const LeagueChallengeLevel CollectionLevel = LeagueChallengeLevel.Platinum;
         public const LeagueChallengeLevel OldFriendChallengeLevel = LeagueChallengeLevel.Challenger;
 
-        public RiotLeagueChallengesApiClient? Client { get; set; }
+        public LeagueChallengesApiClient? Client { get; set; }
         public string? ApiKey { get; set; }
 
         public TestContext? TestContext { get; set; }
@@ -32,7 +32,7 @@ namespace craftersmine.Riot.Api.Tests.League
             ApiKey = TestContext?.Properties["ApiKey"]?.ToString();
             if (string.IsNullOrWhiteSpace(ApiKey))
                 Assert.Fail("No Riot API key provided!");
-            Client = new RiotLeagueChallengesApiClient(RiotApiClientSettingsBuilder.CreateSettingsBuilder(ApiKey).Build());
+            Client = new LeagueChallengesApiClient(RiotApiClientSettingsBuilder.CreateSettingsBuilder(ApiKey).Build());
         }
 
         [TestMethod]
