@@ -56,7 +56,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Tft.S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Tft.Leagues", "craftersmine.Riot.Api.Tft.Leagues\craftersmine.Riot.Api.Tft.Leagues.csproj", "{CC90CAEE-FEBE-42F7-95F5-88D9F1AA92B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.Tft.Matches", "craftersmine.Riot.Api.Tft.Matches\craftersmine.Riot.Api.Tft.Matches.csproj", "{7D3EA4BA-31B8-46F1-8985-A63139520D62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Tft.Matches", "craftersmine.Riot.Api.Tft.Matches\craftersmine.Riot.Api.Tft.Matches.csproj", "{7D3EA4BA-31B8-46F1-8985-A63139520D62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Valorant", "Valorant", "{C02000CF-3A50-4E77-8A70-AD0020E02682}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.Valorant.Content", "craftersmine.Riot.Api.Valorant.Content\craftersmine.Riot.Api.Valorant.Content.csproj", "{C859A5F1-B770-4D9F-97B4-CD89A4B7C949}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -132,6 +136,10 @@ Global
 		{7D3EA4BA-31B8-46F1-8985-A63139520D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D3EA4BA-31B8-46F1-8985-A63139520D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D3EA4BA-31B8-46F1-8985-A63139520D62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C859A5F1-B770-4D9F-97B4-CD89A4B7C949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C859A5F1-B770-4D9F-97B4-CD89A4B7C949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C859A5F1-B770-4D9F-97B4-CD89A4B7C949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C859A5F1-B770-4D9F-97B4-CD89A4B7C949}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -154,6 +162,7 @@ Global
 		{497D8D1C-6DC5-429C-AA67-5E7F4346AFA2} = {FEDF63E4-448B-4E79-89CA-C63EEDDC1A9E}
 		{CC90CAEE-FEBE-42F7-95F5-88D9F1AA92B4} = {FEDF63E4-448B-4E79-89CA-C63EEDDC1A9E}
 		{7D3EA4BA-31B8-46F1-8985-A63139520D62} = {FEDF63E4-448B-4E79-89CA-C63EEDDC1A9E}
+		{C859A5F1-B770-4D9F-97B4-CD89A4B7C949} = {C02000CF-3A50-4E77-8A70-AD0020E02682}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9933B26A-16A4-4BEC-BA5E-63EE5C11C574}
