@@ -31,3 +31,9 @@ using System.Text;
 [assembly:InternalsVisibleTo("craftersmine.Riot.Api.Tft.Matches")]
 
 #endregion
+
+#region Valorant
+
+[assembly:InternalsVisibleTo("craftersmine.Riot.Api.Valorant.Content")]
+
+#endregion
