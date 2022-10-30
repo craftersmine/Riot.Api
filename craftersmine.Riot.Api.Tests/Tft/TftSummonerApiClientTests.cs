@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using craftersmine.Riot.Api.Common;
 using craftersmine.Riot.Api.League.Summoner;
 using craftersmine.Riot.Api.Tests.Account;
-using craftesmine.Riot.Api.Tft.Summoner;
+using craftersmine.Riot.Api.Tft.Summoner;
 
 namespace craftersmine.Riot.Api.Tests.Tft
 {

@@ -4,7 +4,7 @@ using craftersmine.Riot.Api.Common;
 using craftersmine.Riot.Api.Common.Utils;
 using craftersmine.Riot.Api.League.Summoner;
 
-namespace craftesmine.Riot.Api.Tft.Summoner
+namespace craftersmine.Riot.Api.Tft.Summoner
 {
     /// <summary>
     /// Represents Riot Teamfight Tactics Summoner v1 API

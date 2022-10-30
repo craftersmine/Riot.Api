@@ -1,6 +1,4 @@
 ﻿using craftersmine.Riot.Api.Common;
-using craftesmine.Riot.Api.Tft.Summoner;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
