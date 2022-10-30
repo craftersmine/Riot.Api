@@ -34,7 +34,7 @@ namespace craftersmine.Riot.Api.Tft.Matches
 
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, matchId));
 
-            TftMatch match = await Client.Get<TftMatch>(endpoint, null);
+            TftMatch match = await Client.GetAsync<TftMatch>(endpoint, null);
             return match;
         }
 
@@ -78,7 +78,7 @@ namespace craftersmine.Riot.Api.Tft.Matches
                 { "count", amount }
             };
 
-            string[] matches = await Client.Get<string[]>(endpoint, queryParams);
+            string[] matches = await Client.GetAsync<string[]>(endpoint, queryParams);
             return matches;
         }
 
@@ -104,7 +104,7 @@ namespace craftersmine.Riot.Api.Tft.Matches
                 { "count", amount }
             };
 
-            string[] matches = await Client.Get<string[]>(endpoint, queryParams);
+            string[] matches = await Client.GetAsync<string[]>(endpoint, queryParams);
             return matches;
         }
         
@@ -131,7 +131,7 @@ namespace craftersmine.Riot.Api.Tft.Matches
                 { "endTime", endTime.ToUnixTimeSeconds()}
             };
 
-            string[] matches = await Client.Get<string[]>(endpoint, queryParams);
+            string[] matches = await Client.GetAsync<string[]>(endpoint, queryParams);
             return matches;
         }
         
@@ -144,7 +144,7 @@ namespace craftersmine.Riot.Api.Tft.Matches
             string endpoint =
                 UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "by-puuid", puuid, "ids"));
 
-            string[] matches = await Client.Get<string[]>(endpoint, new Dictionary<string, object>() { { "count", 20 } });
+            string[] matches = await Client.GetAsync<string[]>(endpoint, new Dictionary<string, object>() { { "count", 20 } });
             return matches;
         }
     }

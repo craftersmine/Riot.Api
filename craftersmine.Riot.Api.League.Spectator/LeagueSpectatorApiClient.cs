@@ -29,7 +29,7 @@ namespace craftersmine.Riot.Api.League.Spectator
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "featured-games"));
 
             LeagueCurrentFeaturedGamesInformation featuredGamesInformation =
-                await Client.Get<LeagueCurrentFeaturedGamesInformation>(endpoint, null);
+                await Client.GetAsync<LeagueCurrentFeaturedGamesInformation>(endpoint, null);
             return featuredGamesInformation;
         }
 
@@ -50,7 +50,7 @@ namespace craftersmine.Riot.Api.League.Spectator
             string endpoint = UriUtils.GetAddress(region,
                 UriUtils.JoinEndpoints(ApiEndpointRoot, "/active-games/by-summoner", summonerId));
 
-            LeagueCurrentGameInfo currentGameInfo = await Client.Get<LeagueCurrentGameInfo>(endpoint, null);
+            LeagueCurrentGameInfo currentGameInfo = await Client.GetAsync<LeagueCurrentGameInfo>(endpoint, null);
             return currentGameInfo;
         }
     }

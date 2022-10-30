@@ -42,7 +42,7 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
             string endpoint =
                 UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, matchId, "/timeline"));
 
-            LeagueMatchTimeline timeline = await Client.Get<LeagueMatchTimeline>(endpoint, null);
+            LeagueMatchTimeline timeline = await Client.GetAsync<LeagueMatchTimeline>(endpoint, null);
             return timeline;
         }
     }

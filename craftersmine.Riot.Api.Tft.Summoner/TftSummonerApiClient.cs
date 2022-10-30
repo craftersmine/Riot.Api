@@ -33,7 +33,7 @@ namespace craftesmine.Riot.Api.Tft.Summoner
 
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointsRoot, summonerId));
 
-            LeagueSummoner summoner = await Client.Get<LeagueSummoner>(endpoint, null);
+            LeagueSummoner summoner = await Client.GetAsync<LeagueSummoner>(endpoint, null);
             return summoner;
         }
 
@@ -52,7 +52,7 @@ namespace craftesmine.Riot.Api.Tft.Summoner
 
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointsRoot, "by-puuid", puuid));
 
-            LeagueSummoner summoner = await Client.Get<LeagueSummoner>(endpoint, null);
+            LeagueSummoner summoner = await Client.GetAsync<LeagueSummoner>(endpoint, null);
             return summoner;
         }
 
@@ -71,7 +71,7 @@ namespace craftesmine.Riot.Api.Tft.Summoner
 
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointsRoot, "by-name", summonerName));
 
-            LeagueSummoner summoner = await Client.Get<LeagueSummoner>(endpoint, null);
+            LeagueSummoner summoner = await Client.GetAsync<LeagueSummoner>(endpoint, null);
             return summoner;
         }
 
@@ -91,7 +91,7 @@ namespace craftesmine.Riot.Api.Tft.Summoner
             string endpoint =
                 UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointsRoot, "by-account", accountId));
 
-            LeagueSummoner summoner = await Client.Get<LeagueSummoner>(endpoint, null);
+            LeagueSummoner summoner = await Client.GetAsync<LeagueSummoner>(endpoint, null);
             return summoner;
         }
     }

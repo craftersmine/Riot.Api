@@ -40,7 +40,7 @@ namespace craftersmine.Riot.Api.League.Tournament
                 endpoint = UriUtils.GetAddress(RiotRegion.Americas, UriUtils.JoinEndpoints(ApiStubEndpointRoot, "providers"));
             else endpoint = UriUtils.GetAddress(RiotRegion.Americas, UriUtils.JoinEndpoints(ApiEndpointRoot, "providers"));
 
-            int providerId = await Client.Post<int>(endpoint, null, providerRegistrationParameters);
+            int providerId = await Client.PostAsync<int>(endpoint, null, providerRegistrationParameters);
             return providerId;
         }
 
@@ -63,7 +63,7 @@ namespace craftersmine.Riot.Api.League.Tournament
                 endpoint = UriUtils.GetAddress(RiotRegion.Americas, UriUtils.JoinEndpoints(ApiStubEndpointRoot, "tournaments"));
             else endpoint = UriUtils.GetAddress(RiotRegion.Americas, UriUtils.JoinEndpoints(ApiEndpointRoot, "tournaments"));
 
-            int tournamentId = await Client.Post<int>(endpoint, null, tournamentRegistrationParameters);
+            int tournamentId = await Client.PostAsync<int>(endpoint, null, tournamentRegistrationParameters);
             return tournamentId;
         }
 
@@ -93,7 +93,7 @@ namespace craftersmine.Riot.Api.League.Tournament
                 endpoint = UriUtils.GetAddress(RiotRegion.Americas, UriUtils.JoinEndpoints(ApiStubEndpointRoot, "codes"));
             else endpoint = UriUtils.GetAddress(RiotRegion.Americas, UriUtils.JoinEndpoints(ApiEndpointRoot, "codes"));
 
-            string[] tournamentCodes = await Client.Post<string[]>(endpoint, new Dictionary<string, object>() {{"tournamentId", tournamentId}, {"count", amount}}, tournamentCodeParameters);
+            string[] tournamentCodes = await Client.PostAsync<string[]>(endpoint, new Dictionary<string, object>() {{"tournamentId", tournamentId}, {"count", amount}}, tournamentCodeParameters);
             return tournamentCodes;
         }
         
@@ -117,7 +117,7 @@ namespace craftersmine.Riot.Api.League.Tournament
                 endpoint = UriUtils.GetAddress(RiotRegion.Americas, UriUtils.JoinEndpoints(ApiStubEndpointRoot, "codes"));
             else endpoint = UriUtils.GetAddress(RiotRegion.Americas, UriUtils.JoinEndpoints(ApiEndpointRoot, "codes"));
 
-            string[] tournamentCodes = await Client.Post<string[]>(endpoint, new Dictionary<string, object>() {{"tournamentId", tournamentId}}, tournamentCodeParameters);
+            string[] tournamentCodes = await Client.PostAsync<string[]>(endpoint, new Dictionary<string, object>() {{"tournamentId", tournamentId}}, tournamentCodeParameters);
             return tournamentCodes;
         }
 
@@ -140,7 +140,7 @@ namespace craftersmine.Riot.Api.League.Tournament
                 endpoint = UriUtils.GetAddress(RiotRegion.Americas, UriUtils.JoinEndpoints(ApiStubEndpointRoot, "lobby-events/by-code", tournamentCode));
             else endpoint = UriUtils.GetAddress(RiotRegion.Americas, UriUtils.JoinEndpoints(ApiEndpointRoot, "lobby-events/by-code", tournamentCode));
 
-            JObject tournamentEventsRaw = await Client.Get<JObject>(endpoint, null);
+            JObject tournamentEventsRaw = await Client.GetAsync<JObject>(endpoint, null);
             LeagueTournamentEvent[] tournamentEvents = tournamentEventsRaw.GetValue("eventList")?.ToObject<LeagueTournamentEvent[]>();
             return tournamentEvents;
         }
@@ -165,7 +165,7 @@ namespace craftersmine.Riot.Api.League.Tournament
             string endpoint =
                 UriUtils.GetAddress(RiotRegion.Americas, UriUtils.JoinEndpoints(ApiEndpointRoot, "codes", tournamentCode));
 
-            LeagueTournamentCode tournamentCodeData = await Client.Get<LeagueTournamentCode>(endpoint, null);
+            LeagueTournamentCode tournamentCodeData = await Client.GetAsync<LeagueTournamentCode>(endpoint, null);
             return tournamentCodeData;
         }
 
@@ -192,7 +192,7 @@ namespace craftersmine.Riot.Api.League.Tournament
             string endpoint =
                 UriUtils.GetAddress(RiotRegion.Americas, UriUtils.JoinEndpoints(ApiEndpointRoot, "codes", tournamentCode));
 
-            await Client.Put<object>(endpoint, null, tournamentCodeUpdateParameters);
+            await Client.PutAsync<object>(endpoint, null, tournamentCodeUpdateParameters);
         }
     }
 }

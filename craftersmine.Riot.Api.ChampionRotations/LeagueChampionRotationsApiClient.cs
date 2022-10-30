@@ -28,7 +28,7 @@ namespace craftersmine.Riot.Api.League.ChampionRotations
             string endpoint =
                 UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "champion-rotations"));
 
-            LeagueChampionRotationsInfo rotations = await Client.Get<LeagueChampionRotationsInfo>(endpoint, null);
+            LeagueChampionRotationsInfo rotations = await Client.GetAsync<LeagueChampionRotationsInfo>(endpoint, null);
             return rotations;
         }
     }
