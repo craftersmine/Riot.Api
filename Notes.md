@@ -35,11 +35,12 @@ All features to be implemented
 			- [x] Tournament API
 			- [x] Tournament Stub API
 	- [x] Status APIs
-	- [ ] Valorant APIs
-    	- [ ] ***info TBD***
+	- [x] Valorant APIs
+    	- [x] Ranked API
+    	- [x] Content API
 	- [ ] Legends of Runterra APIs
     	- [ ] ***info TBD***
-	- [ ] TFT APIs
+	- [x] TFT APIs
     	- [x] Leagues API
 		- [x] Match API
 		- [x] Summoner API
@@ -60,8 +61,10 @@ All features to be implemented
 - [x] implement TFT summoner API
     - [x] implement API DTOs
     - [x] implement API endpoint methods
-- [ ] implement TFT match API
-    - [ ] implement API DTOs
-    - [ ] implement API endpoint methods
+- [x] implement TFT match API
+    - [x] implement API DTOs
+    - [x] implement API endpoint methods
+- [x] implement Valorant Ranked API
+- [x] implement Valorant Content API
 - [ ] ...
 - [ ] ***TBD***
