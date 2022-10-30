@@ -18,17 +18,6 @@ namespace craftersmine.Riot.Api.Common
         private TimeSpan? _retryAfterLast;
 
         /// <summary>
-        /// Gets current API base address
-        /// </summary>
-        public string BaseAddress
-        {
-            //get => _httpClient.BaseAddress.ToString();
-            //set => _httpClient.BaseAddress = new Uri(value);
-            get;
-            set;
-        }
-        
-        /// <summary>
         /// Creates a new instance of <see cref="Client"/> to make HTTP requests
         /// </summary>
         public Client()
