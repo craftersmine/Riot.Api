@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -28,6 +28,14 @@ namespace craftersmine.Riot.Api.Common
         /// Gets default Riot Data Region for Account API requests
         /// </summary>
         public RiotRegion DefaultDataRegion { get; internal set; } = RiotRegion.Europe;
+
+        /// <summary>
+        /// Gets default Riot Data Shard for Valorant Content API requests
+        /// </summary>
+        /// <remarks>
+        /// Default value is <see cref="RiotShards.Europe"/>
+        /// </remarks>
+        public RiotShards DefaultValorantContentShard { get; internal set; } = RiotShards.ValorantEurope;
 
         /// <summary>
         /// Use <see cref="RiotApiClientSettingsBuilder"/> instead
@@ -127,6 +135,22 @@ namespace craftersmine.Riot.Api.Common
         public RiotApiClientSettingsBuilder UseExperimentalLeaguesApi()
         {
             Settings.UseExperimentalLeaguesApi = true;
+            return this;
+        }
+
+        /// <summary>
+        /// Sets default Valorant Data Shard for requests of Content API to be executed against. It is recommended by Riot to use a cluster near you (near application host)
+        /// </summary>
+        /// <param name="shard">Riot Valorant Data Shard</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException">When unknown or unsupported shard is selected (ex. Legends of Runeterra shard)</exception>
+        public RiotApiClientSettingsBuilder UseDefaultValorantContentRegionShard(RiotShards shard)
+        {
+            if (shard == RiotShards.LoRAmericas || shard == RiotShards.LoRAsiaPacific ||
+                shard == RiotShards.LoREurope || shard == RiotShards.Unknown)
+                throw new ArgumentException("Unexpected value for shard: " + shard.GetShardString() + " - " + shard.ToString(), nameof(shard));
+
+            Settings.DefaultValorantContentShard = shard;
             return this;
         }
     }
