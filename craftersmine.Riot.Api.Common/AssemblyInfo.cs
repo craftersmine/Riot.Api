@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -34,5 +34,6 @@ using System.Text;
 #region Valorant
 
 [assembly:InternalsVisibleTo("craftersmine.Riot.Api.Valorant.Content")]
+[assembly:InternalsVisibleTo("craftersmine.Riot.Api.Valorant.Ranked")]
 
 #endregion

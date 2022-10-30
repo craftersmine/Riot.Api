@@ -60,7 +60,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Tft.M
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Valorant", "Valorant", "{C02000CF-3A50-4E77-8A70-AD0020E02682}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.Valorant.Content", "craftersmine.Riot.Api.Valorant.Content\craftersmine.Riot.Api.Valorant.Content.csproj", "{C859A5F1-B770-4D9F-97B4-CD89A4B7C949}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Valorant.Content", "craftersmine.Riot.Api.Valorant.Content\craftersmine.Riot.Api.Valorant.Content.csproj", "{C859A5F1-B770-4D9F-97B4-CD89A4B7C949}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.Valorant.Ranked", "craftersmine.Riot.Api.Valorant.Ranked\craftersmine.Riot.Api.Valorant.Ranked.csproj", "{639532A2-2AEE-481D-A979-5B32AEED2D71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -140,6 +142,10 @@ Global
 		{C859A5F1-B770-4D9F-97B4-CD89A4B7C949}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C859A5F1-B770-4D9F-97B4-CD89A4B7C949}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C859A5F1-B770-4D9F-97B4-CD89A4B7C949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{639532A2-2AEE-481D-A979-5B32AEED2D71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{639532A2-2AEE-481D-A979-5B32AEED2D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{639532A2-2AEE-481D-A979-5B32AEED2D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{639532A2-2AEE-481D-A979-5B32AEED2D71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -163,6 +169,7 @@ Global
 		{CC90CAEE-FEBE-42F7-95F5-88D9F1AA92B4} = {FEDF63E4-448B-4E79-89CA-C63EEDDC1A9E}
 		{7D3EA4BA-31B8-46F1-8985-A63139520D62} = {FEDF63E4-448B-4E79-89CA-C63EEDDC1A9E}
 		{C859A5F1-B770-4D9F-97B4-CD89A4B7C949} = {C02000CF-3A50-4E77-8A70-AD0020E02682}
+		{639532A2-2AEE-481D-A979-5B32AEED2D71} = {C02000CF-3A50-4E77-8A70-AD0020E02682}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9933B26A-16A4-4BEC-BA5E-63EE5C11C574}
