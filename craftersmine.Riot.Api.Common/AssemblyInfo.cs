@@ -37,3 +37,9 @@ using System.Text;
 [assembly:InternalsVisibleTo("craftersmine.Riot.Api.Valorant.Ranked")]
 
 #endregion
+
+#region Runeterra
+
+[assembly:InternalsVisibleTo("craftersmine.Riot.Api.Runeterra.Ranked")]
+
+#endregion
