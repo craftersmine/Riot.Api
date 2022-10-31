@@ -38,8 +38,9 @@ All features to be implemented
 	- [x] Valorant APIs
     	- [x] Ranked API
     	- [x] Content API
-	- [ ] Legends of Runterra APIs
-    	- [ ] ***info TBD***
+	- [ ] Legends of Runeterra APIs
+    	- [ ] LoR Match API
+    	- [ ] LoR Ranked API
 	- [x] TFT APIs
     	- [x] Leagues API
 		- [x] Match API
@@ -48,23 +49,16 @@ All features to be implemented
     	- [ ] ***info TBD***
 - [ ] Riot Data Dragon API
 	- [ ] Static data requests from [game constants](https://developer.riotgames.com/docs/lol#general_game-constants) (or from custom Git Repository static JSON files)
+    - [ ] Multiple Data Dragon providers (Riot Official, Community Data Dragon)
 	- [ ] ***More Features TBD***
 
 ## Current WIP
-- [ ] !!! REIMPLEMENT ALL TFT LEAGUES DTOs !!! (inherit and hide tier)
+- [x] !!! REIMPLEMENT ALL TFT LEAGUES DTOs !!! (inherit and hide tier)
 - [ ] find more information about API response objects
     - [ ] perform more research about match timeline frame event types
     - [ ] find info aboud "bannerAccent" property for player client preferences
-- [x] implement TFT leagues API
-    - [x] implement API DTOs
-    - [x] implement API endpoint methods
-- [x] implement TFT summoner API
-    - [x] implement API DTOs
-    - [x] implement API endpoint methods
-- [x] implement TFT match API
-    - [x] implement API DTOs
-    - [x] implement API endpoint methods
-- [x] implement Valorant Ranked API
-- [x] implement Valorant Content API
+- [ ] implement LoR APIs
+    - [ ] implement LoR Ranked API
+    - [ ] implement LoR Match API
 - [ ] ...
 - [ ] ***TBD***
