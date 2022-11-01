@@ -2,14 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-	  <Version>0.0.12</Version>
-	  <Authors>craftersmine</Authors>
 	  <Description>Riot Account v1 API wrapper for .NET</Description>
-	  <PackageOutputPath>$(SolutionDir)_NUGETS\craftersmine.Riot.Api\</PackageOutputPath>
-	  <RepositoryType>git</RepositoryType>
-	  <RepositoryUrl>https://github.com/craftersmine/Riot.Api/</RepositoryUrl>
-	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

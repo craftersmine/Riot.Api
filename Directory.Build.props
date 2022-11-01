@@ -1,0 +1,14 @@
+<Project>
+	<PropertyGroup>
+		<GeneratePackageOnBuild Condition="'$(GeneratePackageOnBuild)' == ''">True</GeneratePackageOnBuild>
+		<VersionPrefix>0.0.20</VersionPrefix>
+		<Version Condition="'$(Version)' == ''">$(Version)</Version>
+		<Version Condition="'$(VersionSuffix)' == ''">$(VersionPrefix)</Version>
+		<Version Condition="'$(VersionSuffix)' != ''">$(VersionPrefix)$(VersionSuffix)</Version>
+		<Authors Condition="'$(Authors)' == ''">craftersmine</Authors>
+	    <PackageOutputPath Condition="'$(PackageOutputPath)' == ''">$(SolutionDir)_NUGETS\craftersmine.Riot.Api\</PackageOutputPath>
+		<RepositoryType Condition="'$(RepositoryType)' == ''">git</RepositoryType>
+		<RepositoryUrl Condition="'$(RepositoryUrl)' == ''">https://github.com/craftersmine/Riot.Api/</RepositoryUrl>
+		<GenerateDocumentationFile Condition="'$(GenerateDocumentationFile)' == ''">True</GenerateDocumentationFile>
+	</PropertyGroup>
+</Project>

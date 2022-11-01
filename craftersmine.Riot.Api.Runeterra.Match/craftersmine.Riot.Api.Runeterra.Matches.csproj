@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	  <Description>Riot Legends of Runeterra Match v1 API wrapper for .NET</Description>
+  </PropertyGroup>
+
+</Project>
