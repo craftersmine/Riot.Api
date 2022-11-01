@@ -5,4 +5,8 @@
 	  <Description>Riot Legends of Runeterra Match v1 API wrapper for .NET</Description>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\craftersmine.Riot.Api.Common\craftersmine.Riot.Api.Common.csproj" />
+  </ItemGroup>
+
 </Project>
