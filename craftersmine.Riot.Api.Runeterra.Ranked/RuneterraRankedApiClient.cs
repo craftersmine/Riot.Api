@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using craftersmine.Riot.Api.Common;
 using craftersmine.Riot.Api.Common.Utils;
+using Newtonsoft.Json.Linq;
 
 namespace craftersmine.Riot.Api.Runeterra.Ranked
 {
@@ -35,7 +36,8 @@ namespace craftersmine.Riot.Api.Runeterra.Ranked
 
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "leaderboards"));
 
-            RuneterraPlayer[] leaderboard = await Client.GetAsync<RuneterraPlayer[]>(endpoint, null);
+            JObject leaderboardRaw = await Client.GetAsync<JObject>(endpoint, null);
+            RuneterraPlayer[] leaderboard = leaderboardRaw.GetValue("players")?.ToObject<RuneterraPlayer[]>();
             return leaderboard;
         }
     }
