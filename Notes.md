@@ -38,9 +38,9 @@ All features to be implemented
 	- [x] Valorant APIs
     	- [x] Ranked API
     	- [x] Content API
-	- [ ] Legends of Runeterra APIs
-    	- [ ] LoR Match API
-    	- [ ] LoR Ranked API
+	- [x] Legends of Runeterra APIs
+    	- [x] LoR Match API
+    	- [x] LoR Ranked API
 	- [x] TFT APIs
     	- [x] Leagues API
 		- [x] Match API
@@ -58,8 +58,8 @@ All features to be implemented
     - [ ] perform more research about match timeline frame event types
     - [ ] find info about "bannerAccent" property for player client preferences
 	- [ ] find info about "game_outcome" tie value in LoR match
-- [ ] implement LoR APIs
+- [x] implement LoR APIs
     - [x] implement LoR Ranked API
-    - [ ] implement LoR Match API
+    - [x] implement LoR Match API
 - [ ] ...
 - [ ] ***TBD***
