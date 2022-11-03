@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using craftersmine.Riot.Api.League.ChampionRotations;
 
-namespace craftersmine.Riot.Api.Tests.ChampionRotations
+namespace craftersmine.Riot.Api.Tests.League
 {
     [TestClass]
     public class ChampionRotationsApiClientTests
