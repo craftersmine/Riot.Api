@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using craftersmine.Riot.Api.Common;
 using craftersmine.Riot.Api.Common.Utils;
@@ -16,7 +16,7 @@ namespace craftersmine.Riot.Api.Runeterra.Match
             if (string.IsNullOrWhiteSpace(puuid))
                 throw new ArgumentNullException(nameof(puuid));
 
-            string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, puuid));
+            string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "matches/by-puuid", puuid, "ids"));
 
             string[] matches = await Client.GetAsync<string[]>(endpoint, null);
             return matches;
