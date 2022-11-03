@@ -56,9 +56,10 @@ All features to be implemented
 - [x] !!! REIMPLEMENT ALL TFT LEAGUES DTOs !!! (inherit and hide tier)
 - [ ] find more information about API response objects
     - [ ] perform more research about match timeline frame event types
-    - [ ] find info aboud "bannerAccent" property for player client preferences
+    - [ ] find info about "bannerAccent" property for player client preferences
+	- [ ] find info about "game_outcome" tie value in LoR match
 - [ ] implement LoR APIs
-    - [ ] implement LoR Ranked API
+    - [x] implement LoR Ranked API
     - [ ] implement LoR Match API
 - [ ] ...
 - [ ] ***TBD***
