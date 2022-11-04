@@ -39,7 +39,7 @@ namespace craftersmine.Riot.Api.Runeterra.Matches
         /// <summary>
         /// Gets a player's game outcome
         /// </summary>
-        [JsonProperty("geme_outcome"), JsonConverter(typeof(StringEnumConverter))]
+        [JsonProperty("game_outcome"), JsonConverter(typeof(StringEnumConverter))]
         public RuneterraGameOutcome GameOutcome { get; private set; }
     }
 }
