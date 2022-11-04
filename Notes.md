@@ -53,7 +53,6 @@ All features to be implemented
 	- [ ] ***More Features TBD***
 
 ## Current WIP
-- [x] !!! REIMPLEMENT ALL TFT LEAGUES DTOs !!! (inherit and hide tier)
 - [ ] find more information about API response objects
     - [ ] perform more research about match timeline frame event types
     - [ ] find info about "bannerAccent" property for player client preferences
