@@ -29,6 +29,7 @@
     <ProjectReference Include="..\craftersmine.Riot.Api.League.Matches\craftersmine.Riot.Api.League.Matches.csproj" />
     <ProjectReference Include="..\craftersmine.Riot.Api.League.Spectator\craftersmine.Riot.Api.League.Spectator.csproj" />
     <ProjectReference Include="..\craftersmine.Riot.Api.League.Tournament\craftersmine.Riot.Api.League.Tournament.csproj" />
+    <ProjectReference Include="..\craftersmine.Riot.Api.Runeterra.Match\craftersmine.Riot.Api.Runeterra.Matches.csproj" />
     <ProjectReference Include="..\craftersmine.Riot.Api.Runeterra.Ranked\craftersmine.Riot.Api.Runeterra.Ranked.csproj" />
     <ProjectReference Include="..\craftersmine.Riot.Api.Status\craftersmine.Riot.Api.Status.csproj" />
     <ProjectReference Include="..\craftersmine.Riot.Api.League.SummonerLeagues\craftersmine.Riot.Api.League.SummonerLeagues.csproj" />
