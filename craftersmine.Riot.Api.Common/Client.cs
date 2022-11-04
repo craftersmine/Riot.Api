@@ -18,17 +18,6 @@ namespace craftersmine.Riot.Api.Common
         private TimeSpan? _retryAfterLast;
 
         /// <summary>
-        /// Gets current API base address
-        /// </summary>
-        public string BaseAddress
-        {
-            //get => _httpClient.BaseAddress.ToString();
-            //set => _httpClient.BaseAddress = new Uri(value);
-            get;
-            set;
-        }
-        
-        /// <summary>
         /// Creates a new instance of <see cref="Client"/> to make HTTP requests
         /// </summary>
         public Client()
@@ -72,7 +61,7 @@ namespace craftersmine.Riot.Api.Common
         /// <param name="queryParams">Additional query parameters (<see langword="null"/> for none)</param>
         /// <returns>Object of type <see cref="T"/> from response</returns>
         /// <exception cref="RiotApiException"></exception>
-        public async Task<T> Get<T>(string address, IDictionary<string, object> queryParams)
+        public async Task<T> GetAsync<T>(string address, IDictionary<string, object> queryParams)
         {
             List<string> _queryParamsList = new List<string>();
             if (!(queryParams is null) && queryParams.Any())
@@ -112,7 +101,7 @@ namespace craftersmine.Riot.Api.Common
         /// <param name="bodyContent">POST request body parameters to send, will be converted to JSON</param>
         /// <returns>Object of type <see cref="T"/> from response</returns>
         /// <exception cref="RiotApiException"></exception>
-        public async Task<T> Post<T>(string address, IDictionary<string, object> queryParams, object bodyContent)
+        public async Task<T> PostAsync<T>(string address, IDictionary<string, object> queryParams, object bodyContent)
         {
             List<string> _queryParamsList = new List<string>();
             if (!(queryParams is null) && queryParams.Any())
@@ -154,7 +143,7 @@ namespace craftersmine.Riot.Api.Common
         /// <param name="bodyContent">POST request body parameters to send, will be converted to JSON</param>
         /// <returns>Object of type <see cref="T"/> from response</returns>
         /// <exception cref="RiotApiException"></exception>
-        public async Task<T> Put<T>(string address, IDictionary<string, object> queryParams, object bodyContent)
+        public async Task<T> PutAsync<T>(string address, IDictionary<string, object> queryParams, object bodyContent)
         {
             List<string> _queryParamsList = new List<string>();
             if (!(queryParams is null) && queryParams.Any())

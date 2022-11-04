@@ -11,13 +11,13 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
     /// <summary>
     /// Represents a Riot Match v5 Timeline API
     /// </summary>
-    public class RiotLeagueMatchTimelineApiClient : RiotLeagueMatchApiClient
+    public class LeagueMatchTimelineApiClient : LeagueMatchApiClient
     {
         /// <summary>
-        /// Creates a new instance of <see cref="RiotLeagueMatchTimelineApiClient"/> instance
+        /// Creates a new instance of <see cref="LeagueMatchTimelineApiClient"/> instance
         /// </summary>
-        /// <param name="settings">Settings for <see cref="RiotLeagueMatchApiClient"/></param>
-        public RiotLeagueMatchTimelineApiClient(RiotApiClientSettings settings) : base(settings)
+        /// <param name="settings">Settings for <see cref="LeagueMatchApiClient"/></param>
+        public LeagueMatchTimelineApiClient(RiotApiClientSettings settings) : base(settings)
         { }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace craftersmine.Riot.Api.League.Matches.Timeline
             string endpoint =
                 UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, matchId, "/timeline"));
 
-            LeagueMatchTimeline timeline = await Client.Get<LeagueMatchTimeline>(endpoint, null);
+            LeagueMatchTimeline timeline = await Client.GetAsync<LeagueMatchTimeline>(endpoint, null);
             return timeline;
         }
     }

@@ -28,7 +28,7 @@ namespace craftersmine.Riot.Api.Status
             string endpoint =
                 UriUtils.GetAddress(serverRegion, UriUtils.JoinEndpoints("/lol/status/v4", "platform-data"));
 
-            RiotServiceStatus serviceStatus = await Client.Get<RiotServiceStatus>(endpoint, null);
+            RiotServiceStatus serviceStatus = await Client.GetAsync<RiotServiceStatus>(endpoint, null);
             return serviceStatus;
         }
         
@@ -48,7 +48,7 @@ namespace craftersmine.Riot.Api.Status
             string endpoint =
                 UriUtils.GetAddress(serverRegion, UriUtils.JoinEndpoints("/val/status/v1", "platform-data"));
             
-            RiotServiceStatus serviceStatus = await Client.Get<RiotServiceStatus>(endpoint, null);
+            RiotServiceStatus serviceStatus = await Client.GetAsync<RiotServiceStatus>(endpoint, null);
             return serviceStatus;
         }
         
@@ -70,7 +70,7 @@ namespace craftersmine.Riot.Api.Status
             string endpoint =
                 UriUtils.GetAddress(serverRegion, UriUtils.JoinEndpoints("/lor/status/v1", "platform-data"));
             
-            RiotServiceStatus serviceStatus = await Client.Get<RiotServiceStatus>(endpoint, null);
+            RiotServiceStatus serviceStatus = await Client.GetAsync<RiotServiceStatus>(endpoint, null);
             return serviceStatus;
         }
     }

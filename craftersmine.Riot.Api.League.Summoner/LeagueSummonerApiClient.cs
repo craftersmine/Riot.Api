@@ -11,15 +11,15 @@ namespace craftersmine.Riot.Api.League.Summoner
     /// <summary>
     /// Represents Riot League of Legends Summoner v4 API
     /// </summary>
-    public class RiotLeagueSummonerApiClient : RiotApiClient
+    public class LeagueSummonerApiClient : RiotApiClient
     {
         private const string ApiEndpointRoot = "/lol/summoner/v4/summoners/";
 
         /// <summary>
-        /// Creates new instance of <see cref="RiotLeagueSummonerApiClient"/> with specified settings
+        /// Creates new instance of <see cref="LeagueSummonerApiClient"/> with specified settings
         /// </summary>
         /// <param name="settings"></param>
-        public RiotLeagueSummonerApiClient(RiotApiClientSettings settings) : base(settings) { }
+        public LeagueSummonerApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
         /// Gets a League of legends Summoner account with specified summoner name in specified region
@@ -37,7 +37,7 @@ namespace craftersmine.Riot.Api.League.Summoner
             string endpoint =
                 UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "by-name", summonerName));
 
-            LeagueSummoner summoner = await Client.Get<LeagueSummoner>(endpoint, null);
+            LeagueSummoner summoner = await Client.GetAsync<LeagueSummoner>(endpoint, null);
             return summoner;
         }
         
@@ -56,7 +56,7 @@ namespace craftersmine.Riot.Api.League.Summoner
 
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "by-puuid", puuid));
 
-            LeagueSummoner summoner = await Client.Get<LeagueSummoner>(endpoint, null);
+            LeagueSummoner summoner = await Client.GetAsync<LeagueSummoner>(endpoint, null);
             return summoner;
         }
         
@@ -76,7 +76,7 @@ namespace craftersmine.Riot.Api.League.Summoner
             string endpoint =
                 UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "by-account", accountId));
 
-            LeagueSummoner summoner = await Client.Get<LeagueSummoner>(endpoint, null);
+            LeagueSummoner summoner = await Client.GetAsync<LeagueSummoner>(endpoint, null);
             return summoner;
         }
         
@@ -95,7 +95,7 @@ namespace craftersmine.Riot.Api.League.Summoner
 
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, summonerId));
 
-            LeagueSummoner summoner = await Client.Get<LeagueSummoner>(endpoint, null);
+            LeagueSummoner summoner = await Client.GetAsync<LeagueSummoner>(endpoint, null);
             return summoner;
         }
     }

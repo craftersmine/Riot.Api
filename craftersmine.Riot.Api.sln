@@ -29,6 +29,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AA0701B1-7805-470B-B3FB-22167FEE6013}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.League.Matches.Timeline", "craftersmine.Riot.Api.League.Matches.Timeline\craftersmine.Riot.Api.League.Matches.Timeline.csproj", "{A39B5F75-0B2D-4AC6-81A3-1CE15183470D}"
@@ -56,7 +57,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Tft.S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Tft.Leagues", "craftersmine.Riot.Api.Tft.Leagues\craftersmine.Riot.Api.Tft.Leagues.csproj", "{CC90CAEE-FEBE-42F7-95F5-88D9F1AA92B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.Tft.Matches", "craftersmine.Riot.Api.Tft.Matches\craftersmine.Riot.Api.Tft.Matches.csproj", "{7D3EA4BA-31B8-46F1-8985-A63139520D62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Tft.Matches", "craftersmine.Riot.Api.Tft.Matches\craftersmine.Riot.Api.Tft.Matches.csproj", "{7D3EA4BA-31B8-46F1-8985-A63139520D62}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Valorant", "Valorant", "{C02000CF-3A50-4E77-8A70-AD0020E02682}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Valorant.Content", "craftersmine.Riot.Api.Valorant.Content\craftersmine.Riot.Api.Valorant.Content.csproj", "{C859A5F1-B770-4D9F-97B4-CD89A4B7C949}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Valorant.Ranked", "craftersmine.Riot.Api.Valorant.Ranked\craftersmine.Riot.Api.Valorant.Ranked.csproj", "{639532A2-2AEE-481D-A979-5B32AEED2D71}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Legends of Runeterra", "Legends of Runeterra", "{76DF8D67-EE96-4F40-B9A4-CB7A498E1E38}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Runeterra.Ranked", "craftersmine.Riot.Api.Runeterra.Ranked\craftersmine.Riot.Api.Runeterra.Ranked.csproj", "{A12C9701-4D4B-454D-B7A0-BD379D5DBDC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.Runeterra.Matches", "craftersmine.Riot.Api.Runeterra.Match\craftersmine.Riot.Api.Runeterra.Matches.csproj", "{5D57A65C-5DC1-4DBF-BB0F-42BDAD3C9282}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -132,6 +145,22 @@ Global
 		{7D3EA4BA-31B8-46F1-8985-A63139520D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D3EA4BA-31B8-46F1-8985-A63139520D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D3EA4BA-31B8-46F1-8985-A63139520D62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C859A5F1-B770-4D9F-97B4-CD89A4B7C949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C859A5F1-B770-4D9F-97B4-CD89A4B7C949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C859A5F1-B770-4D9F-97B4-CD89A4B7C949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C859A5F1-B770-4D9F-97B4-CD89A4B7C949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{639532A2-2AEE-481D-A979-5B32AEED2D71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{639532A2-2AEE-481D-A979-5B32AEED2D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{639532A2-2AEE-481D-A979-5B32AEED2D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{639532A2-2AEE-481D-A979-5B32AEED2D71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A12C9701-4D4B-454D-B7A0-BD379D5DBDC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A12C9701-4D4B-454D-B7A0-BD379D5DBDC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A12C9701-4D4B-454D-B7A0-BD379D5DBDC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A12C9701-4D4B-454D-B7A0-BD379D5DBDC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D57A65C-5DC1-4DBF-BB0F-42BDAD3C9282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D57A65C-5DC1-4DBF-BB0F-42BDAD3C9282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D57A65C-5DC1-4DBF-BB0F-42BDAD3C9282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D57A65C-5DC1-4DBF-BB0F-42BDAD3C9282}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -154,6 +183,10 @@ Global
 		{497D8D1C-6DC5-429C-AA67-5E7F4346AFA2} = {FEDF63E4-448B-4E79-89CA-C63EEDDC1A9E}
 		{CC90CAEE-FEBE-42F7-95F5-88D9F1AA92B4} = {FEDF63E4-448B-4E79-89CA-C63EEDDC1A9E}
 		{7D3EA4BA-31B8-46F1-8985-A63139520D62} = {FEDF63E4-448B-4E79-89CA-C63EEDDC1A9E}
+		{C859A5F1-B770-4D9F-97B4-CD89A4B7C949} = {C02000CF-3A50-4E77-8A70-AD0020E02682}
+		{639532A2-2AEE-481D-A979-5B32AEED2D71} = {C02000CF-3A50-4E77-8A70-AD0020E02682}
+		{A12C9701-4D4B-454D-B7A0-BD379D5DBDC6} = {76DF8D67-EE96-4F40-B9A4-CB7A498E1E38}
+		{5D57A65C-5DC1-4DBF-BB0F-42BDAD3C9282} = {76DF8D67-EE96-4F40-B9A4-CB7A498E1E38}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9933B26A-16A4-4BEC-BA5E-63EE5C11C574}

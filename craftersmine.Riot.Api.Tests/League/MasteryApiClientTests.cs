@@ -18,7 +18,7 @@ namespace craftersmine.Riot.Api.Tests.League
         public const int GnarChampionId = 150;
         public const bool EnableExperimental = false;
 
-        public RiotLeagueMasteryApiClient? Client { get; set; }
+        public LeagueMasteryApiClient? Client { get; set; }
         public string? ApiKey { get; set; }
 
         public TestContext? TestContext { get; set; }
@@ -33,9 +33,9 @@ namespace craftersmine.Riot.Api.Tests.League
             // Client is created differently depending whether experimental features are enabled or not
 #pragma warning disable CS0162 // Code is heuristically unreachable
             if (EnableExperimental)
-                Client = new RiotLeagueMasteryApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).UseExperimentalLeaguesApi().Build());
+                Client = new LeagueMasteryApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).UseExperimentalLeaguesApi().Build());
             else 
-                Client = new RiotLeagueMasteryApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
+                Client = new LeagueMasteryApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
 #pragma warning restore CS0162 // Code is heuristically unreachable
         }
 

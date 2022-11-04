@@ -9,15 +9,15 @@ namespace craftersmine.Riot.Api.League.Mastery
     /// <summary>
     /// Represents a Riot Champion-Mastery v4 API
     /// </summary>
-    public class RiotLeagueMasteryApiClient : RiotApiClient
+    public class LeagueMasteryApiClient : RiotApiClient
     {
         private const string ApiEndpointRoot = "/lol/champion-mastery/v4/";
 
         /// <summary>
-        /// Creates a new instance of <see cref="RiotLeagueMasteryApiClient"/> instance
+        /// Creates a new instance of <see cref="LeagueMasteryApiClient"/> instance
         /// </summary>
-        /// <param name="settings">Settings for <see cref="RiotLeagueMasteryApiClient"/></param>
-        public RiotLeagueMasteryApiClient(RiotApiClientSettings settings) : base(settings) { }
+        /// <param name="settings">Settings for <see cref="LeagueMasteryApiClient"/></param>
+        public LeagueMasteryApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
         /// Gets all champion masteries existing on champions for League of Legends summoner by League of Legends summoner ID
@@ -35,7 +35,7 @@ namespace craftersmine.Riot.Api.League.Mastery
             string endpoint = UriUtils.GetAddress(region,
                 UriUtils.JoinEndpoints(ApiEndpointRoot, "champion-masteries/by-summoner", summonerId));
 
-            LeagueChampionMastery[] masteries = await Client.Get<LeagueChampionMastery[]>(endpoint, null);
+            LeagueChampionMastery[] masteries = await Client.GetAsync<LeagueChampionMastery[]>(endpoint, null);
             return masteries;
         }
 
@@ -62,7 +62,7 @@ namespace craftersmine.Riot.Api.League.Mastery
                 UriUtils.JoinEndpoints(ApiEndpointRoot, "champion-masteries/by-summoner/", summonerId, "/by-champion/",
                     championId.ToString()));
 
-            LeagueChampionMastery mastery = await Client.Get<LeagueChampionMastery>(endpoint, null);
+            LeagueChampionMastery mastery = await Client.GetAsync<LeagueChampionMastery>(endpoint, null);
             return mastery;
         }
 
@@ -88,7 +88,7 @@ namespace craftersmine.Riot.Api.League.Mastery
             string endpoint = UriUtils.GetAddress(region,
                 UriUtils.JoinEndpoints(ApiEndpointRoot, "champion-masteries/by-summoner/", summonerId, "/top"));
 
-            LeagueChampionMastery[] topMasteries = await Client.Get<LeagueChampionMastery[]>(endpoint,
+            LeagueChampionMastery[] topMasteries = await Client.GetAsync<LeagueChampionMastery[]>(endpoint,
                 new Dictionary<string, object>() {{"count", topEntriesCount}});
             return topMasteries;
         }
@@ -123,7 +123,7 @@ namespace craftersmine.Riot.Api.League.Mastery
             string endpoint = UriUtils.GetAddress(region,
                 UriUtils.JoinEndpoints(ApiEndpointRoot, "scores/by-summoner", summonerId));
 
-            int totalMasteries = await Client.Get<int>(endpoint, null);
+            int totalMasteries = await Client.GetAsync<int>(endpoint, null);
             return totalMasteries;
         }
     }

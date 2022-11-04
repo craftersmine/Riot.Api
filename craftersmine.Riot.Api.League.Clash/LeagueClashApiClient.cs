@@ -8,15 +8,15 @@ namespace craftersmine.Riot.Api.League.Clash
     /// <summary>
     /// Represents Riot League of Legends Clash v1 API
     /// </summary>
-    public class RiotLeagueClashApiClient : RiotApiClient
+    public class LeagueClashApiClient : RiotApiClient
     {
         private const string ApiEndpointRoot = "/lol/clash/v1/";
 
         /// <summary>
-        /// Creates a new instance of <see cref="RiotLeagueClashApiClient"/> instance
+        /// Creates a new instance of <see cref="LeagueClashApiClient"/> instance
         /// </summary>
-        /// <param name="settings">Settings for <see cref="RiotLeagueClashApiClient"/></param>
-        public RiotLeagueClashApiClient(RiotApiClientSettings settings) : base(settings) { }
+        /// <param name="settings">Settings for <see cref="LeagueClashApiClient"/></param>
+        public LeagueClashApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
         /// Gets a list of Clash players for specified summoner by summoner ID in all registered tournaments
@@ -34,7 +34,7 @@ namespace craftersmine.Riot.Api.League.Clash
             string endpoint = UriUtils.GetAddress(region,
                 UriUtils.JoinEndpoints(ApiEndpointRoot, "/players/by-summoner/", summonerId));
 
-            LeagueClashPlayer[] players = await Client.Get<LeagueClashPlayer[]>(endpoint, null);
+            LeagueClashPlayer[] players = await Client.GetAsync<LeagueClashPlayer[]>(endpoint, null);
             return players;
         }
 
@@ -53,7 +53,7 @@ namespace craftersmine.Riot.Api.League.Clash
 
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "teams", teamId));
 
-            LeagueClashTeam team = await Client.Get<LeagueClashTeam>(endpoint, null);
+            LeagueClashTeam team = await Client.GetAsync<LeagueClashTeam>(endpoint, null);
             return team;
         }
 
@@ -67,7 +67,7 @@ namespace craftersmine.Riot.Api.League.Clash
         {
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "tournaments"));
 
-            LeagueClashTournament[] tournaments = await Client.Get<LeagueClashTournament[]>(endpoint, null);
+            LeagueClashTournament[] tournaments = await Client.GetAsync<LeagueClashTournament[]>(endpoint, null);
             return tournaments;
         }
 
@@ -87,7 +87,7 @@ namespace craftersmine.Riot.Api.League.Clash
             string endpoint = UriUtils.GetAddress(region,
                 UriUtils.JoinEndpoints(ApiEndpointRoot, "tournaments/by-team", teamId));
 
-            LeagueClashTournament tournament = await Client.Get<LeagueClashTournament>(endpoint, null);
+            LeagueClashTournament tournament = await Client.GetAsync<LeagueClashTournament>(endpoint, null);
             return tournament;
         }
 
@@ -107,7 +107,7 @@ namespace craftersmine.Riot.Api.League.Clash
             string endpoint = UriUtils.GetAddress(region,
                 UriUtils.JoinEndpoints(ApiEndpointRoot, "tournaments", tournamentId.ToString()));
 
-            LeagueClashTournament tournament = await Client.Get<LeagueClashTournament>(endpoint, null);
+            LeagueClashTournament tournament = await Client.GetAsync<LeagueClashTournament>(endpoint, null);
             return tournament;
         }
     }

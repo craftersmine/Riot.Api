@@ -10,15 +10,15 @@ namespace craftersmine.Riot.Api.Tft.Leagues
     /// <summary>
     /// Represents a Riot Teamfight Tactics Leagues v1 API
     /// </summary>
-    public class RiotTftLeaguesApiClient : RiotApiClient
+    public class TftLeaguesApiClient : RiotApiClient
     {
         private const string ApiEndpointRoot = "/tft/league/v1/";
 
         /// <summary>
-        /// Creates a new instance of <see cref="RiotTftLeaguesApiClient"/> instance
+        /// Creates a new instance of <see cref="TftLeaguesApiClient"/> instance
         /// </summary>
-        /// <param name="settings">Settings for <see cref="RiotTftLeaguesApiClient"/></param>
-        public RiotTftLeaguesApiClient(RiotApiClientSettings settings) : base(settings) { }
+        /// <param name="settings">Settings for <see cref="TftLeaguesApiClient"/></param>
+        public TftLeaguesApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
         /// Gets Teamfight Tactics Challenger League in specified region
@@ -30,7 +30,7 @@ namespace craftersmine.Riot.Api.Tft.Leagues
         {
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "challenger"));
 
-            TftLeagueList leagueList = await Client.Get<TftLeagueList>(endpoint, null);
+            TftLeagueList leagueList = await Client.GetAsync<TftLeagueList>(endpoint, null);
             return leagueList;
         }
 
@@ -44,7 +44,7 @@ namespace craftersmine.Riot.Api.Tft.Leagues
         {
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "grandmaster"));
 
-            TftLeagueList leagueList = await Client.Get<TftLeagueList>(endpoint, null);
+            TftLeagueList leagueList = await Client.GetAsync<TftLeagueList>(endpoint, null);
             return leagueList;
         }
 
@@ -58,7 +58,7 @@ namespace craftersmine.Riot.Api.Tft.Leagues
         {
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "master"));
 
-            TftLeagueList leagueList = await Client.Get<TftLeagueList>(endpoint, null);
+            TftLeagueList leagueList = await Client.GetAsync<TftLeagueList>(endpoint, null);
             return leagueList;
         }
 
@@ -78,7 +78,7 @@ namespace craftersmine.Riot.Api.Tft.Leagues
             string endpoint =
                 UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "by-summoner", summonerId));
 
-            TftSummonerLeague[] summonerLeagues = await Client.Get<TftSummonerLeague[]>(endpoint, null);
+            TftSummonerLeague[] summonerLeagues = await Client.GetAsync<TftSummonerLeague[]>(endpoint, null);
             return summonerLeagues;
         }
 
@@ -107,7 +107,7 @@ namespace craftersmine.Riot.Api.Tft.Leagues
                 UriUtils.JoinEndpoints(ApiEndpointRoot, "entries", rankedTier.GetRankedTierString(),
                     divisionRank.GetLeagueDivisionRankString()));
 
-            TftSummonerLeague[] summonerLeagues = await Client.Get<TftSummonerLeague[]>(endpoint, new Dictionary<string, object>() { { "page", page } });
+            TftSummonerLeague[] summonerLeagues = await Client.GetAsync<TftSummonerLeague[]>(endpoint, new Dictionary<string, object>() { { "page", page } });
             return summonerLeagues;
         }
 
@@ -133,7 +133,7 @@ namespace craftersmine.Riot.Api.Tft.Leagues
 
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "leagues", leagueId));
 
-            TftLeagueList leagueList = await Client.Get<TftLeagueList>(endpoint, null);
+            TftLeagueList leagueList = await Client.GetAsync<TftLeagueList>(endpoint, null);
             return leagueList;
         }
 
@@ -148,7 +148,7 @@ namespace craftersmine.Riot.Api.Tft.Leagues
             string endpoint =
                 UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "RANKED_TFT_TURBO/top"));
 
-            TftHyperRollTopRatedLadderEntry[] topRatedLadderEntries = await Client.Get<TftHyperRollTopRatedLadderEntry[]>(endpoint, null);
+            TftHyperRollTopRatedLadderEntry[] topRatedLadderEntries = await Client.GetAsync<TftHyperRollTopRatedLadderEntry[]>(endpoint, null);
             return topRatedLadderEntries;
         }
     }

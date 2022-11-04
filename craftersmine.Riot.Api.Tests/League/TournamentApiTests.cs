@@ -15,7 +15,7 @@ namespace craftersmine.Riot.Api.Tests.League
     {
         public const string TestSummonerId = "zQCXBkL1w3w6JQMW2GrPlepMI_IhaC4zcSyePpXAkxKXcrs";
 
-        public RiotLeagueTournamentApiClient? Client { get; set; }
+        public LeagueTournamentApiClient? Client { get; set; }
         public string? ApiKey { get; set; }
 
         public TestContext? TestContext { get; set; }
@@ -26,7 +26,7 @@ namespace craftersmine.Riot.Api.Tests.League
             ApiKey = TestContext?.Properties["ApiKey"]?.ToString();
             if (string.IsNullOrWhiteSpace(ApiKey))
                 Assert.Fail("No Riot API key provided!");
-            Client = new RiotLeagueTournamentApiClient(RiotApiClientSettingsBuilder.CreateSettingsBuilder(ApiKey).UseTournamentStub().Build());
+            Client = new LeagueTournamentApiClient(RiotApiClientSettingsBuilder.CreateSettingsBuilder(ApiKey).UseTournamentStub().Build());
         }
 
         [TestMethod]

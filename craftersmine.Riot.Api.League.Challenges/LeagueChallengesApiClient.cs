@@ -9,15 +9,15 @@ namespace craftersmine.Riot.Api.League.Challenges
     /// <summary>
     /// Represents a League of Legends Challenges v1 API client
     /// </summary>
-    public class RiotLeagueChallengesApiClient : RiotApiClient
+    public class LeagueChallengesApiClient : RiotApiClient
     {
         private const string ApiEndpointRoot = "/lol/challenges/v1/";
         
         /// <summary>
-        /// Creates a new instance of <see cref="RiotLeagueChallengesApiClient"/> instance
+        /// Creates a new instance of <see cref="LeagueChallengesApiClient"/> instance
         /// </summary>
-        /// <param name="settings">Settings for <see cref="RiotLeagueChallengesApiClient"/></param>
-        public RiotLeagueChallengesApiClient(RiotApiClientSettings settings) : base(settings) { }
+        /// <param name="settings">Settings for <see cref="LeagueChallengesApiClient"/></param>
+        public LeagueChallengesApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
         /// Gets a collection of available challenges and their data in specified League of Legends server region
@@ -29,7 +29,7 @@ namespace craftersmine.Riot.Api.League.Challenges
         {
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "challenges/config"));
 
-            LeagueChallengeCollection leagueChallenges = await Client.Get<LeagueChallengeCollection>(endpoint, null);
+            LeagueChallengeCollection leagueChallenges = await Client.GetAsync<LeagueChallengeCollection>(endpoint, null);
             return leagueChallenges;
         }
         
@@ -44,7 +44,7 @@ namespace craftersmine.Riot.Api.League.Challenges
             string endpoint =
                 UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "challenges/percentiles"));
 
-            LeagueChallengePercentilesCollection leagueChallengePercentiles = await Client.Get<LeagueChallengePercentilesCollection>(endpoint, null);
+            LeagueChallengePercentilesCollection leagueChallengePercentiles = await Client.GetAsync<LeagueChallengePercentilesCollection>(endpoint, null);
             return leagueChallengePercentiles;
         }
 
@@ -64,7 +64,7 @@ namespace craftersmine.Riot.Api.League.Challenges
             string endpoint = UriUtils.GetAddress(region,
                 UriUtils.JoinEndpoints(ApiEndpointRoot, "challenges", challengeId.ToString(), "config"));
 
-            LeagueChallenge challenge = await Client.Get<LeagueChallenge>(endpoint, null);
+            LeagueChallenge challenge = await Client.GetAsync<LeagueChallenge>(endpoint, null);
             return challenge;
         }
 
@@ -99,7 +99,7 @@ namespace craftersmine.Riot.Api.League.Challenges
                     challengeLevel.GetStringFor()));
 
             LeagueChallengeLeaderboardEntryCollection leaderboardEntryCollection =
-                await Client.Get<LeagueChallengeLeaderboardEntryCollection>(endpoint,
+                await Client.GetAsync<LeagueChallengeLeaderboardEntryCollection>(endpoint,
                     new Dictionary<string, object>() {{"limit", amount}});
 
             return leaderboardEntryCollection;
@@ -123,7 +123,7 @@ namespace craftersmine.Riot.Api.League.Challenges
                     challengeLevel.GetStringFor()));
 
             LeagueChallengeLeaderboardEntryCollection leaderboardEntryCollection =
-                await Client.Get<LeagueChallengeLeaderboardEntryCollection>(endpoint, null);
+                await Client.GetAsync<LeagueChallengeLeaderboardEntryCollection>(endpoint, null);
 
             return leaderboardEntryCollection;
         }
@@ -146,7 +146,7 @@ namespace craftersmine.Riot.Api.League.Challenges
                 UriUtils.JoinEndpoints(ApiEndpointRoot, "challenges", challengeId.ToString(), "percentiles"));
 
             LeagueChallengePercentiles challengePercentiles =
-                await Client.Get<LeagueChallengePercentiles>(endpoint, null);
+                await Client.GetAsync<LeagueChallengePercentiles>(endpoint, null);
             return challengePercentiles;
         }
 
@@ -168,7 +168,7 @@ namespace craftersmine.Riot.Api.League.Challenges
                 UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "player-data", puuid));
 
             LeagueChallengesPlayerData challengesPlayerData =
-                await Client.Get<LeagueChallengesPlayerData>(endpoint, null);
+                await Client.GetAsync<LeagueChallengesPlayerData>(endpoint, null);
 
             return challengesPlayerData;
         }

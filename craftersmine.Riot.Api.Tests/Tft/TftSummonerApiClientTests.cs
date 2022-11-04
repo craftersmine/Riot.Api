@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using craftersmine.Riot.Api.Common;
 using craftersmine.Riot.Api.League.Summoner;
 using craftersmine.Riot.Api.Tests.Account;
-using craftesmine.Riot.Api.Tft.Summoner;
+using craftersmine.Riot.Api.Tft.Summoner;
 
 namespace craftersmine.Riot.Api.Tests.Tft
 {
@@ -17,7 +17,7 @@ namespace craftersmine.Riot.Api.Tests.Tft
         public const string MyAccountId = "1Qr4Eh3voM158K6jQOrEkl02Tk20MY9HI3NLq6phi4NG7sjvo1OeYhzy";
         public const string MySummonerId = "PtRpTVHs2N12hcdRB5OgxNcs2y4wAK7yg4K38y8028YwBGw";
 
-        public RiotTftSummonerApiClient? Client { get; set; }
+        public TftSummonerApiClient? Client { get; set; }
         public string? ApiKey { get; set; }
 
         public TestContext? TestContext { get; set; }
@@ -28,7 +28,7 @@ namespace craftersmine.Riot.Api.Tests.Tft
             ApiKey = TestContext?.Properties["ApiKey"]?.ToString();
             if (string.IsNullOrWhiteSpace(ApiKey))
                 Assert.Fail("No Riot API key provided!");
-            Client = new RiotTftSummonerApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
+            Client = new TftSummonerApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
         }
 
         [TestMethod]

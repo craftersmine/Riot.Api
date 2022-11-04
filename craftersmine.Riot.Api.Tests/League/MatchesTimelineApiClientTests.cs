@@ -18,7 +18,7 @@ namespace craftersmine.Riot.Api.Tests.League
     {
         public const int DataVersion = 2;
 
-        public new RiotLeagueMatchTimelineApiClient? Client { get; set; }
+        public new LeagueMatchTimelineApiClient? Client { get; set; }
 
         public new void GetMatchesForPlayerByPuuidTests() {}
 
@@ -30,7 +30,7 @@ namespace craftersmine.Riot.Api.Tests.League
             ApiKey = TestContext?.Properties["ApiKey"]?.ToString();
             if (string.IsNullOrWhiteSpace(ApiKey))
                 Assert.Fail("No Riot API key provided!");
-            Client = new RiotLeagueMatchTimelineApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
+            Client = new LeagueMatchTimelineApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
         }
         
         [TestMethod]

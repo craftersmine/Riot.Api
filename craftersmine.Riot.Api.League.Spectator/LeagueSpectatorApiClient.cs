@@ -8,15 +8,15 @@ namespace craftersmine.Riot.Api.League.Spectator
     /// <summary>
     /// Represents a League of Legends Spectator v4 API client
     /// </summary>
-    public class RiotLeagueSpectatorApiClient : RiotApiClient
+    public class LeagueSpectatorApiClient : RiotApiClient
     {
         private const string ApiEndpointRoot = "/lol/spectator/v4";
         
         /// <summary>
-        /// Creates a new instance of <see cref="RiotLeagueSpectatorApiClient"/> instance
+        /// Creates a new instance of <see cref="LeagueSpectatorApiClient"/> instance
         /// </summary>
-        /// <param name="settings">Settings for <see cref="RiotLeagueSpectatorApiClient"/></param>
-        public RiotLeagueSpectatorApiClient(RiotApiClientSettings settings) : base(settings) { }
+        /// <param name="settings">Settings for <see cref="LeagueSpectatorApiClient"/></param>
+        public LeagueSpectatorApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
         /// Gets currently playing featured games in specified League of Legends region
@@ -29,7 +29,7 @@ namespace craftersmine.Riot.Api.League.Spectator
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "featured-games"));
 
             LeagueCurrentFeaturedGamesInformation featuredGamesInformation =
-                await Client.Get<LeagueCurrentFeaturedGamesInformation>(endpoint, null);
+                await Client.GetAsync<LeagueCurrentFeaturedGamesInformation>(endpoint, null);
             return featuredGamesInformation;
         }
 
@@ -50,7 +50,7 @@ namespace craftersmine.Riot.Api.League.Spectator
             string endpoint = UriUtils.GetAddress(region,
                 UriUtils.JoinEndpoints(ApiEndpointRoot, "/active-games/by-summoner", summonerId));
 
-            LeagueCurrentGameInfo currentGameInfo = await Client.Get<LeagueCurrentGameInfo>(endpoint, null);
+            LeagueCurrentGameInfo currentGameInfo = await Client.GetAsync<LeagueCurrentGameInfo>(endpoint, null);
             return currentGameInfo;
         }
     }

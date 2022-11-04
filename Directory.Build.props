@@ -1,0 +1,30 @@
+<Project>
+	<PropertyGroup>
+		<!-- Generate NuGet package on Build -->
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+
+		<!-- Version metadata -->
+		<VersionSuffix>dev</VersionSuffix>
+		<VersionPrefix>0.0.20</VersionPrefix>
+		<Version Condition="'$(Version)' == ''">$(Version)</Version>
+		<Version Condition="'$(VersionSuffix)' == ''">$(VersionPrefix)</Version>
+		<Version Condition="'$(VersionSuffix)' != ''">$(VersionPrefix)-$(VersionSuffix)</Version>
+
+		<!-- Package information -->
+		<Authors Condition="'$(Authors)' == ''">craftersmine</Authors>
+	    <PackageOutputPath>$(SolutionDir)_NUGETS\craftersmine.Riot.Api\</PackageOutputPath>
+		<RepositoryType>git</RepositoryType>
+		<RepositoryUrl>https://github.com/craftersmine/Riot.Api/</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+
+		<!-- XML docs generation -->
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+
+		<!-- Debug information -->
+		<IncludeSymbols>True</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+		<DebugSymbols>True</DebugSymbols>
+		<DebugType>pdbonly</DebugType>
+	</PropertyGroup>
+</Project>

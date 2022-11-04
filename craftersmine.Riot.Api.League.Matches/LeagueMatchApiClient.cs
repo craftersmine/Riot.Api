@@ -11,7 +11,7 @@ namespace craftersmine.Riot.Api.League.Matches
     /// <summary>
     /// Represents a Riot Match v5 API
     /// </summary>
-    public class RiotLeagueMatchApiClient : RiotApiClient
+    public class LeagueMatchApiClient : RiotApiClient
     {
         /// <summary>
         /// Gets a root for Riot Match v5 API endpoints
@@ -19,10 +19,10 @@ namespace craftersmine.Riot.Api.League.Matches
         protected const string ApiEndpointRoot = "/lol/match/v5/matches";
 
         /// <summary>
-        /// Creates a new instance of <see cref="RiotLeagueMatchApiClient"/> instance
+        /// Creates a new instance of <see cref="LeagueMatchApiClient"/> instance
         /// </summary>
-        /// <param name="settings">Settings for <see cref="RiotLeagueMatchApiClient"/></param>
-        public RiotLeagueMatchApiClient(RiotApiClientSettings settings) : base(settings) { }
+        /// <param name="settings">Settings for <see cref="LeagueMatchApiClient"/></param>
+        public LeagueMatchApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
         /// Gets a list of match IDs for player by specified Riot PUUID
@@ -69,7 +69,7 @@ namespace craftersmine.Riot.Api.League.Matches
                 { "count", count }
             };
 
-            string[] matchIds = await Client.Get<string[]>(endpoint, queryParams);
+            string[] matchIds = await Client.GetAsync<string[]>(endpoint, queryParams);
             return matchIds;
         }
 
@@ -98,7 +98,7 @@ namespace craftersmine.Riot.Api.League.Matches
                 { "type", type.GetLeagueMatchTypeString() }
             };
 
-            string[] matchIds = await Client.Get<string[]>(endpoint, queryParams);
+            string[] matchIds = await Client.GetAsync<string[]>(endpoint, queryParams);
             return matchIds;
         }
         
@@ -118,7 +118,7 @@ namespace craftersmine.Riot.Api.League.Matches
                 { "queue", queueId },
             };
 
-            string[] matchIds = await Client.Get<string[]>(endpoint, queryParams);
+            string[] matchIds = await Client.GetAsync<string[]>(endpoint, queryParams);
             return matchIds;
         }
         
@@ -137,7 +137,7 @@ namespace craftersmine.Riot.Api.League.Matches
                 { "type", type.GetLeagueMatchTypeString() }
             };
 
-            string[] matchIds = await Client.Get<string[]>(endpoint, queryParams);
+            string[] matchIds = await Client.GetAsync<string[]>(endpoint, queryParams);
             return matchIds;
         }
         
@@ -157,7 +157,7 @@ namespace craftersmine.Riot.Api.League.Matches
                 { "endTime", endTime.ToUnixTimeSeconds() }
             };
 
-            string[] matchIds = await Client.Get<string[]>(endpoint, queryParams);
+            string[] matchIds = await Client.GetAsync<string[]>(endpoint, queryParams);
             return matchIds;
         }
         
@@ -180,7 +180,7 @@ namespace craftersmine.Riot.Api.League.Matches
                 { "queue", queueId }
             };
 
-            string[] matchIds = await Client.Get<string[]>(endpoint, queryParams);
+            string[] matchIds = await Client.GetAsync<string[]>(endpoint, queryParams);
             return matchIds;
         }
         
@@ -202,7 +202,7 @@ namespace craftersmine.Riot.Api.League.Matches
                 { "type", type.GetLeagueMatchTypeString() },
             };
 
-            string[] matchIds = await Client.Get<string[]>(endpoint, queryParams);
+            string[] matchIds = await Client.GetAsync<string[]>(endpoint, queryParams);
             return matchIds;
         }
 
@@ -227,7 +227,7 @@ namespace craftersmine.Riot.Api.League.Matches
 
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, matchId));
 
-            LeagueMatch match = await Client.Get<LeagueMatch>(endpoint, null);
+            LeagueMatch match = await Client.GetAsync<LeagueMatch>(endpoint, null);
             return match;
         }
     }

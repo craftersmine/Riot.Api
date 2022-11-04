@@ -34,7 +34,7 @@ namespace craftersmine.Riot.Api.Account
             string endpoint = UriUtils.GetAddress(Settings.DefaultDataRegion, UriUtils.JoinEndpoints(ApiEndpointRoot, "by-puuid", puuid));
 
             RiotAccount account =
-                await Client.Get<RiotAccount>(endpoint, null);
+                await Client.GetAsync<RiotAccount>(endpoint, null);
 
             return account;
         }
@@ -56,7 +56,7 @@ namespace craftersmine.Riot.Api.Account
 
             string endpoint = UriUtils.GetAddress(Settings.DefaultDataRegion, UriUtils.JoinEndpoints(ApiEndpointRoot, "by-riot-id", riotId, tag));
 
-            RiotAccount account = await Client.Get<RiotAccount>(endpoint, null);
+            RiotAccount account = await Client.GetAsync<RiotAccount>(endpoint, null);
             return account;
         }
 
@@ -80,7 +80,7 @@ namespace craftersmine.Riot.Api.Account
                 UriUtils.JoinEndpoints(ApiEndpointActiveShardRoot, "by-game", game.GetShardGameString(), "by-puuid",
                     puuid));
 
-            RiotActiveShard activeShard = await Client.Get<RiotActiveShard>(endpoint, null);
+            RiotActiveShard activeShard = await Client.GetAsync<RiotActiveShard>(endpoint, null);
             return activeShard;
         }
     }

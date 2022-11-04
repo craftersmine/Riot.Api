@@ -35,33 +35,31 @@ All features to be implemented
 			- [x] Tournament API
 			- [x] Tournament Stub API
 	- [x] Status APIs
-	- [ ] Valorant APIs
-    	- [ ] ***info TBD***
-	- [ ] Legends of Runterra APIs
-    	- [ ] ***info TBD***
-	- [ ] TFT APIs
+	- [x] Valorant APIs
+    	- [x] Ranked API
+    	- [x] Content API
+	- [x] Legends of Runeterra APIs
+    	- [x] LoR Match API
+    	- [x] LoR Ranked API
+	- [x] TFT APIs
     	- [x] Leagues API
-		- [ ] Match API
+		- [x] Match API
 		- [x] Summoner API
 	- [ ] League of Legends Client APIs
     	- [ ] ***info TBD***
 - [ ] Riot Data Dragon API
 	- [ ] Static data requests from [game constants](https://developer.riotgames.com/docs/lol#general_game-constants) (or from custom Git Repository static JSON files)
+    - [ ] Multiple Data Dragon providers (Riot Official, Community Data Dragon)
 	- [ ] ***More Features TBD***
 
 ## Current WIP
-- [ ] !!! REIMPLEMENT ALL TFT LEAGUES DTOs !!! (inherit and hide tier)
+- [x] !!! REIMPLEMENT ALL TFT LEAGUES DTOs !!! (inherit and hide tier)
 - [ ] find more information about API response objects
     - [ ] perform more research about match timeline frame event types
-    - [ ] find info aboud "bannerAccent" property for player client preferences
-- [x] implement TFT leagues API
-    - [x] implement API DTOs
-    - [x] implement API endpoint methods
-- [x] implement TFT summoner API
-    - [x] implement API DTOs
-    - [x] implement API endpoint methods
-- [ ] implement TFT match API
-    - [ ] implement API DTOs
-    - [ ] implement API endpoint methods
+    - [ ] find info about "bannerAccent" property for player client preferences
+	- [ ] find info about "game_outcome" tie value in LoR match
+- [x] implement LoR APIs
+    - [x] implement LoR Ranked API
+    - [x] implement LoR Match API
 - [ ] ...
 - [ ] ***TBD***

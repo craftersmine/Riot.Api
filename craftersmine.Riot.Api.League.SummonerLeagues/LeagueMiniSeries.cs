@@ -11,7 +11,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
     /// <summary>
     /// Represents current League of Legends ranked promotion series
     /// </summary>
-    public sealed class MiniSeries
+    public sealed class LeagueMiniSeries
     {
         /// <summary>
         /// Gets a count of wins in promotion series

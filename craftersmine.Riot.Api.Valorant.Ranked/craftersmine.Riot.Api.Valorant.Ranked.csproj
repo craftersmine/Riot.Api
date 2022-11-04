@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	  <Description>Riot Valorant Ranked v1 API wrapper for .NET</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\craftersmine.Riot.Api.Common\craftersmine.Riot.Api.Common.csproj" />
+  </ItemGroup>
+
+</Project>

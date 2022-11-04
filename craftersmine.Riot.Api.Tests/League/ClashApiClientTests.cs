@@ -23,7 +23,7 @@ namespace craftersmine.Riot.Api.Tests.League
         public const string TeamId = "c9fee353-d9bf-4dcd-a38a-e54c1e003db4";
         public const string CaptainSummonerId = "NwUQy3eGM4_eEaHA6SsKQ5YwRGc77nvwDdfq6NKUmzNXx-ay1ByLBsZ2ZQ";
 
-        public RiotLeagueClashApiClient? Client { get; set; }
+        public LeagueClashApiClient? Client { get; set; }
         public string? ApiKey { get; set; }
 
         public TestContext? TestContext { get; set; }
@@ -34,7 +34,7 @@ namespace craftersmine.Riot.Api.Tests.League
             ApiKey = TestContext?.Properties["ApiKey"]?.ToString();
             if (string.IsNullOrWhiteSpace(ApiKey))
                 Assert.Fail("No Riot API key provided!");
-            Client = new RiotLeagueClashApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
+            Client = new LeagueClashApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
         }
 
         [TestMethod]

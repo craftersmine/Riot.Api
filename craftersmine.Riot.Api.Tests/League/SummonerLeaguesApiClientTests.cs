@@ -27,7 +27,7 @@ namespace craftersmine.Riot.Api.Tests.League
         public const string GoldSoloRuLeagueId = "ec505230-5223-463c-a25b-0025d31da466";
         public const string GoldSoloRuLeagueName = "Nidalee's Agents";
 
-        public RiotSummonerLeaguesApiClient? Client { get; set; }
+        public LeagueSummonerLeaguesApiClient? Client { get; set; }
         public string? ApiKey { get; set; }
 
         public TestContext? TestContext { get; set; }
@@ -38,7 +38,7 @@ namespace craftersmine.Riot.Api.Tests.League
             ApiKey = TestContext?.Properties["ApiKey"]?.ToString();
             if (string.IsNullOrWhiteSpace(ApiKey))
                 Assert.Fail("No Riot API key provided!");
-            Client = new RiotSummonerLeaguesApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
+            Client = new LeagueSummonerLeaguesApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
         }
 
         [TestMethod]

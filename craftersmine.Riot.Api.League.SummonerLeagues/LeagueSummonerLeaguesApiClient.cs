@@ -9,15 +9,15 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
     /// <summary>
     /// Represents a Riot League v4 API
     /// </summary>
-    public class RiotSummonerLeaguesApiClient : RiotApiClient
+    public class LeagueSummonerLeaguesApiClient : RiotApiClient
     {
         private const string ApiEndpointRoot = "/lol/league/v4/";
 
         /// <summary>
-        /// Creates a new instance of <see cref="RiotSummonerLeaguesApiClient"/> instance
+        /// Creates a new instance of <see cref="LeagueSummonerLeaguesApiClient"/> instance
         /// </summary>
-        /// <param name="settings">Settings for <see cref="RiotSummonerLeaguesApiClient"/></param>
-        public RiotSummonerLeaguesApiClient(RiotApiClientSettings settings) : base(settings) { }
+        /// <param name="settings">Settings for <see cref="LeagueSummonerLeaguesApiClient"/></param>
+        public LeagueSummonerLeaguesApiClient(RiotApiClientSettings settings) : base(settings) { }
 
         /// <summary>
         /// Gets Ranked League of Legends entries for summoner with summoner ID from specified region
@@ -35,7 +35,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
             string endpoint = UriUtils.GetAddress(region,
                 UriUtils.JoinEndpoints(ApiEndpointRoot, "entries/by-summoner", summonerId));
 
-            SummonerLeague[] leagues = await Client.Get<SummonerLeague[]>(endpoint, null);
+            SummonerLeague[] leagues = await Client.GetAsync<SummonerLeague[]>(endpoint, null);
             return leagues;
         }
 
@@ -55,7 +55,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
             string endpoint = UriUtils.GetAddress(region,
                 UriUtils.JoinEndpoints(ApiEndpointRoot, "challengerleagues/by-queue", queue.GetLeagueQueueStringFor()));
 
-            LeagueList leagueList = await Client.Get<LeagueList>(endpoint, null);
+            LeagueList leagueList = await Client.GetAsync<LeagueList>(endpoint, null);
             return leagueList;
         }
         
@@ -75,7 +75,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
             string endpoint = UriUtils.GetAddress(region,
                 UriUtils.JoinEndpoints(ApiEndpointRoot, "grandmasterleagues/by-queue", queue.GetLeagueQueueStringFor()));
 
-            LeagueList leagueList = await Client.Get<LeagueList>(endpoint, null);
+            LeagueList leagueList = await Client.GetAsync<LeagueList>(endpoint, null);
             return leagueList;
         }
 
@@ -95,7 +95,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
             string endpoint = UriUtils.GetAddress(region,
                 UriUtils.JoinEndpoints(ApiEndpointRoot, "masterleagues/by-queue", queue.GetLeagueQueueStringFor()));
 
-            LeagueList leagueList = await Client.Get<LeagueList>(endpoint, null);
+            LeagueList leagueList = await Client.GetAsync<LeagueList>(endpoint, null);
             return leagueList;
         }
 
@@ -133,7 +133,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
                     UriUtils.JoinEndpoints("/lol/league-exp/v4/entries", queue.GetLeagueQueueStringFor(),
                         tier.GetRankedTierString(), division.GetLeagueDivisionRankString(), page.ToString()));
 
-            SummonerLeague[] leagues = await Client.Get<SummonerLeague[]>(endpoint, new Dictionary<string, object>(){ { "page", page } });
+            SummonerLeague[] leagues = await Client.GetAsync<SummonerLeague[]>(endpoint, new Dictionary<string, object>(){ { "page", page } });
             return leagues;
         }
         
@@ -167,7 +167,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
 
             string endpoint = UriUtils.GetAddress(region, UriUtils.JoinEndpoints(ApiEndpointRoot, "leagues", leagueId));
 
-            LeagueList leagueList = await Client.Get<LeagueList>(endpoint, null);
+            LeagueList leagueList = await Client.GetAsync<LeagueList>(endpoint, null);
             return leagueList;
         }
     }

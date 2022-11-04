@@ -1,6 +1,4 @@
 ﻿using craftersmine.Riot.Api.Common;
-using craftesmine.Riot.Api.Tft.Summoner;
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +41,7 @@ namespace craftersmine.Riot.Api.Tests.Tft
         public readonly TimeSpan TimeEliminated = new TimeSpan(0, 36, 41);
         public const RiotRegion Region = RiotRegion.Americas;
 
-        public RiotTftMatchesApiClient? Client { get; set; }
+        public TftMatchesApiClient? Client { get; set; }
         public string? ApiKey { get; set; }
 
         public TestContext? TestContext { get; set; }
@@ -54,7 +52,7 @@ namespace craftersmine.Riot.Api.Tests.Tft
             ApiKey = TestContext?.Properties["ApiKey"]?.ToString();
             if (string.IsNullOrWhiteSpace(ApiKey))
                 Assert.Fail("No Riot API key provided!");
-            Client = new RiotTftMatchesApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
+            Client = new TftMatchesApiClient(new RiotApiClientSettingsBuilder().UseApiKey(ApiKey).Build());
         }
 
         [TestMethod]
