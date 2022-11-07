@@ -32,6 +32,10 @@ namespace craftersmine.Riot.Api.League.Client
         /// Gets current player's champion stats
         /// </summary>
         public LeagueChampionStats ChampionStats { get; private set; }
-        public LeaguePlayerRunes Runes { get; private set; }
+        /// <summary>
+        /// Gets current player's selected runes
+        /// </summary>
+        [JsonProperty("fullRunes")]
+        public LeagueChampionRunes Runes { get; private set; }
     }
 }
