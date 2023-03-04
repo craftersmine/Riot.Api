@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\craftersmine.Riot.Api.Common\craftersmine.Riot.Api.Common.csproj" />
+    <ProjectReference Include="..\craftersmine.Riot.Api.League.Matches\craftersmine.Riot.Api.League.Matches.csproj" />
   </ItemGroup>
 
 </Project>
