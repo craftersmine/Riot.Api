@@ -18,9 +18,13 @@ namespace craftersmine.Riot.Api.League.Client
         /// </summary>
         MinionsSpawning,
         /// <summary>
-        /// First kill made
+        /// First tower destroyed
         /// </summary>
         FirstBrick,
+        /// <summary>
+        /// First kill made
+        /// </summary>
+        FirstBlood,
         /// <summary>
         /// Turret has been destroyed
         /// </summary>
@@ -52,6 +56,10 @@ namespace craftersmine.Riot.Api.League.Client
         /// <summary>
         /// Team has been aced
         /// </summary>
-        Ace
+        Ace,
+        /// <summary>
+        /// Game has ended
+        /// </summary>
+        GameEnd
     }
 }
