@@ -13,7 +13,7 @@ namespace craftersmine.Riot.Api.League.Client
 
         public async Task<LeagueGameData> GetAllGameDataAsync()
         {
-            string endpoint = UriUtils.JoinEndpoints(LeagueClientRoot, "allgamedata");
+            string endpoint = UriUtils.JoinEndpoints(LeagueClientRoot, "allgamedata").Substring(1);
 
             LeagueGameData gameData = await Client.GetAsync<LeagueGameData>(endpoint, null);
             return gameData;
