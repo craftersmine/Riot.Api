@@ -46,14 +46,55 @@ All features to be implemented
 		- [x] Match API
 		- [x] Summoner API
 	- [ ] League of Legends Client APIs
-    	- [ ] ***info TBD***
+    	- [ ] All game data endpoint
+    		- GET
+			- /liveclientdata/allgamedata
+    		- query: int: eventID
+		- [ ] Active player data endpoint
+    		- GET
+			- /liveclientdata/activeplayer
+		- [ ] Active player abilities endpoint
+    		- GET
+			- /liveclientdata/activeplayerabilities
+		- [ ] Active player name endpoint
+    		- GET
+    		- /liveclientdata/activeplayername
+		- [ ] Active player runes endpoint
+    		- GET
+			- /liveclientdata/activeplayerrunes
+		- [ ] Event data endpoint
+    		- GET
+			- /liveclientdata/eventdata
+    		- query: int: eventID
+		- [ ] Game stats endpoint
+    		- GET
+			- /liveclientdata/gamestats
+		- [ ] Players items endpoint
+    		- GET
+			- /liveclientdata/playeritems
+    		- query: string: summonerName
+		- [ ] Player list endpoint
+    		- GET
+			- /liveclientdata/playerlist
+    		- query: enum: teamID {ALL, UNKNOWN, CHAOS, ORDER, NEUTRAL}
+		- [ ] Player main runes endpoint
+    		- GET
+			- /liveclientdata/playermainrunes
+    		- query: string: summonerName
+		- [ ] Player scores endpoint
+    		- GET
+    		- /liveclientdata/playerscores
+    		- query: string: summonerName
+		- [ ] Player summoner spells endpoint
+    		- GET
+    		- /liveclientdata/playersummonerspells
+    		- query: string: summonerName
 - [ ] Riot Data Dragon API
 	- [ ] Static data requests from [game constants](https://developer.riotgames.com/docs/lol#general_game-constants) (or from custom Git Repository static JSON files)
     - [ ] Multiple Data Dragon providers (Riot Official, Community Data Dragon)
 	- [ ] ***More Features TBD***
 
 ## Current WIP
-- [x] !!! REIMPLEMENT ALL TFT LEAGUES DTOs !!! (inherit and hide tier)
 - [ ] find more information about API response objects
     - [ ] perform more research about match timeline frame event types
     - [ ] find info about "bannerAccent" property for player client preferences
@@ -61,5 +102,6 @@ All features to be implemented
 - [x] implement LoR APIs
     - [x] implement LoR Ranked API
     - [x] implement LoR Match API
-- [ ] ...
+- [x] Implement League Client Event info object and collections
+- [ ] Implement League Client and events classes
 - [ ] ***TBD***

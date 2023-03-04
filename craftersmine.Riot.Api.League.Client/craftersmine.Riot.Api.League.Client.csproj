@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\craftersmine.Riot.Api.Common\craftersmine.Riot.Api.Common.csproj" />
+    <ProjectReference Include="..\craftersmine.Riot.Api.League.Matches\craftersmine.Riot.Api.League.Matches.csproj" />
+  </ItemGroup>
+
+</Project>

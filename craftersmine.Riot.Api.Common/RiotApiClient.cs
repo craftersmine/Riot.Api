@@ -40,7 +40,7 @@ namespace craftersmine.Riot.Api.Common
         /// <param name="settings">Settings for <see cref="RiotApiClient"/></param>
         public RiotApiClient(RiotApiClientSettings settings)
         {
-            _client = new Client();
+            _client = new Client(settings);
             _settings = settings;
 
             _client.SetHeader("X-Riot-Token", _settings.ApiKey);

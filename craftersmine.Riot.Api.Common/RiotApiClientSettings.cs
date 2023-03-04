@@ -25,6 +25,11 @@ namespace craftersmine.Riot.Api.Common
         public bool UseExperimentalLeaguesApi { get; internal set; } = false;
 
         /// <summary>
+        /// Gets <see langword="true"/> to ignore SSL certificates
+        /// </summary>
+        public bool IgnoreSSLCertificates { get; internal set; } = false;
+
+        /// <summary>
         /// Gets default Riot Data Region for Account API requests
         /// </summary>
         /// <remarks>
@@ -154,6 +159,16 @@ namespace craftersmine.Riot.Api.Common
                 throw new ArgumentException("Unexpected value for shard: " + shard.GetShardString() + " - " + shard.ToString(), nameof(shard));
 
             Settings.DefaultValorantContentShard = shard;
+            return this;
+        }
+
+        /// <summary>
+        /// Disables checking for SSL certificates
+        /// </summary>
+        /// <returns></returns>
+        public RiotApiClientSettingsBuilder IgnoreSSLCertificates()
+        {
+            Settings.IgnoreSSLCertificates = true;
             return this;
         }
     }
