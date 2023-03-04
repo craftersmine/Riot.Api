@@ -16,13 +16,27 @@ namespace craftersmine.Riot.Api.Common
     {
         private readonly HttpClient _httpClient;
         private TimeSpan? _retryAfterLast;
+        private RiotApiClientSettings _settings;
 
         /// <summary>
         /// Creates a new instance of <see cref="Client"/> to make HTTP requests
         /// </summary>
-        public Client()
+        public Client(RiotApiClientSettings settings)
         {
-            _httpClient = new HttpClient();
+            _settings = settings;
+            if (_settings.IgnoreSSLCertificates)
+            {
+                HttpClientHandler handler = new HttpClientHandler();
+                handler.ServerCertificateCustomValidationCallback += (message, cert, chain, sslPolicyErrors) =>
+                {
+                    return _settings.IgnoreSSLCertificates;
+                };
+                _httpClient = new HttpClient(handler);
+            }
+            else
+            {
+                _httpClient = new HttpClient();
+            }
         }
 
         /// <summary>
