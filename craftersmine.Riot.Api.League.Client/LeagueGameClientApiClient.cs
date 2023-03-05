@@ -184,6 +184,10 @@ namespace craftersmine.Riot.Api.League.Client
             return events;
         }
 
+        /// <summary>
+        /// Gets current game information (map, mode, etc.)
+        /// </summary>
+        /// <returns>Information about game</returns>
         public async Task<LeagueGameData> GetGameInfoAsync()
         {
             string endpoint = UriUtils.GetAddress(LeagueClientRoot, "gamestats");
