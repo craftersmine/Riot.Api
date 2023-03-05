@@ -183,5 +183,13 @@ namespace craftersmine.Riot.Api.League.Client
 
             return events;
         }
+
+        public async Task<LeagueGameData> GetGameInfoAsync()
+        {
+            string endpoint = UriUtils.GetAddress(LeagueClientRoot, "gamestats");
+            LeagueGameData data = await Client.GetAsync<LeagueGameData>(endpoint, null);
+
+            return data;
+        }
     }
 }
