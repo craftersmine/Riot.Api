@@ -45,50 +45,51 @@ All features to be implemented
     	- [x] Leagues API
 		- [x] Match API
 		- [x] Summoner API
-	- [ ] League of Legends Client APIs
-    	- [ ] All game data endpoint
+	- [x] League of Legends Client APIs
+    	- [x] All game data endpoint
     		- GET
 			- /liveclientdata/allgamedata
     		- query: int: eventID
-		- [ ] Active player data endpoint
+		- [x] Active player data endpoint
     		- GET
 			- /liveclientdata/activeplayer
-		- [ ] Active player abilities endpoint
+		- [x] Active player abilities endpoint
     		- GET
 			- /liveclientdata/activeplayerabilities
-		- [ ] Active player name endpoint
+		- [x] Active player name endpoint
     		- GET
     		- /liveclientdata/activeplayername
-		- [ ] Active player runes endpoint
+		- [x] Active player runes endpoint
     		- GET
 			- /liveclientdata/activeplayerrunes
-		- [ ] Event data endpoint
+		- [x] Event data endpoint
     		- GET
 			- /liveclientdata/eventdata
     		- query: int: eventID
-		- [ ] Game stats endpoint
+		- [x] Game stats endpoint
     		- GET
 			- /liveclientdata/gamestats
-		- [ ] Players items endpoint
+		- [x] Players items endpoint
     		- GET
 			- /liveclientdata/playeritems
     		- query: string: summonerName
-		- [ ] Player list endpoint
+		- [x] Player list endpoint
     		- GET
 			- /liveclientdata/playerlist
     		- query: enum: teamID {ALL, UNKNOWN, CHAOS, ORDER, NEUTRAL}
-		- [ ] Player main runes endpoint
+		- [x] Player main runes endpoint
     		- GET
 			- /liveclientdata/playermainrunes
     		- query: string: summonerName
-		- [ ] Player scores endpoint
+		- [x] Player scores endpoint
     		- GET
     		- /liveclientdata/playerscores
     		- query: string: summonerName
-		- [ ] Player summoner spells endpoint
+		- [x] Player summoner spells endpoint
     		- GET
     		- /liveclientdata/playersummonerspells
     		- query: string: summonerName
+	- [ ] Replay API
 - [ ] Riot Data Dragon API
 	- [ ] Static data requests from [game constants](https://developer.riotgames.com/docs/lol#general_game-constants) (or from custom Git Repository static JSON files)
     - [ ] Multiple Data Dragon providers (Riot Official, Community Data Dragon)
@@ -99,9 +100,4 @@ All features to be implemented
     - [ ] perform more research about match timeline frame event types
     - [ ] find info about "bannerAccent" property for player client preferences
 	- [ ] find info about "game_outcome" tie value in LoR match
-- [x] implement LoR APIs
-    - [x] implement LoR Ranked API
-    - [x] implement LoR Match API
-- [x] Implement League Client Event info object and collections
-- [x] Implement League Client and events classes
 - [ ] ***TBD***
