@@ -21,7 +21,7 @@ namespace craftersmine.Riot.Api.League.Client
         /// <summary>
         /// Gets information about current players
         /// </summary>
-        [JsonProperty("players")]
+        [JsonProperty("allPlayers")]
         public LeaguePlayerData[] Players { get; private set; }
         /// <summary>
         /// Gets information about occurred game events
