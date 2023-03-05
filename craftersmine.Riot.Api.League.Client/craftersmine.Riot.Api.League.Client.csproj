@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+	  <Description>Riot League of Legends Client API wrapper for .NET</Description>
   </PropertyGroup>
 
   <ItemGroup>
