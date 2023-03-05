@@ -22,7 +22,7 @@ namespace craftersmine.Riot.Api.League.Client
                 case LeagueGameEventType.MinionsSpawning:
                     return evt.ToObject<MinionsSpawningEvent>();
                 case LeagueGameEventType.ChampionKill:
-                    return evt.ToObject<ChampionKillEvent>();
+                    return evt.ToObject<ChampionKilledEvent>();
                 case LeagueGameEventType.FirstBlood:
                     return evt.ToObject<FirstBloodEvent>();
                 case LeagueGameEventType.Multikill:
@@ -35,6 +35,12 @@ namespace craftersmine.Riot.Api.League.Client
                     return evt.ToObject<InhibitorDestroyedEvent>();
                 case LeagueGameEventType.Ace:
                     return evt.ToObject<AceEvent>();
+                case LeagueGameEventType.DragonKill:
+                    return evt.ToObject<DragonKilledEvent>();
+                case LeagueGameEventType.HeraldKill:
+                    return evt.ToObject<HeraldKilledEvent>();
+                case LeagueGameEventType.BaronKill:
+                    return evt.ToObject<BaronKilledEvent>();
                 case LeagueGameEventType.GameEnd:
                     return evt.ToObject<GameEndEvent>();
                 default:
