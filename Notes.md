@@ -100,4 +100,5 @@ All features to be implemented
     - [ ] perform more research about match timeline frame event types
     - [ ] find info about "bannerAccent" property for player client preferences
 	- [ ] find info about "game_outcome" tie value in LoR match
+	- [ ] find info about League Client game end event result values
 - [ ] ***TBD***
