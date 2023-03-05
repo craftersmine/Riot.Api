@@ -33,6 +33,8 @@ namespace craftersmine.Riot.Api.Tests.League
             Assert.IsNotNull(Client, "Client is not initialized");
             LeagueGameData gameData = await Client.GetAllGameDataAsync();
 
+            Assert.IsNotNull(gameData);
+
             Assert.AreEqual("CLASSIC", gameData.GameData.GameMode);
             Assert.AreEqual("Map11", gameData.GameData.MapName);
             Assert.AreEqual("Chemtech", gameData.GameData.MapTerrain);
@@ -75,6 +77,38 @@ namespace craftersmine.Riot.Api.Tests.League
             Assert.IsTrue(evt2.Assisters.Contains("KiraNi"));
             Assert.AreEqual("imFloppy", evt2.KillerName);
             Assert.AreEqual("Wei WuXian", evt2.VictimName);
+        }
+
+        [TestMethod]
+        public async Task GetActivePlayerDataTests()
+        {
+            Assert.IsNotNull(Client, "Client is not initialized");
+            LeagueActivePlayerData playerData = await Client.GetActivePlayerDataAsync();
+
+            Assert.IsNotNull(playerData);
+            Assert.AreEqual("craftersmine", playerData.SummonerName);
+            Assert.AreEqual(1, playerData.ChampionLevel);
+            Assert.AreEqual(0, playerData.CurrentGold);
+            Assert.IsTrue(playerData.HasRelativeTeamColors);
+        }
+
+        public async Task GetActivePlayerNameTests()
+        {
+            Assert.IsNotNull(Client, "Client is not initialized");
+            string summonerName = await Client.GetActivePlayerNameAsync();
+            Assert.AreEqual("craftersmine", summonerName);
+        }
+
+        public async Task GetActivePlayerAbilitiesTests()
+        {
+            Assert.IsNotNull(Client, "Client is not initialized");
+            LeagueChampionAbilities abilities = await Client.GetActivePlayerAbilitiesAsync();
+            Assert.IsNotNull(abilities);
+            Assert.IsNotNull(abilities.Passive);
+            Assert.IsNotNull(abilities.Q);
+            Assert.IsNotNull(abilities.W);
+            Assert.IsNotNull(abilities.E);
+            Assert.IsNotNull(abilities.R);
         }
     }
 }
