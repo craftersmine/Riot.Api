@@ -103,5 +103,5 @@ All features to be implemented
     - [x] implement LoR Ranked API
     - [x] implement LoR Match API
 - [x] Implement League Client Event info object and collections
-- [ ] Implement League Client and events classes
+- [x] Implement League Client and events classes
 - [ ] ***TBD***
