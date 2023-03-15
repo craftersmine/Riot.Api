@@ -46,6 +46,7 @@ namespace craftersmine.Riot.Api.Tests.League
             {
                 if (e.ResponseCode == HttpResponseCode.ServiceUnavailable)
                     Assert.Inconclusive("Riot Service Status API returned code 503 - Service Unavailable. Try again");
+                else throw;
             }
         }
     }
