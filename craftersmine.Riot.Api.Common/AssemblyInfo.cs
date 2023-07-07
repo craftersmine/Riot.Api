@@ -22,6 +22,7 @@ using System.Text;
 [assembly:InternalsVisibleTo("craftersmine.Riot.Api.League.Spectator")]
 
 [assembly:InternalsVisibleTo("craftersmine.Riot.Api.League.Client")]
+[assembly:InternalsVisibleTo("craftersmine.Riot.Api.League.Client.Replay")]
 
 #endregion
 

@@ -39,6 +39,19 @@ namespace craftersmine.Riot.Api.Common.Utils
             return shard.GetAddressFor() + endpoint;
         }
 
+        public static string GetAddress(string address, string endpoint)
+        {
+            if (string.IsNullOrWhiteSpace(address))
+                throw new ArgumentNullException(nameof(address));
+            if (string.IsNullOrWhiteSpace(endpoint))
+                throw new ArgumentNullException(nameof(endpoint));
+
+            if (endpoint.StartsWith("/"))
+                endpoint = endpoint.Substring(1);
+
+            return address + endpoint;
+        }
+
         public static string JoinEndpoints(params string[] endpointsPaths)
         {
             string endpoint = string.Empty;

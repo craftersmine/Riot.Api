@@ -71,7 +71,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Runet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.Runeterra.Matches", "craftersmine.Riot.Api.Runeterra.Match\craftersmine.Riot.Api.Runeterra.Matches.csproj", "{5D57A65C-5DC1-4DBF-BB0F-42BDAD3C9282}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.League.Client", "craftersmine.Riot.Api.League.Client\craftersmine.Riot.Api.League.Client.csproj", "{398EA67C-4124-4A9F-90A3-8A2DD8E88FD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.Riot.Api.League.Client", "craftersmine.Riot.Api.League.Client\craftersmine.Riot.Api.League.Client.csproj", "{398EA67C-4124-4A9F-90A3-8A2DD8E88FD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.Riot.Api.League.Client.Replay", "craftersmine.Riot.Api.League.Client.Replay\craftersmine.Riot.Api.League.Client.Replay.csproj", "{B7AD5D67-AE9B-495B-8F19-C2CC82C24E07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -167,6 +169,10 @@ Global
 		{398EA67C-4124-4A9F-90A3-8A2DD8E88FD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{398EA67C-4124-4A9F-90A3-8A2DD8E88FD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{398EA67C-4124-4A9F-90A3-8A2DD8E88FD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7AD5D67-AE9B-495B-8F19-C2CC82C24E07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7AD5D67-AE9B-495B-8F19-C2CC82C24E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7AD5D67-AE9B-495B-8F19-C2CC82C24E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7AD5D67-AE9B-495B-8F19-C2CC82C24E07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -194,6 +200,7 @@ Global
 		{A12C9701-4D4B-454D-B7A0-BD379D5DBDC6} = {76DF8D67-EE96-4F40-B9A4-CB7A498E1E38}
 		{5D57A65C-5DC1-4DBF-BB0F-42BDAD3C9282} = {76DF8D67-EE96-4F40-B9A4-CB7A498E1E38}
 		{398EA67C-4124-4A9F-90A3-8A2DD8E88FD9} = {F8CD6F7F-11FD-4D78-932E-5400EE06E461}
+		{B7AD5D67-AE9B-495B-8F19-C2CC82C24E07} = {F8CD6F7F-11FD-4D78-932E-5400EE06E461}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9933B26A-16A4-4BEC-BA5E-63EE5C11C574}

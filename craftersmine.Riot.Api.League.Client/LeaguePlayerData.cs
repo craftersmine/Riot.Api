@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using craftersmine.Riot.Api.Common.Converters;
+using craftersmine.Riot.Api.League.Matches;
+using craftersmine.Riot.Api.League.Matches.Converters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -40,8 +42,8 @@ namespace craftersmine.Riot.Api.League.Client
         /// <summary>
         /// Gets player's position
         /// </summary>
-        [JsonProperty("position")]
-        public string Position { get; private set; } // TODO (craftersmine): Determine what it is (what lane is it actually, preselected in client or generated)
+        [JsonProperty("position"), JsonConverter(typeof(LeagueMatchPositionConverter))]
+        public LeagueMatchPosition Position { get; private set; }
         /// <summary>
         /// Gets an internal raw champion raw name
         /// </summary>
