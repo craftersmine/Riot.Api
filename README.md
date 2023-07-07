@@ -3,8 +3,8 @@ Riot Games API wrapper in .NET
 
 [![Created under Riot Legal Jibber Jabber](https://img.shields.io/badge/created_under-Riot_Legal_Jibber_Jabber-red?logo=riot-games)](https://www.riotgames.com/en/legal)
 [![GitHub License](https://img.shields.io/github/license/craftersmine/Riot.Api)](https://github.com/craftersmine/Riot.Api/tree/master/LICENSE)
-[![Nuget](https://img.shields.io/nuget/v/craftersmine.Riot.Api?logo=nuget)](https://www.nuget.org/packages/craftersmine.Riot.Api) 
-[![Nuget](https://img.shields.io/nuget/dt/craftersmine.Riot.Api?label=nuget%20downloads&logo=nuget)](https://www.nuget.org/packages/craftersmine.Riot.Api) 
+[![Nuget](https://img.shields.io/nuget/v/craftersmine.Riot.Api.Common?logo=nuget)](https://www.nuget.org/packages/craftersmine.Riot.Api.Common) 
+[![Nuget](https://img.shields.io/nuget/dt/craftersmine.Riot.Api.Common?label=nuget%20downloads&logo=nuget)](https://www.nuget.org/packages/craftersmine.Riot.Api.Common) 
 [![GitHub Releases](https://img.shields.io/github/downloads/craftersmine/Riot.Api/total?label=github%20downloads&logo=github)](https://github.com/craftersmine/Riot.Api/releases)
 ![Discord](https://img.shields.io/badge/discord-@craftersmine-5865f2?logo=discord&logoColor=white)
 ![GitHub Repo stars](https://img.shields.io/github/stars/craftersmine/Riot.Api)
