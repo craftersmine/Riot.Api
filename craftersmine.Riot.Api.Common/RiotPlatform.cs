@@ -53,6 +53,26 @@ namespace craftersmine.Riot.Api.Common
         /// Republic of Korea region
         /// </summary>
         Korea,
+        /// <summary>
+        /// Philippines region
+        /// </summary>
+        Philippines,
+        /// <summary>
+        /// Singapore, Malaysia, & Indonesia region
+        /// </summary>
+        Singapore,
+        /// <summary>
+        /// Thailand region
+        /// </summary>
+        Thailand,
+        /// <summary>
+        /// Vietnam region
+        /// </summary>
+        Vietnam,
+        /// <summary>
+        /// Taiwan region
+        /// </summary>
+        Taiwan
     }
 
     /// <summary>
@@ -92,6 +112,16 @@ namespace craftersmine.Riot.Api.Common
                     return Constants.BaseAddressPlatformJp1;
                 case RiotPlatform.Korea:
                     return Constants.BaseAddressPlatformKr;
+                case RiotPlatform.Philippines:
+                    return Constants.BaseAddressPlatformPh2;
+                case RiotPlatform.Singapore:
+                    return Constants.BaseAddressPlatformSg2;
+                case RiotPlatform.Thailand:
+                    return Constants.BaseAddressPlatformTh2;
+                case RiotPlatform.Vietnam:
+                    return Constants.BaseAddressPlatformVn2;
+                case RiotPlatform.Taiwan:
+                    return Constants.BaseAddressPlatformTw2;
                 default:
                     throw new Exception("Something went wrong when selecting platform! This should not happen");
             }
@@ -128,6 +158,16 @@ namespace craftersmine.Riot.Api.Common
                     return Constants.LolJp1Region;
                 case RiotPlatform.Korea:
                     return Constants.LolKrRegion;
+                case RiotPlatform.Philippines:
+                    return Constants.LolPh2Region;
+                case RiotPlatform.Singapore:
+                    return Constants.LolSg2Region;
+                case RiotPlatform.Thailand:
+                    return Constants.LolTh2Region;
+                case RiotPlatform.Taiwan:
+                    return Constants.LolTw2Region;
+                case RiotPlatform.Vietnam:
+                    return Constants.LolVn2Region;
             }
             throw new ArgumentException("Unknown Riot Platform passed in!", nameof(platform));
         }
@@ -158,6 +198,16 @@ namespace craftersmine.Riot.Api.Common
                     return RiotPlatform.Japan;
                 case Constants.LolKrRegion:
                     return RiotPlatform.Korea;
+                case Constants.LolPh2Region:
+                    return RiotPlatform.Philippines;
+                case Constants.LolSg2Region:
+                    return RiotPlatform.Singapore;
+                case Constants.LolTh2Region:
+                    return RiotPlatform.Thailand;
+                case Constants.LolTw2Region:
+                    return RiotPlatform.Taiwan;
+                case Constants.LolVn2Region:
+                    return RiotPlatform.Vietnam;
                 default:
                     throw new ArgumentException("Unknown Riot Platform passed in!", nameof(str));
             }
@@ -194,6 +244,16 @@ namespace craftersmine.Riot.Api.Common
                     return Constants.LolJpRegion;
                 case RiotPlatform.Korea:
                     return Constants.LolKrRegion;
+                case RiotPlatform.Philippines:
+                    return Constants.LolPhRegion;
+                case RiotPlatform.Singapore:
+                    return Constants.LolSgRegion;
+                case RiotPlatform.Thailand:
+                    return Constants.LolThRegion;
+                case RiotPlatform.Taiwan:
+                    return Constants.LolTwRegion;
+                case RiotPlatform.Vietnam:
+                    return Constants.LolVnRegion;
             }
             throw new ArgumentException("Unknown Riot Platform passed in!", nameof(platform));
         }
@@ -224,6 +284,16 @@ namespace craftersmine.Riot.Api.Common
                     return RiotPlatform.Japan;
                 case Constants.LolKrRegion:
                     return RiotPlatform.Korea;
+                case Constants.LolPhRegion:
+                    return RiotPlatform.Philippines;
+                case Constants.LolSgRegion:
+                    return RiotPlatform.Singapore;
+                case Constants.LolThRegion:
+                    return RiotPlatform.Thailand;
+                case Constants.LolTwRegion:
+                    return RiotPlatform.Taiwan;
+                case Constants.LolVnRegion:
+                    return RiotPlatform.Vietnam;
                 default:
                     throw new ArgumentException("Unknown Riot Platform passed in!", nameof(str));
             }
