@@ -29,6 +29,11 @@ namespace craftersmine.Riot.Api.Common
         public const string BaseAddressPlatformOc1  = "https://oc1.api.riotgames.com/";
         public const string BaseAddressPlatformTr1  = "https://tr1.api.riotgames.com/";
         public const string BaseAddressPlatformRu   = "https://ru.api.riotgames.com/";
+        public const string BaseAddressPlatformPh2   = "https://ph2.api.riotgames.com/";
+        public const string BaseAddressPlatformSg2   = "https://sg2.api.riotgames.com/";
+        public const string BaseAddressPlatformTh2   = "https://th2.api.riotgames.com/";
+        public const string BaseAddressPlatformVn2   = "https://vn2.api.riotgames.com/";
+        public const string BaseAddressPlatformTw2   = "https://tw2.api.riotgames.com/";
 
         #endregion
 
@@ -71,6 +76,11 @@ namespace craftersmine.Riot.Api.Common
         public const string LolNaRegion   = "NA";
         public const string LolOceRegion  = "OCE";
         public const string LolTrRegion   = "TR";
+        public const string LolPhRegion = "PH";
+        public const string LolSgRegion = "SG";
+        public const string LolThRegion = "TH";
+        public const string LolTwRegion = "TW";
+        public const string LolVnRegion = "VN";
 
         #endregion
 
@@ -87,6 +97,11 @@ namespace craftersmine.Riot.Api.Common
         public const string LolJp1Region = "JP1";
         public const string LolPbe1Region = "PBE1";
         public const string LolValorantKrRegion = "KR";
+        public const string LolPh2Region = "PH2";
+        public const string LolSg2Region = "SG2";
+        public const string LolTh2Region = "TH2";
+        public const string LolTw2Region = "TW2";
+        public const string LolVn2Region = "VN2";
         
         public const string ShardValorantEuropeU = "EU";
         public const string ShardValorantNorthAmericaU = "NA";
