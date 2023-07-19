@@ -36,6 +36,10 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
         /// </summary>
         Platinum,
         /// <summary>
+        /// Emerald tier
+        /// </summary>
+        Emerald,
+        /// <summary>
         /// Diamond tier
         /// </summary>
         Diamond,
@@ -67,6 +71,7 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
         private const string SilverTier = "SILVER";
         private const string GoldTier = "GOLD";
         private const string PlatinumTier = "PLATINUM";
+        private const string EmeraldTier = "EMERALD";
         private const string DiamondTier = "DIAMOND";
         private const string MasterTier = "MASTER";
         private const string GrandmasterTier = "GRANDMASTER";
@@ -93,6 +98,8 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
                     return GoldTier;
                 case LeagueRankedTier.Platinum:
                     return PlatinumTier;
+                case LeagueRankedTier.Emerald:
+                    return EmeraldTier;
                 case LeagueRankedTier.Diamond:
                     return DiamondTier;
                 case LeagueRankedTier.Master:
@@ -122,6 +129,8 @@ namespace craftersmine.Riot.Api.League.SummonerLeagues
                     return LeagueRankedTier.Gold;
                 case PlatinumTier:
                     return LeagueRankedTier.Platinum;
+                case EmeraldTier:
+                    return LeagueRankedTier.Emerald;
                 case DiamondTier:
                     return LeagueRankedTier.Diamond;
                 case MasterTier:
