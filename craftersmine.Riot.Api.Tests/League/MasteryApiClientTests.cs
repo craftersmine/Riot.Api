@@ -15,7 +15,7 @@ namespace craftersmine.Riot.Api.Tests.League
     {
         public const int OrnnChampionId = 516;
         public const int VolibearChampionId = 106;
-        public const int GnarChampionId = 150;
+        public const int ZiggsChampionId = 115;
         public const bool EnableExperimental = false;
 
         public LeagueMasteryApiClient? Client { get; set; }
@@ -40,11 +40,11 @@ namespace craftersmine.Riot.Api.Tests.League
         }
 
         [TestMethod]
-        public async Task GetMasteriesBySummonerIdTests()
+        public async Task GetMasteriesByPuuidTests()
         {
             Assert.IsNotNull(Client, "Client is not initialized");
             LeagueChampionMastery[] masteries =
-                await Client.GetMasteriesBySummonerId(RiotPlatform.Russia, LeagueSummonerApiClientTests.MySummonerId);
+                await Client.GetMasteriesByPuuid(RiotPlatform.Russia, LeagueSummonerApiClientTests.MyPuuid);
             Assert.IsTrue(masteries.Any(), "No masteries returned");
             LeagueChampionMastery? ornnMastery = masteries.FirstOrDefault(m => m.ChampionId == OrnnChampionId);
             Assert.IsNotNull(ornnMastery,
@@ -55,12 +55,12 @@ namespace craftersmine.Riot.Api.Tests.League
         }
 
         [TestMethod]
-        public async Task GetMasteryForChampionBySummonerIdTests()
+        public async Task GetMasteryForChampionByPuuidTests()
         {
             Assert.IsNotNull(Client, "Client is not initialized");
             LeagueChampionMastery ornnMastery =
-                await Client.GetMasteryForChampionBySummonerId(RiotPlatform.Russia, OrnnChampionId,
-                    LeagueSummonerApiClientTests.MySummonerId);
+                await Client.GetMasteryForChampionByPuuid(RiotPlatform.Russia, OrnnChampionId,
+                    LeagueSummonerApiClientTests.MyPuuid);
             Assert.IsNotNull(ornnMastery,
                 "No mastery for Ornn in my champion pool (almost a 1m points and mastery 7, something wrong)");
             Assert.IsTrue(ornnMastery.MasteryLevel == 7,
@@ -73,18 +73,18 @@ namespace craftersmine.Riot.Api.Tests.League
         {
             Assert.IsNotNull(Client, "Client is not initialized");
             LeagueChampionMastery[] topMasteries =
-                await Client.GetTopThreeMasteriesBySummonerId(RiotPlatform.Russia,
-                    LeagueSummonerApiClientTests.MySummonerId);
+                await Client.GetTopThreeMasteriesByPuuid(RiotPlatform.Russia,
+                    LeagueSummonerApiClientTests.MyPuuid);
             Assert.IsTrue(topMasteries.Any(), "No masteries returned");
             LeagueChampionMastery? ornnMastery = topMasteries.FirstOrDefault(m => m.ChampionId == OrnnChampionId);
             LeagueChampionMastery? voliMastery = topMasteries.FirstOrDefault(m => m.ChampionId == VolibearChampionId);
-            LeagueChampionMastery? gnarMastery = topMasteries.FirstOrDefault(m => m.ChampionId == GnarChampionId);
+            LeagueChampionMastery? gnarMastery = topMasteries.FirstOrDefault(m => m.ChampionId == ZiggsChampionId);
             Assert.IsNotNull(ornnMastery,
                 "No mastery for Ornn in my champion pool (almost a 1m points and mastery 7, something wrong)");
             Assert.IsNotNull(voliMastery,
                 "No mastery for Volibear in my champion pool (over 150k points and mastery 7, something wrong)");
             Assert.IsNotNull(gnarMastery,
-                "No mastery for Gnar in my champion pool (over 35k points and mastery 5, something wrong)");
+                "No mastery for Ziggs in my champion pool (over 35k points and mastery 5, something wrong)");
             Assert.IsTrue(ornnMastery.MasteryLevel == 7,
                 "Got 7th mastery on Ornn, but it reported " + ornnMastery.MasteryLevel);
             Assert.IsTrue(ornnMastery.MasteryPoints > 950000, "It is definitely over 950k on Ornn");
@@ -97,12 +97,12 @@ namespace craftersmine.Riot.Api.Tests.League
         }
 
         [TestMethod]
-        public async Task GetTotalMasteriesBySummonerIdTests()
+        public async Task GetTotalMasteriesByPuuidTests()
         {
             Assert.IsNotNull(Client, "Client is not initialized");
             int totalMasteries =
-                await Client.GetTotalMasteriesBySummonerId(RiotPlatform.Russia,
-                    LeagueSummonerApiClientTests.MySummonerId);
+                await Client.GetTotalMasteriesByPuuid(RiotPlatform.Russia,
+                    LeagueSummonerApiClientTests.MyPuuid);
         }
     }
 }

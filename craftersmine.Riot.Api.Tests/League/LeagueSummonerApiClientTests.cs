@@ -15,6 +15,7 @@ namespace craftersmine.Riot.Api.Tests.League
         public const string MySummonerNameRu = "craftersmine";
         public const string MyAccountId = "1Qr4Eh3voM158K6jQOrEkl02Tk20MY9HI3NLq6phi4NG7sjvo1OeYhzy";
         public const string MySummonerId = "PtRpTVHs2N12hcdRB5OgxNcs2y4wAK7yg4K38y8028YwBGw";
+        public const string MyPuuid = "XRWOl9NePvqBbDsCBQKMgks13Cyc5KO1N-ZCPE0xr8Yvt58H7JjiWx_jlkF4VSYc31kBYfoKZtSNhA";
 
         public LeagueSummonerApiClient? Client { get; set; }
         public string? ApiKey { get; set; }
