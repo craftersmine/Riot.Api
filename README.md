@@ -8,7 +8,7 @@ Riot Games API wrapper in .NET
 [![GitHub Releases](https://img.shields.io/github/downloads/craftersmine/Riot.Api/total?label=github%20downloads&logo=github)](https://github.com/craftersmine/Riot.Api/releases)
 ![Discord](https://img.shields.io/badge/discord-@craftersmine-5865f2?logo=discord&logoColor=white)
 ![GitHub Repo stars](https://img.shields.io/github/stars/craftersmine/Riot.Api)
-![Maintenance](https://img.shields.io/maintenance/yes/2023)
+![Maintenance](https://img.shields.io/maintenance/yes/2025)
 
 ## Installation:
 * Search for `craftersmine.Riot.Api` in NuGet explorer in Visual Studio (or your IDE) and select required packages
